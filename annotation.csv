@@ -1,544 +1,544 @@
-Run,Cell_type,GEO_Accession (exp),sex,Strain,Dir
-SRR2727045,ES2i,GSM1911848,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727045.SRR2727045.fastq_Aligned.sortedByCoord.out.bam
-SRR2727046,ES2i,GSM1911849,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727046.SRR2727046.fastq_Aligned.sortedByCoord.out.bam
-SRR2727047,ES2i,GSM1911850,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727047.SRR2727047.fastq_Aligned.sortedByCoord.out.bam
-SRR2727048,ES2i,GSM1911851,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727048.SRR2727048.fastq_Aligned.sortedByCoord.out.bam
-SRR2727049,ES2i,GSM1911852,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727049.SRR2727049.fastq_Aligned.sortedByCoord.out.bam
-SRR2727050,ES2i,GSM1911853,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727050.SRR2727050.fastq_Aligned.sortedByCoord.out.bam
-SRR2727051,ES2i,GSM1911854,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727051.SRR2727051.fastq_Aligned.sortedByCoord.out.bam
-SRR2727052,ES2i,GSM1911855,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727052.SRR2727052.fastq_Aligned.sortedByCoord.out.bam
-SRR2727053,ES2i,GSM1911856,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727053.SRR2727053.fastq_Aligned.sortedByCoord.out.bam
-SRR2727054,ES2i,GSM1911857,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727054.SRR2727054.fastq_Aligned.sortedByCoord.out.bam
-SRR2727055,ES2i,GSM1911858,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727055.SRR2727055.fastq_Aligned.sortedByCoord.out.bam
-SRR2727056,ES2i,GSM1911859,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727056.SRR2727056.fastq_Aligned.sortedByCoord.out.bam
-SRR2727057,ES2i,GSM1911860,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727057.SRR2727057.fastq_Aligned.sortedByCoord.out.bam
-SRR2727058,ES2i,GSM1911861,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727058.SRR2727058.fastq_Aligned.sortedByCoord.out.bam
-SRR2727059,ES2i,GSM1911862,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727059.SRR2727059.fastq_Aligned.sortedByCoord.out.bam
-SRR2727060,ES2i,GSM1911863,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727060.SRR2727060.fastq_Aligned.sortedByCoord.out.bam
-SRR2727061,ES2i,GSM1911864,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727061.SRR2727061.fastq_Aligned.sortedByCoord.out.bam
-SRR2727062,ES2i,GSM1911865,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727062.SRR2727062.fastq_Aligned.sortedByCoord.out.bam
-SRR2727063,ES2i,GSM1911866,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727063.SRR2727063.fastq_Aligned.sortedByCoord.out.bam
-SRR2727064,ES2i,GSM1911867,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727064.SRR2727064.fastq_Aligned.sortedByCoord.out.bam
-SRR2727065,ES2i,GSM1911868,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727065.SRR2727065.fastq_Aligned.sortedByCoord.out.bam
-SRR2727066,ES2i,GSM1911869,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727066.SRR2727066.fastq_Aligned.sortedByCoord.out.bam
-SRR2727067,ES2i,GSM1911870,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727067.SRR2727067.fastq_Aligned.sortedByCoord.out.bam
-SRR2727068,ES2i,GSM1911871,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727068.SRR2727068.fastq_Aligned.sortedByCoord.out.bam
-SRR2727069,ES2i,GSM1911872,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727069.SRR2727069.fastq_Aligned.sortedByCoord.out.bam
-SRR2727070,ES2i,GSM1911873,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727070.SRR2727070.fastq_Aligned.sortedByCoord.out.bam
-SRR2727071,ES2i,GSM1911874,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727071.SRR2727071.fastq_Aligned.sortedByCoord.out.bam
-SRR2727072,ES2i,GSM1911875,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727072.SRR2727072.fastq_Aligned.sortedByCoord.out.bam
-SRR2727073,ES2i,GSM1911876,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727073.SRR2727073.fastq_Aligned.sortedByCoord.out.bam
-SRR2727074,ES2i,GSM1911877,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727074.SRR2727074.fastq_Aligned.sortedByCoord.out.bam
-SRR2727075,ES2i,GSM1911878,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727075.SRR2727075.fastq_Aligned.sortedByCoord.out.bam
-SRR2727076,ES2i,GSM1911879,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727076.SRR2727076.fastq_Aligned.sortedByCoord.out.bam
-SRR2727077,ES2i,GSM1911880,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727077.SRR2727077.fastq_Aligned.sortedByCoord.out.bam
-SRR2727078,ES2i,GSM1911881,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727078.SRR2727078.fastq_Aligned.sortedByCoord.out.bam
-SRR2727079,ES2i,GSM1911882,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727079.SRR2727079.fastq_Aligned.sortedByCoord.out.bam
-SRR2727080,ES2i,GSM1911883,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727080.SRR2727080.fastq_Aligned.sortedByCoord.out.bam
-SRR2727081,ES2i,GSM1911884,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727081.SRR2727081.fastq_Aligned.sortedByCoord.out.bam
-SRR2727082,ES2i,GSM1911885,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727082.SRR2727082.fastq_Aligned.sortedByCoord.out.bam
-SRR2727083,ES2i,GSM1911886,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727083.SRR2727083.fastq_Aligned.sortedByCoord.out.bam
-SRR2727084,ES2i,GSM1911887,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727084.SRR2727084.fastq_Aligned.sortedByCoord.out.bam
-SRR2727085,ES2i,GSM1911888,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727085.SRR2727085.fastq_Aligned.sortedByCoord.out.bam
-SRR2727086,ES2i,GSM1911889,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727086.SRR2727086.fastq_Aligned.sortedByCoord.out.bam
-SRR2727087,ES2i,GSM1911890,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727087.SRR2727087.fastq_Aligned.sortedByCoord.out.bam
-SRR2727088,ES2i,GSM1911891,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727088.SRR2727088.fastq_Aligned.sortedByCoord.out.bam
-SRR2727089,ES2i,GSM1911892,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727089.SRR2727089.fastq_Aligned.sortedByCoord.out.bam
-SRR2727090,ES2i,GSM1911893,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727090.SRR2727090.fastq_Aligned.sortedByCoord.out.bam
-SRR2727091,ES2i,GSM1911894,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727091.SRR2727091.fastq_Aligned.sortedByCoord.out.bam
-SRR2727092,ES2i,GSM1911895,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727092.SRR2727092.fastq_Aligned.sortedByCoord.out.bam
-SRR2727093,ES2i,GSM1911896,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727093.SRR2727093.fastq_Aligned.sortedByCoord.out.bam
-SRR2727094,ES2i,GSM1911897,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727094.SRR2727094.fastq_Aligned.sortedByCoord.out.bam
-SRR2727095,ES2i,GSM1911898,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727095.SRR2727095.fastq_Aligned.sortedByCoord.out.bam
-SRR2727096,ES2i,GSM1911899,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727096.SRR2727096.fastq_Aligned.sortedByCoord.out.bam
-SRR2727097,ES2i,GSM1911900,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727097.SRR2727097.fastq_Aligned.sortedByCoord.out.bam
-SRR2727098,ES2i,GSM1911901,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727098.SRR2727098.fastq_Aligned.sortedByCoord.out.bam
-SRR2727099,ES2i,GSM1911902,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727099.SRR2727099.fastq_Aligned.sortedByCoord.out.bam
-SRR2727100,ES2i,GSM1911903,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727100.SRR2727100.fastq_Aligned.sortedByCoord.out.bam
-SRR2727101,ES2i,GSM1911904,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727101.SRR2727101.fastq_Aligned.sortedByCoord.out.bam
-SRR2727102,ES2i,GSM1911905,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727102.SRR2727102.fastq_Aligned.sortedByCoord.out.bam
-SRR2727103,ES2i,GSM1911906,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727103.SRR2727103.fastq_Aligned.sortedByCoord.out.bam
-SRR2727104,ES2i,GSM1911907,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727104.SRR2727104.fastq_Aligned.sortedByCoord.out.bam
-SRR2727105,ES2i,GSM1911908,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727105.SRR2727105.fastq_Aligned.sortedByCoord.out.bam
-SRR2727106,ES2i,GSM1911909,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727106.SRR2727106.fastq_Aligned.sortedByCoord.out.bam
-SRR2727107,ES2i,GSM1911910,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727107.SRR2727107.fastq_Aligned.sortedByCoord.out.bam
-SRR2727108,ES2i,GSM1911911,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727108.SRR2727108.fastq_Aligned.sortedByCoord.out.bam
-SRR2727109,ES2i,GSM1911912,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727109.SRR2727109.fastq_Aligned.sortedByCoord.out.bam
-SRR2727110,ES2i,GSM1911913,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727110.SRR2727110.fastq_Aligned.sortedByCoord.out.bam
-SRR2727111,ES2i,GSM1911914,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727111.SRR2727111.fastq_Aligned.sortedByCoord.out.bam
-SRR2727112,ES2i,GSM1911915,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727112.SRR2727112.fastq_Aligned.sortedByCoord.out.bam
-SRR2727113,ES2i,GSM1911916,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727113.SRR2727113.fastq_Aligned.sortedByCoord.out.bam
-SRR2727114,ES2i,GSM1911917,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727114.SRR2727114.fastq_Aligned.sortedByCoord.out.bam
-SRR2727115,ES2i,GSM1911918,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727115.SRR2727115.fastq_Aligned.sortedByCoord.out.bam
-SRR2727116,ES2i,GSM1911919,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727116.SRR2727116.fastq_Aligned.sortedByCoord.out.bam
-SRR2727117,ES2i,GSM1911920,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727117.SRR2727117.fastq_Aligned.sortedByCoord.out.bam
-SRR2727118,ES2i,GSM1911921,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727118.SRR2727118.fastq_Aligned.sortedByCoord.out.bam
-SRR2727119,ES2i,GSM1911922,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727119.SRR2727119.fastq_Aligned.sortedByCoord.out.bam
-SRR2727120,ES2i,GSM1911923,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727120.SRR2727120.fastq_Aligned.sortedByCoord.out.bam
-SRR2727121,ES2i,GSM1911924,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727121.SRR2727121.fastq_Aligned.sortedByCoord.out.bam
-SRR2727122,ES2i,GSM1911925,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727122.SRR2727122.fastq_Aligned.sortedByCoord.out.bam
-SRR2727123,ES2i,GSM1911926,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727123.SRR2727123.fastq_Aligned.sortedByCoord.out.bam
-SRR2727124,ES2i,GSM1911927,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727124.SRR2727124.fastq_Aligned.sortedByCoord.out.bam
-SRR2727125,ES2i,GSM1911928,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727125.SRR2727125.fastq_Aligned.sortedByCoord.out.bam
-SRR2727126,ES2i,GSM1911929,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727126.SRR2727126.fastq_Aligned.sortedByCoord.out.bam
-SRR2727127,ES2i,GSM1911930,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727127.SRR2727127.fastq_Aligned.sortedByCoord.out.bam
-SRR2727128,ES2i,GSM1911931,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727128.SRR2727128.fastq_Aligned.sortedByCoord.out.bam
-SRR2727129,ES2i,GSM1911932,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727129.SRR2727129.fastq_Aligned.sortedByCoord.out.bam
-SRR2727130,ES2i,GSM1911933,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727130.SRR2727130.fastq_Aligned.sortedByCoord.out.bam
-SRR2727131,ES2i,GSM1911934,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727131.SRR2727131.fastq_Aligned.sortedByCoord.out.bam
-SRR2727132,ES2i,GSM1911935,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727132.SRR2727132.fastq_Aligned.sortedByCoord.out.bam
-SRR2727133,ES2i,GSM1911936,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727133.SRR2727133.fastq_Aligned.sortedByCoord.out.bam
-SRR2727134,ES2i,GSM1911937,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727134.SRR2727134.fastq_Aligned.sortedByCoord.out.bam
-SRR2727135,ES2i,GSM1911938,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727135.SRR2727135.fastq_Aligned.sortedByCoord.out.bam
-SRR2727136,ES2i,GSM1911939,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727136.SRR2727136.fastq_Aligned.sortedByCoord.out.bam
-SRR2727137,ES2i,GSM1911940,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727137.SRR2727137.fastq_Aligned.sortedByCoord.out.bam
-SRR2727138,ES2i,GSM1911941,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727138.SRR2727138.fastq_Aligned.sortedByCoord.out.bam
-SRR2727139,ES2i,GSM1911942,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727139.SRR2727139.fastq_Aligned.sortedByCoord.out.bam
-SRR2727140,ES2i,GSM1911943,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727140.SRR2727140.fastq_Aligned.sortedByCoord.out.bam
-SRR2727141,ES2i,GSM1911944,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727141.SRR2727141.fastq_Aligned.sortedByCoord.out.bam
-SRR2727142,ES2i,GSM1911945,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727142.SRR2727142.fastq_Aligned.sortedByCoord.out.bam
-SRR2727143,ES2i,GSM1911946,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727143.SRR2727143.fastq_Aligned.sortedByCoord.out.bam
-SRR2727144,ES2i,GSM1911947,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727144.SRR2727144.fastq_Aligned.sortedByCoord.out.bam
-SRR2727145,ES2i,GSM1911948,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727145.SRR2727145.fastq_Aligned.sortedByCoord.out.bam
-SRR2727146,ES2i,GSM1911949,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727146.SRR2727146.fastq_Aligned.sortedByCoord.out.bam
-SRR2727147,ES2i,GSM1911950,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727147.SRR2727147.fastq_Aligned.sortedByCoord.out.bam
-SRR2727148,ES2i,GSM1911951,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727148.SRR2727148.fastq_Aligned.sortedByCoord.out.bam
-SRR2727149,ES2i,GSM1911952,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727149.SRR2727149.fastq_Aligned.sortedByCoord.out.bam
-SRR2727150,ES2i,GSM1911953,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727150.SRR2727150.fastq_Aligned.sortedByCoord.out.bam
-SRR2727151,ES2i,GSM1911954,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727151.SRR2727151.fastq_Aligned.sortedByCoord.out.bam
-SRR2727152,ES2i,GSM1911955,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727152.SRR2727152.fastq_Aligned.sortedByCoord.out.bam
-SRR2727153,ES2i,GSM1911956,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727153.SRR2727153.fastq_Aligned.sortedByCoord.out.bam
-SRR2727154,ES2i,GSM1911957,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727154.SRR2727154.fastq_Aligned.sortedByCoord.out.bam
-SRR2727155,ES2i,GSM1911958,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727155.SRR2727155.fastq_Aligned.sortedByCoord.out.bam
-SRR2727156,ES,GSM1911959,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727156.SRR2727156.fastq_Aligned.sortedByCoord.out.bam
-SRR2727157,ES,GSM1911960,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727157.SRR2727157.fastq_Aligned.sortedByCoord.out.bam
-SRR2727158,ES,GSM1911961,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727158.SRR2727158.fastq_Aligned.sortedByCoord.out.bam
-SRR2727159,ES,GSM1911962,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727159.SRR2727159.fastq_Aligned.sortedByCoord.out.bam
-SRR2727160,ES,GSM1911963,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727160.SRR2727160.fastq_Aligned.sortedByCoord.out.bam
-SRR2727161,ES,GSM1911964,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727161.SRR2727161.fastq_Aligned.sortedByCoord.out.bam
-SRR2727162,ES,GSM1911965,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727162.SRR2727162.fastq_Aligned.sortedByCoord.out.bam
-SRR2727163,ES,GSM1911966,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727163.SRR2727163.fastq_Aligned.sortedByCoord.out.bam
-SRR2727164,ES,GSM1911967,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727164.SRR2727164.fastq_Aligned.sortedByCoord.out.bam
-SRR2727166,ES,GSM1911969,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727166.SRR2727166.fastq_Aligned.sortedByCoord.out.bam
-SRR2727167,ES,GSM1911970,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727167.SRR2727167.fastq_Aligned.sortedByCoord.out.bam
-SRR2727168,ES,GSM1911971,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727168.SRR2727168.fastq_Aligned.sortedByCoord.out.bam
-SRR2727169,ES,GSM1911972,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727169.SRR2727169.fastq_Aligned.sortedByCoord.out.bam
-SRR2727170,ES,GSM1911973,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727170.SRR2727170.fastq_Aligned.sortedByCoord.out.bam
-SRR2727171,ES,GSM1911974,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727171.SRR2727171.fastq_Aligned.sortedByCoord.out.bam
-SRR2727172,ES,GSM1911975,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727172.SRR2727172.fastq_Aligned.sortedByCoord.out.bam
-SRR2727173,ES,GSM1911976,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727173.SRR2727173.fastq_Aligned.sortedByCoord.out.bam
-SRR2727174,ES,GSM1911977,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727174.SRR2727174.fastq_Aligned.sortedByCoord.out.bam
-SRR2727175,ES,GSM1911978,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727175.SRR2727175.fastq_Aligned.sortedByCoord.out.bam
-SRR2727176,ES,GSM1911979,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727176.SRR2727176.fastq_Aligned.sortedByCoord.out.bam
-SRR2727177,ES,GSM1911980,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727177.SRR2727177.fastq_Aligned.sortedByCoord.out.bam
-SRR2727178,ES,GSM1911981,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727178.SRR2727178.fastq_Aligned.sortedByCoord.out.bam
-SRR2727179,ES,GSM1911982,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727179.SRR2727179.fastq_Aligned.sortedByCoord.out.bam
-SRR2727180,ES,GSM1911983,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727180.SRR2727180.fastq_Aligned.sortedByCoord.out.bam
-SRR2727181,ES,GSM1911984,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727181.SRR2727181.fastq_Aligned.sortedByCoord.out.bam
-SRR2727182,ES,GSM1911985,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727182.SRR2727182.fastq_Aligned.sortedByCoord.out.bam
-SRR2727183,ES,GSM1911986,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727183.SRR2727183.fastq_Aligned.sortedByCoord.out.bam
-SRR2727184,ES,GSM1911987,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727184.SRR2727184.fastq_Aligned.sortedByCoord.out.bam
-SRR2727185,ES,GSM1911988,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727185.SRR2727185.fastq_Aligned.sortedByCoord.out.bam
-SRR2727186,ES,GSM1911989,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727186.SRR2727186.fastq_Aligned.sortedByCoord.out.bam
-SRR2727187,ES,GSM1911990,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727187.SRR2727187.fastq_Aligned.sortedByCoord.out.bam
-SRR2727188,ES,GSM1911991,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727188.SRR2727188.fastq_Aligned.sortedByCoord.out.bam
-SRR2727189,ES,GSM1911992,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727189.SRR2727189.fastq_Aligned.sortedByCoord.out.bam
-SRR2727190,ES,GSM1911993,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727190.SRR2727190.fastq_Aligned.sortedByCoord.out.bam
-SRR2727191,ES,GSM1911994,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727191.SRR2727191.fastq_Aligned.sortedByCoord.out.bam
-SRR2727192,ES,GSM1911995,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727192.SRR2727192.fastq_Aligned.sortedByCoord.out.bam
-SRR2727193,ES,GSM1911996,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727193.SRR2727193.fastq_Aligned.sortedByCoord.out.bam
-SRR2727194,ES,GSM1911997,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727194.SRR2727194.fastq_Aligned.sortedByCoord.out.bam
-SRR2727195,ES,GSM1911998,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727195.SRR2727195.fastq_Aligned.sortedByCoord.out.bam
-SRR2727196,ES,GSM1911999,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727196.SRR2727196.fastq_Aligned.sortedByCoord.out.bam
-SRR2727197,ES,GSM1912000,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727197.SRR2727197.fastq_Aligned.sortedByCoord.out.bam
-SRR2727198,ES,GSM1912001,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727198.SRR2727198.fastq_Aligned.sortedByCoord.out.bam
-SRR2727200,ES,GSM1912003,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727200.SRR2727200.fastq_Aligned.sortedByCoord.out.bam
-SRR2727201,ES,GSM1912004,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727201.SRR2727201.fastq_Aligned.sortedByCoord.out.bam
-SRR2727202,ES,GSM1912005,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727202.SRR2727202.fastq_Aligned.sortedByCoord.out.bam
-SRR2727203,ES,GSM1912006,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727203.SRR2727203.fastq_Aligned.sortedByCoord.out.bam
-SRR2727204,ES,GSM1912007,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727204.SRR2727204.fastq_Aligned.sortedByCoord.out.bam
-SRR2727205,ES,GSM1912008,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727205.SRR2727205.fastq_Aligned.sortedByCoord.out.bam
-SRR2727206,ES,GSM1912009,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727206.SRR2727206.fastq_Aligned.sortedByCoord.out.bam
-SRR2727207,ES,GSM1912010,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727207.SRR2727207.fastq_Aligned.sortedByCoord.out.bam
-SRR2727208,ES,GSM1912011,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727208.SRR2727208.fastq_Aligned.sortedByCoord.out.bam
-SRR2727209,ES,GSM1912012,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727209.SRR2727209.fastq_Aligned.sortedByCoord.out.bam
-SRR2727210,ES,GSM1912013,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727210.SRR2727210.fastq_Aligned.sortedByCoord.out.bam
-SRR2727211,ES,GSM1912014,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727211.SRR2727211.fastq_Aligned.sortedByCoord.out.bam
-SRR2727212,ES,GSM1912015,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727212.SRR2727212.fastq_Aligned.sortedByCoord.out.bam
-SRR2727213,ES,GSM1912016,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727213.SRR2727213.fastq_Aligned.sortedByCoord.out.bam
-SRR2727214,ES,GSM1912017,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727214.SRR2727214.fastq_Aligned.sortedByCoord.out.bam
-SRR2727215,ES,GSM1912018,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727215.SRR2727215.fastq_Aligned.sortedByCoord.out.bam
-SRR2727216,ES,GSM1912019,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727216.SRR2727216.fastq_Aligned.sortedByCoord.out.bam
-SRR2727217,ES,GSM1912020,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727217.SRR2727217.fastq_Aligned.sortedByCoord.out.bam
-SRR2727218,ES,GSM1912021,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727218.SRR2727218.fastq_Aligned.sortedByCoord.out.bam
-SRR2727219,ES,GSM1912022,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727219.SRR2727219.fastq_Aligned.sortedByCoord.out.bam
-SRR2727220,ES,GSM1912023,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727220.SRR2727220.fastq_Aligned.sortedByCoord.out.bam
-SRR2727221,ES,GSM1912024,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727221.SRR2727221.fastq_Aligned.sortedByCoord.out.bam
-SRR2727222,ES,GSM1912025,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727222.SRR2727222.fastq_Aligned.sortedByCoord.out.bam
-SRR2727223,ES,GSM1912026,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727223.SRR2727223.fastq_Aligned.sortedByCoord.out.bam
-SRR2727224,ES,GSM1912027,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727224.SRR2727224.fastq_Aligned.sortedByCoord.out.bam
-SRR2727225,ES,GSM1912028,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727225.SRR2727225.fastq_Aligned.sortedByCoord.out.bam
-SRR2727226,ES,GSM1912029,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727226.SRR2727226.fastq_Aligned.sortedByCoord.out.bam
-SRR2727227,ES,GSM1912030,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727227.SRR2727227.fastq_Aligned.sortedByCoord.out.bam
-SRR2727228,ES,GSM1912031,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727228.SRR2727228.fastq_Aligned.sortedByCoord.out.bam
-SRR2727229,ES,GSM1912032,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727229.SRR2727229.fastq_Aligned.sortedByCoord.out.bam
-SRR2727230,ES,GSM1912033,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727230.SRR2727230.fastq_Aligned.sortedByCoord.out.bam
-SRR2727231,ES,GSM1912034,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727231.SRR2727231.fastq_Aligned.sortedByCoord.out.bam
-SRR2727232,ES,GSM1912035,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727232.SRR2727232.fastq_Aligned.sortedByCoord.out.bam
-SRR2727233,ES,GSM1912036,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727233.SRR2727233.fastq_Aligned.sortedByCoord.out.bam
-SRR2727234,ES,GSM1912037,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727234.SRR2727234.fastq_Aligned.sortedByCoord.out.bam
-SRR2727276,Epi,GSM1912079,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727276.SRR2727276.fastq_Aligned.sortedByCoord.out.bam
-SRR2727277,Epi,GSM1912080,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727277.SRR2727277.fastq_Aligned.sortedByCoord.out.bam
-SRR2727278,Epi,GSM1912081,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727278.SRR2727278.fastq_Aligned.sortedByCoord.out.bam
-SRR2727279,Epi,GSM1912082,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727279.SRR2727279.fastq_Aligned.sortedByCoord.out.bam
-SRR2727280,Epi,GSM1912083,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727280.SRR2727280.fastq_Aligned.sortedByCoord.out.bam
-SRR2727281,Epi,GSM1912084,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727281.SRR2727281.fastq_Aligned.sortedByCoord.out.bam
-SRR2727282,Epi,GSM1912085,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727282.SRR2727282.fastq_Aligned.sortedByCoord.out.bam
-SRR2727283,Epi,GSM1912086,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727283.SRR2727283.fastq_Aligned.sortedByCoord.out.bam
-SRR2727284,Epi,GSM1912087,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727284.SRR2727284.fastq_Aligned.sortedByCoord.out.bam
-SRR2727285,Epi,GSM1912088,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727285.SRR2727285.fastq_Aligned.sortedByCoord.out.bam
-SRR2727286,Epi,GSM1912089,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727286.SRR2727286.fastq_Aligned.sortedByCoord.out.bam
-SRR2727287,Epi,GSM1912090,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727287.SRR2727287.fastq_Aligned.sortedByCoord.out.bam
-SRR2727288,Epi,GSM1912091,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727288.SRR2727288.fastq_Aligned.sortedByCoord.out.bam
-SRR2727289,Epi,GSM1912092,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727289.SRR2727289.fastq_Aligned.sortedByCoord.out.bam
-SRR2727290,Epi,GSM1912093,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727290.SRR2727290.fastq_Aligned.sortedByCoord.out.bam
-SRR2727291,Epi,GSM1912094,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727291.SRR2727291.fastq_Aligned.sortedByCoord.out.bam
-SRR2727292,Epi,GSM1912095,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727292.SRR2727292.fastq_Aligned.sortedByCoord.out.bam
-SRR2727293,Epi,GSM1912096,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727293.SRR2727293.fastq_Aligned.sortedByCoord.out.bam
-SRR2727294,Epi,GSM1912097,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727294.SRR2727294.fastq_Aligned.sortedByCoord.out.bam
-SRR2727295,Epi,GSM1912098,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727295.SRR2727295.fastq_Aligned.sortedByCoord.out.bam
-SRR2727296,Epi,GSM1912099,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727296.SRR2727296.fastq_Aligned.sortedByCoord.out.bam
-SRR2727297,Epi,GSM1912100,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727297.SRR2727297.fastq_Aligned.sortedByCoord.out.bam
-SRR2727298,Epi,GSM1912101,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727298.SRR2727298.fastq_Aligned.sortedByCoord.out.bam
-SRR2727299,Epi,GSM1912102,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727299.SRR2727299.fastq_Aligned.sortedByCoord.out.bam
-SRR2727300,Epi,GSM1912103,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727300.SRR2727300.fastq_Aligned.sortedByCoord.out.bam
-SRR2727301,Epi,GSM1912104,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727301.SRR2727301.fastq_Aligned.sortedByCoord.out.bam
-SRR2727302,Epi,GSM1912105,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727302.SRR2727302.fastq_Aligned.sortedByCoord.out.bam
-SRR2727303,Epi,GSM1912106,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727303.SRR2727303.fastq_Aligned.sortedByCoord.out.bam
-SRR2727304,Epi,GSM1912107,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727304.SRR2727304.fastq_Aligned.sortedByCoord.out.bam
-SRR2727305,Epi,GSM1912108,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727305.SRR2727305.fastq_Aligned.sortedByCoord.out.bam
-SRR2727306,Epi,GSM1912109,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727306.SRR2727306.fastq_Aligned.sortedByCoord.out.bam
-SRR2727307,Epi,GSM1912110,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727307.SRR2727307.fastq_Aligned.sortedByCoord.out.bam
-SRR2727308,Epi,GSM1912111,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727308.SRR2727308.fastq_Aligned.sortedByCoord.out.bam
-SRR2727309,Epi,GSM1912112,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727309.SRR2727309.fastq_Aligned.sortedByCoord.out.bam
-SRR2727310,Epi,GSM1912113,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727310.SRR2727310.fastq_Aligned.sortedByCoord.out.bam
-SRR2727311,Epi,GSM1912114,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727311.SRR2727311.fastq_Aligned.sortedByCoord.out.bam
-SRR2727312,Epi,GSM1912115,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727312.SRR2727312.fastq_Aligned.sortedByCoord.out.bam
-SRR2727313,Epi,GSM1912116,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727313.SRR2727313.fastq_Aligned.sortedByCoord.out.bam
-SRR2727314,Epi,GSM1912117,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727314.SRR2727314.fastq_Aligned.sortedByCoord.out.bam
-SRR2727315,Epi,GSM1912118,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727315.SRR2727315.fastq_Aligned.sortedByCoord.out.bam
-SRR2727316,Epi,GSM1912119,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727316.SRR2727316.fastq_Aligned.sortedByCoord.out.bam
-SRR2727317,Epi,GSM1912120,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727317.SRR2727317.fastq_Aligned.sortedByCoord.out.bam
-SRR2727318,Epi,GSM1912121,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727318.SRR2727318.fastq_Aligned.sortedByCoord.out.bam
-SRR2727319,Epi,GSM1912122,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727319.SRR2727319.fastq_Aligned.sortedByCoord.out.bam
-SRR2727320,Epi,GSM1912124,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727320.SRR2727320.fastq_Aligned.sortedByCoord.out.bam
-SRR2727321,Epi,GSM1912126,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727321.SRR2727321.fastq_Aligned.sortedByCoord.out.bam
-SRR2727322,Epi,GSM1912129,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727322.SRR2727322.fastq_Aligned.sortedByCoord.out.bam
-SRR2727323,Epi,GSM1912132,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727323.SRR2727323.fastq_Aligned.sortedByCoord.out.bam
-SRR2727324,Epi,GSM1912133,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727324.SRR2727324.fastq_Aligned.sortedByCoord.out.bam
-SRR2727325,Epi,GSM1912134,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727325.SRR2727325.fastq_Aligned.sortedByCoord.out.bam
-SRR2727326,Epi,GSM1912135,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727326.SRR2727326.fastq_Aligned.sortedByCoord.out.bam
-SRR2727327,Epi,GSM1912136,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727327.SRR2727327.fastq_Aligned.sortedByCoord.out.bam
-SRR2727328,Epi,GSM1912137,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727328.SRR2727328.fastq_Aligned.sortedByCoord.out.bam
-SRR2727329,Epi,GSM1912138,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727329.SRR2727329.fastq_Aligned.sortedByCoord.out.bam
-SRR2727330,Epi,GSM1912139,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727330.SRR2727330.fastq_Aligned.sortedByCoord.out.bam
-SRR2727331,Epi,GSM1912140,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727331.SRR2727331.fastq_Aligned.sortedByCoord.out.bam
-SRR2727332,Epi,GSM1912141,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727332.SRR2727332.fastq_Aligned.sortedByCoord.out.bam
-SRR2727333,Epi,GSM1912142,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727333.SRR2727333.fastq_Aligned.sortedByCoord.out.bam
-SRR2727334,Epi,GSM1912143,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727334.SRR2727334.fastq_Aligned.sortedByCoord.out.bam
-SRR2727335,Epi,GSM1912144,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727335.SRR2727335.fastq_Aligned.sortedByCoord.out.bam
-SRR2727336,Epi,GSM1912145,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727336.SRR2727336.fastq_Aligned.sortedByCoord.out.bam
-SRR2727337,Epi,GSM1912146,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727337.SRR2727337.fastq_Aligned.sortedByCoord.out.bam
-SRR2727338,Epi,GSM1912147,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727338.SRR2727338.fastq_Aligned.sortedByCoord.out.bam
-SRR2727339,Epi,GSM1912148,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727339.SRR2727339.fastq_Aligned.sortedByCoord.out.bam
-SRR2727340,Epi,GSM1912149,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727340.SRR2727340.fastq_Aligned.sortedByCoord.out.bam
-SRR2727341,Epi,GSM1912150,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727341.SRR2727341.fastq_Aligned.sortedByCoord.out.bam
-SRR2727342,Epi,GSM1912151,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727342.SRR2727342.fastq_Aligned.sortedByCoord.out.bam
-SRR2727343,Epi,GSM1912152,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727343.SRR2727343.fastq_Aligned.sortedByCoord.out.bam
-SRR2727344,Epi,GSM1912153,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727344.SRR2727344.fastq_Aligned.sortedByCoord.out.bam
-SRR2727345,Epi,GSM1912154,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727345.SRR2727345.fastq_Aligned.sortedByCoord.out.bam
-SRR2727346,Epi,GSM1912155,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727346.SRR2727346.fastq_Aligned.sortedByCoord.out.bam
-SRR2727347,Epi,GSM1912156,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727347.SRR2727347.fastq_Aligned.sortedByCoord.out.bam
-SRR2727348,Epi,GSM1912157,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727348.SRR2727348.fastq_Aligned.sortedByCoord.out.bam
-SRR2727349,Epi,GSM1912158,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727349.SRR2727349.fastq_Aligned.sortedByCoord.out.bam
-SRR2727350,Epi,GSM1912159,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727350.SRR2727350.fastq_Aligned.sortedByCoord.out.bam
-SRR2727351,Epi,GSM1912160,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727351.SRR2727351.fastq_Aligned.sortedByCoord.out.bam
-SRR2727352,Epi,GSM1912161,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727352.SRR2727352.fastq_Aligned.sortedByCoord.out.bam
-SRR2727353,Epi,GSM1912162,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727353.SRR2727353.fastq_Aligned.sortedByCoord.out.bam
-SRR2727354,Epi,GSM1912163,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727354.SRR2727354.fastq_Aligned.sortedByCoord.out.bam
-SRR2727355,Epi,GSM1912164,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727355.SRR2727355.fastq_Aligned.sortedByCoord.out.bam
-SRR2727356,Epi,GSM1912165,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727356.SRR2727356.fastq_Aligned.sortedByCoord.out.bam
-SRR2727357,Epi,GSM1912166,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727357.SRR2727357.fastq_Aligned.sortedByCoord.out.bam
-SRR2727358,Epi,GSM1912167,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727358.SRR2727358.fastq_Aligned.sortedByCoord.out.bam
-SRR2727359,Epi,GSM1912168,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727359.SRR2727359.fastq_Aligned.sortedByCoord.out.bam
-SRR2727360,Epi,GSM1912169,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727360.SRR2727360.fastq_Aligned.sortedByCoord.out.bam
-SRR2727361,Epi,GSM1912170,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727361.SRR2727361.fastq_Aligned.sortedByCoord.out.bam
-SRR2727362,Epi,GSM1912171,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727362.SRR2727362.fastq_Aligned.sortedByCoord.out.bam
-SRR2727363,Epi,GSM1912172,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727363.SRR2727363.fastq_Aligned.sortedByCoord.out.bam
-SRR2727364,Epi,GSM1912173,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727364.SRR2727364.fastq_Aligned.sortedByCoord.out.bam
-SRR2727365,Epi,GSM1912174,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727365.SRR2727365.fastq_Aligned.sortedByCoord.out.bam
-SRR2727366,Epi,GSM1912175,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727366.SRR2727366.fastq_Aligned.sortedByCoord.out.bam
-SRR2727367,Epi,GSM1912176,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727367.SRR2727367.fastq_Aligned.sortedByCoord.out.bam
-SRR2727368,Epi,GSM1912177,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727368.SRR2727368.fastq_Aligned.sortedByCoord.out.bam
-SRR2727369,Epi,GSM1912178,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727369.SRR2727369.fastq_Aligned.sortedByCoord.out.bam
-SRR2727370,Epi,GSM1912179,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727370.SRR2727370.fastq_Aligned.sortedByCoord.out.bam
-SRR2727371,Epi,GSM1912180,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727371.SRR2727371.fastq_Aligned.sortedByCoord.out.bam
-SRR2727372,Epi,GSM1912181,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727372.SRR2727372.fastq_Aligned.sortedByCoord.out.bam
-SRR2727373,Epi,GSM1912182,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727373.SRR2727373.fastq_Aligned.sortedByCoord.out.bam
-SRR2727374,Epi,GSM1912183,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727374.SRR2727374.fastq_Aligned.sortedByCoord.out.bam
-SRR2727375,Epi,GSM1912184,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727375.SRR2727375.fastq_Aligned.sortedByCoord.out.bam
-SRR2727376,Epi,GSM1912185,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727376.SRR2727376.fastq_Aligned.sortedByCoord.out.bam
-SRR2727377,Epi,GSM1912186,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727377.SRR2727377.fastq_Aligned.sortedByCoord.out.bam
-SRR2727378,Epi,GSM1912187,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727378.SRR2727378.fastq_Aligned.sortedByCoord.out.bam
-SRR2727379,Epi,GSM1912188,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727379.SRR2727379.fastq_Aligned.sortedByCoord.out.bam
-SRR2727380,Epi,GSM1912189,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727380.SRR2727380.fastq_Aligned.sortedByCoord.out.bam
-SRR2727381,Epi,GSM1912190,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727381.SRR2727381.fastq_Aligned.sortedByCoord.out.bam
-SRR2727382,Epi,GSM1912191,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727382.SRR2727382.fastq_Aligned.sortedByCoord.out.bam
-SRR2727383,Epi,GSM1912192,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727383.SRR2727383.fastq_Aligned.sortedByCoord.out.bam
-SRR2727384,Epi,GSM1912193,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727384.SRR2727384.fastq_Aligned.sortedByCoord.out.bam
-SRR2727385,Epi,GSM1912194,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727385.SRR2727385.fastq_Aligned.sortedByCoord.out.bam
-SRR2727386,Epi,GSM1912195,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727386.SRR2727386.fastq_Aligned.sortedByCoord.out.bam
-SRR2727387,Epi,GSM1912196,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727387.SRR2727387.fastq_Aligned.sortedByCoord.out.bam
-SRR2727388,Epi,GSM1912197,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727388.SRR2727388.fastq_Aligned.sortedByCoord.out.bam
-SRR2727389,Epi,GSM1912198,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727389.SRR2727389.fastq_Aligned.sortedByCoord.out.bam
-SRR2727390,Epi,GSM1912199,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727390.SRR2727390.fastq_Aligned.sortedByCoord.out.bam
-SRR2727391,Epi,GSM1912200,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727391.SRR2727391.fastq_Aligned.sortedByCoord.out.bam
-SRR2727392,Epi,GSM1912201,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727392.SRR2727392.fastq_Aligned.sortedByCoord.out.bam
-SRR2727393,Epi,GSM1912202,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727393.SRR2727393.fastq_Aligned.sortedByCoord.out.bam
-SRR2727394,Epi,GSM1912203,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727394.SRR2727394.fastq_Aligned.sortedByCoord.out.bam
-SRR2727395,Epi,GSM1912204,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727395.SRR2727395.fastq_Aligned.sortedByCoord.out.bam
-SRR2727396,Epi,GSM1912205,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727396.SRR2727396.fastq_Aligned.sortedByCoord.out.bam
-SRR2727397,Epi,GSM1912206,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727397.SRR2727397.fastq_Aligned.sortedByCoord.out.bam
-SRR2727398,Epi,GSM1912207,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727398.SRR2727398.fastq_Aligned.sortedByCoord.out.bam
-SRR2727399,Epi,GSM1912208,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727399.SRR2727399.fastq_Aligned.sortedByCoord.out.bam
-SRR2727400,Epi,GSM1912209,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727400.SRR2727400.fastq_Aligned.sortedByCoord.out.bam
-SRR2727401,Epi,GSM1912210,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727401.SRR2727401.fastq_Aligned.sortedByCoord.out.bam
-SRR2727402,Epi,GSM1912211,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727402.SRR2727402.fastq_Aligned.sortedByCoord.out.bam
-SRR2727403,Epi,GSM1912212,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727403.SRR2727403.fastq_Aligned.sortedByCoord.out.bam
-SRR2727404,Epi,GSM1912213,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727404.SRR2727404.fastq_Aligned.sortedByCoord.out.bam
-SRR2727405,Epi,GSM1912214,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727405.SRR2727405.fastq_Aligned.sortedByCoord.out.bam
-SRR2727406,Epi,GSM1912215,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727406.SRR2727406.fastq_Aligned.sortedByCoord.out.bam
-SRR2727407,Epi,GSM1912216,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727407.SRR2727407.fastq_Aligned.sortedByCoord.out.bam
-SRR2727408,Epi,GSM1912217,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727408.SRR2727408.fastq_Aligned.sortedByCoord.out.bam
-SRR2727409,Epi,GSM1912218,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727409.SRR2727409.fastq_Aligned.sortedByCoord.out.bam
-SRR2727410,Epi,GSM1912219,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727410.SRR2727410.fastq_Aligned.sortedByCoord.out.bam
-SRR2727411,Epi,GSM1912220,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727411.SRR2727411.fastq_Aligned.sortedByCoord.out.bam
-SRR2727412,Epi,GSM1912221,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727412.SRR2727412.fastq_Aligned.sortedByCoord.out.bam
-SRR2727413,Epi,GSM1912222,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727413.SRR2727413.fastq_Aligned.sortedByCoord.out.bam
-SRR2727414,Epi,GSM1912223,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727414.SRR2727414.fastq_Aligned.sortedByCoord.out.bam
-SRR2727415,Epi,GSM1912224,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727415.SRR2727415.fastq_Aligned.sortedByCoord.out.bam
-SRR2727416,Epi,GSM1912225,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727416.SRR2727416.fastq_Aligned.sortedByCoord.out.bam
-SRR2727417,Epi,GSM1912226,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727417.SRR2727417.fastq_Aligned.sortedByCoord.out.bam
-SRR2727492,E5.5 Epiblast,GSM1912301,male,male C57BL/6J x female C57BL/6J,..align.SRR2727492.SRR2727492.fastq_Aligned.sortedByCoord.out.bam
-SRR2727493,E5.5 Epiblast,GSM1912302,male,male C57BL/6J x female C57BL/6J,..align.SRR2727493.SRR2727493.fastq_Aligned.sortedByCoord.out.bam
-SRR2727494,E5.5 Epiblast,GSM1912303,male,male C57BL/6J x female C57BL/6J,..align.SRR2727494.SRR2727494.fastq_Aligned.sortedByCoord.out.bam
-SRR2727495,E5.5 Epiblast,GSM1912304,male,male C57BL/6J x female C57BL/6J,..align.SRR2727495.SRR2727495.fastq_Aligned.sortedByCoord.out.bam
-SRR2727496,E5.5 Epiblast,GSM1912305,male,male C57BL/6J x female C57BL/6J,..align.SRR2727496.SRR2727496.fastq_Aligned.sortedByCoord.out.bam
-SRR2727497,E5.5 Epiblast,GSM1912306,male,male C57BL/6J x female C57BL/6J,..align.SRR2727497.SRR2727497.fastq_Aligned.sortedByCoord.out.bam
-SRR2727498,E5.5 Epiblast,GSM1912307,male,male C57BL/6J x female C57BL/6J,..align.SRR2727498.SRR2727498.fastq_Aligned.sortedByCoord.out.bam
-SRR2727499,E5.5 Epiblast,GSM1912308,male,male C57BL/6J x female C57BL/6J,..align.SRR2727499.SRR2727499.fastq_Aligned.sortedByCoord.out.bam
-SRR2727500,E5.5 Epiblast,GSM1912309,male,male C57BL/6J x female C57BL/6J,..align.SRR2727500.SRR2727500.fastq_Aligned.sortedByCoord.out.bam
-SRR2727501,E5.5 Epiblast,GSM1912310,male,male C57BL/6J x female C57BL/6J,..align.SRR2727501.SRR2727501.fastq_Aligned.sortedByCoord.out.bam
-SRR2727502,E5.5 Epiblast,GSM1912311,male,male C57BL/6J x female C57BL/6J,..align.SRR2727502.SRR2727502.fastq_Aligned.sortedByCoord.out.bam
-SRR2727503,E5.5 Epiblast,GSM1912312,male,male C57BL/6J x female C57BL/6J,..align.SRR2727503.SRR2727503.fastq_Aligned.sortedByCoord.out.bam
-SRR2727504,E5.5 Epiblast,GSM1912313,male,male C57BL/6J x female C57BL/6J,..align.SRR2727504.SRR2727504.fastq_Aligned.sortedByCoord.out.bam
-SRR2727505,E5.5 Epiblast,GSM1912314,male,male C57BL/6J x female C57BL/6J,..align.SRR2727505.SRR2727505.fastq_Aligned.sortedByCoord.out.bam
-SRR2727506,E5.5 Epiblast,GSM1912315,male,male C57BL/6J x female C57BL/6J,..align.SRR2727506.SRR2727506.fastq_Aligned.sortedByCoord.out.bam
-SRR2727507,E5.5 Epiblast,GSM1912316,male,male C57BL/6J x female C57BL/6J,..align.SRR2727507.SRR2727507.fastq_Aligned.sortedByCoord.out.bam
-SRR2727508,E5.5 Epiblast,GSM1912317,male,male C57BL/6J x female C57BL/6J,..align.SRR2727508.SRR2727508.fastq_Aligned.sortedByCoord.out.bam
-SRR2727509,E5.5 Epiblast,GSM1912318,male,male C57BL/6J x female C57BL/6J,..align.SRR2727509.SRR2727509.fastq_Aligned.sortedByCoord.out.bam
-SRR2727510,E5.5 Epiblast,GSM1912319,male,male C57BL/6J x female C57BL/6J,..align.SRR2727510.SRR2727510.fastq_Aligned.sortedByCoord.out.bam
-SRR2727511,E5.5 Epiblast,GSM1912320,male,male C57BL/6J x female C57BL/6J,..align.SRR2727511.SRR2727511.fastq_Aligned.sortedByCoord.out.bam
-SRR2727512,E5.5 Epiblast,GSM1912321,male,male C57BL/6J x female C57BL/6J,..align.SRR2727512.SRR2727512.fastq_Aligned.sortedByCoord.out.bam
-SRR2727513,E5.5 Epiblast,GSM1912322,male,male C57BL/6J x female C57BL/6J,..align.SRR2727513.SRR2727513.fastq_Aligned.sortedByCoord.out.bam
-SRR2727514,E5.5 Epiblast,GSM1912323,male,male C57BL/6J x female C57BL/6J,..align.SRR2727514.SRR2727514.fastq_Aligned.sortedByCoord.out.bam
-SRR2727515,E5.5 Epiblast,GSM1912324,male,male C57BL/6J x female C57BL/6J,..align.SRR2727515.SRR2727515.fastq_Aligned.sortedByCoord.out.bam
-SRR2727516,E5.5 Epiblast,GSM1912325,male,male C57BL/6J x female C57BL/6J,..align.SRR2727516.SRR2727516.fastq_Aligned.sortedByCoord.out.bam
-SRR2727517,E5.5 Epiblast,GSM1912326,male,male C57BL/6J x female C57BL/6J,..align.SRR2727517.SRR2727517.fastq_Aligned.sortedByCoord.out.bam
-SRR2727518,E5.5 Epiblast,GSM1912327,male,male C57BL/6J x female C57BL/6J,..align.SRR2727518.SRR2727518.fastq_Aligned.sortedByCoord.out.bam
-SRR2727519,E5.5 Epiblast,GSM1912328,male,male C57BL/6J x female C57BL/6J,..align.SRR2727519.SRR2727519.fastq_Aligned.sortedByCoord.out.bam
-SRR2727520,E5.5 Epiblast,GSM1912329,male,male C57BL/6J x female C57BL/6J,..align.SRR2727520.SRR2727520.fastq_Aligned.sortedByCoord.out.bam
-SRR2727521,E5.5 Epiblast,GSM1912330,male,male C57BL/6J x female C57BL/6J,..align.SRR2727521.SRR2727521.fastq_Aligned.sortedByCoord.out.bam
-SRR2727522,E5.5 Epiblast,GSM1912331,male,male C57BL/6J x female C57BL/6J,..align.SRR2727522.SRR2727522.fastq_Aligned.sortedByCoord.out.bam
-SRR2727523,E5.5 Epiblast,GSM1912332,male,male C57BL/6J x female C57BL/6J,..align.SRR2727523.SRR2727523.fastq_Aligned.sortedByCoord.out.bam
-SRR2727524,E5.5 Epiblast,GSM1912333,male,male C57BL/6J x female C57BL/6J,..align.SRR2727524.SRR2727524.fastq_Aligned.sortedByCoord.out.bam
-SRR2727525,E5.5 Epiblast,GSM1912334,male,male C57BL/6J x female C57BL/6J,..align.SRR2727525.SRR2727525.fastq_Aligned.sortedByCoord.out.bam
-SRR2727526,E5.5 Epiblast,GSM1912335,male,male C57BL/6J x female C57BL/6J,..align.SRR2727526.SRR2727526.fastq_Aligned.sortedByCoord.out.bam
-SRR2727527,E5.5 Epiblast,GSM1912336,male,male C57BL/6J x female C57BL/6J,..align.SRR2727527.SRR2727527.fastq_Aligned.sortedByCoord.out.bam
-SRR2727528,E5.5 Epiblast,GSM1912337,male,male C57BL/6J x female C57BL/6J,..align.SRR2727528.SRR2727528.fastq_Aligned.sortedByCoord.out.bam
-SRR2727529,E5.5 Epiblast,GSM1912338,male,male C57BL/6J x female C57BL/6J,..align.SRR2727529.SRR2727529.fastq_Aligned.sortedByCoord.out.bam
-SRR2727530,E5.5 Epiblast,GSM1912339,male,male C57BL/6J x female C57BL/6J,..align.SRR2727530.SRR2727530.fastq_Aligned.sortedByCoord.out.bam
-SRR2727531,E5.5 Epiblast,GSM1912340,male,male C57BL/6J x female C57BL/6J,..align.SRR2727531.SRR2727531.fastq_Aligned.sortedByCoord.out.bam
-SRR2727532,E5.5 Epiblast,GSM1912341,male,male C57BL/6J x female C57BL/6J,..align.SRR2727532.SRR2727532.fastq_Aligned.sortedByCoord.out.bam
-SRR2727533,E5.5 Epiblast,GSM1912342,male,male C57BL/6J x female C57BL/6J,..align.SRR2727533.SRR2727533.fastq_Aligned.sortedByCoord.out.bam
-SRR2727534,E5.5 Epiblast,GSM1912343,male,male C57BL/6J x female C57BL/6J,..align.SRR2727534.SRR2727534.fastq_Aligned.sortedByCoord.out.bam
-SRR2727535,E5.5 Epiblast,GSM1912344,male,male C57BL/6J x female C57BL/6J,..align.SRR2727535.SRR2727535.fastq_Aligned.sortedByCoord.out.bam
-SRR2727536,E5.5 Epiblast,GSM1912345,male,male C57BL/6J x female C57BL/6J,..align.SRR2727536.SRR2727536.fastq_Aligned.sortedByCoord.out.bam
-SRR2727537,E5.5 Epiblast,GSM1912346,male,male C57BL/6J x female C57BL/6J,..align.SRR2727537.SRR2727537.fastq_Aligned.sortedByCoord.out.bam
-SRR2727538,E5.5 Epiblast,GSM1912347,male,male C57BL/6J x female C57BL/6J,..align.SRR2727538.SRR2727538.fastq_Aligned.sortedByCoord.out.bam
-SRR2727539,E5.5 Epiblast,GSM1912348,male,male C57BL/6J x female C57BL/6J,..align.SRR2727539.SRR2727539.fastq_Aligned.sortedByCoord.out.bam
-SRR2727540,E5.5 Epiblast,GSM1912349,male,male C57BL/6J x female C57BL/6J,..align.SRR2727540.SRR2727540.fastq_Aligned.sortedByCoord.out.bam
-SRR2727541,E5.5 Epiblast,GSM1912350,male,male C57BL/6J x female C57BL/6J,..align.SRR2727541.SRR2727541.fastq_Aligned.sortedByCoord.out.bam
-SRR2727542,E5.5 Epiblast,GSM1912351,male,male C57BL/6J x female C57BL/6J,..align.SRR2727542.SRR2727542.fastq_Aligned.sortedByCoord.out.bam
-SRR2727543,E5.5 Epiblast,GSM1912352,male,male C57BL/6J x female C57BL/6J,..align.SRR2727543.SRR2727543.fastq_Aligned.sortedByCoord.out.bam
-SRR2727544,E5.5 Epiblast,GSM1912353,male,male C57BL/6J x female C57BL/6J,..align.SRR2727544.SRR2727544.fastq_Aligned.sortedByCoord.out.bam
-SRR2727545,E5.5 Epiblast,GSM1912354,male,male C57BL/6J x female C57BL/6J,..align.SRR2727545.SRR2727545.fastq_Aligned.sortedByCoord.out.bam
-SRR2727546,E5.5 Epiblast,GSM1912355,male,male C57BL/6J x female C57BL/6J,..align.SRR2727546.SRR2727546.fastq_Aligned.sortedByCoord.out.bam
-SRR2727547,E5.5 Epiblast,GSM1912356,male,male C57BL/6J x female C57BL/6J,..align.SRR2727547.SRR2727547.fastq_Aligned.sortedByCoord.out.bam
-SRR2727548,E5.5 Epiblast,GSM1912357,male,male C57BL/6J x female C57BL/6J,..align.SRR2727548.SRR2727548.fastq_Aligned.sortedByCoord.out.bam
-SRR2727549,E5.5 Epiblast,GSM1912358,male,male C57BL/6J x female C57BL/6J,..align.SRR2727549.SRR2727549.fastq_Aligned.sortedByCoord.out.bam
-SRR2727550,E5.5 Epiblast,GSM1912359,male,male C57BL/6J x female C57BL/6J,..align.SRR2727550.SRR2727550.fastq_Aligned.sortedByCoord.out.bam
-SRR2727551,E5.5 Epiblast,GSM1912360,male,male C57BL/6J x female C57BL/6J,..align.SRR2727551.SRR2727551.fastq_Aligned.sortedByCoord.out.bam
-SRR2727552,E5.5 Epiblast,GSM1912361,male,male C57BL/6J x female C57BL/6J,..align.SRR2727552.SRR2727552.fastq_Aligned.sortedByCoord.out.bam
-SRR2727553,E5.5 Epiblast,GSM1912362,male,male C57BL/6J x female C57BL/6J,..align.SRR2727553.SRR2727553.fastq_Aligned.sortedByCoord.out.bam
-SRR2727554,E5.5 Epiblast,GSM1912363,male,male C57BL/6J x female C57BL/6J,..align.SRR2727554.SRR2727554.fastq_Aligned.sortedByCoord.out.bam
-SRR2727555,E5.5 Epiblast,GSM1912364,female,male C57BL/6J x female C57BL/6J,..align.SRR2727555.SRR2727555.fastq_Aligned.sortedByCoord.out.bam
-SRR2727556,E5.5 Epiblast,GSM1912365,female,male C57BL/6J x female C57BL/6J,..align.SRR2727556.SRR2727556.fastq_Aligned.sortedByCoord.out.bam
-SRR2727557,E5.5 Epiblast,GSM1912366,female,male C57BL/6J x female C57BL/6J,..align.SRR2727557.SRR2727557.fastq_Aligned.sortedByCoord.out.bam
-SRR2727558,E5.5 Epiblast,GSM1912367,female,male C57BL/6J x female C57BL/6J,..align.SRR2727558.SRR2727558.fastq_Aligned.sortedByCoord.out.bam
-SRR2727559,E5.5 Epiblast,GSM1912368,female,male C57BL/6J x female C57BL/6J,..align.SRR2727559.SRR2727559.fastq_Aligned.sortedByCoord.out.bam
-SRR2727560,E5.5 Epiblast,GSM1912369,female,male C57BL/6J x female C57BL/6J,..align.SRR2727560.SRR2727560.fastq_Aligned.sortedByCoord.out.bam
-SRR2727561,E5.5 Epiblast,GSM1912370,female,male C57BL/6J x female C57BL/6J,..align.SRR2727561.SRR2727561.fastq_Aligned.sortedByCoord.out.bam
-SRR2727562,E5.5 Epiblast,GSM1912371,female,male C57BL/6J x female C57BL/6J,..align.SRR2727562.SRR2727562.fastq_Aligned.sortedByCoord.out.bam
-SRR2727563,E5.5 Epiblast,GSM1912372,female,male C57BL/6J x female C57BL/6J,..align.SRR2727563.SRR2727563.fastq_Aligned.sortedByCoord.out.bam
-SRR2727564,E5.5 Epiblast,GSM1912373,female,male C57BL/6J x female C57BL/6J,..align.SRR2727564.SRR2727564.fastq_Aligned.sortedByCoord.out.bam
-SRR2727565,E5.5 Epiblast,GSM1912374,female,male C57BL/6J x female C57BL/6J,..align.SRR2727565.SRR2727565.fastq_Aligned.sortedByCoord.out.bam
-SRR2727566,E5.5 Epiblast,GSM1912375,female,male C57BL/6J x female C57BL/6J,..align.SRR2727566.SRR2727566.fastq_Aligned.sortedByCoord.out.bam
-SRR2727567,E5.5 Epiblast,GSM1912376,female,male C57BL/6J x female C57BL/6J,..align.SRR2727567.SRR2727567.fastq_Aligned.sortedByCoord.out.bam
-SRR2727568,E5.5 Epiblast,GSM1912377,female,male C57BL/6J x female C57BL/6J,..align.SRR2727568.SRR2727568.fastq_Aligned.sortedByCoord.out.bam
-SRR2727569,E5.5 Epiblast,GSM1912378,female,male C57BL/6J x female C57BL/6J,..align.SRR2727569.SRR2727569.fastq_Aligned.sortedByCoord.out.bam
-SRR2727570,E5.5 Epiblast,GSM1912379,female,male C57BL/6J x female C57BL/6J,..align.SRR2727570.SRR2727570.fastq_Aligned.sortedByCoord.out.bam
-SRR2727571,E5.5 Epiblast,GSM1912380,female,male C57BL/6J x female C57BL/6J,..align.SRR2727571.SRR2727571.fastq_Aligned.sortedByCoord.out.bam
-SRR2727572,E5.5 Epiblast,GSM1912381,female,male C57BL/6J x female C57BL/6J,..align.SRR2727572.SRR2727572.fastq_Aligned.sortedByCoord.out.bam
-SRR2727573,E5.5 Epiblast,GSM1912382,female,male C57BL/6J x female C57BL/6J,..align.SRR2727573.SRR2727573.fastq_Aligned.sortedByCoord.out.bam
-SRR2727574,E5.5 Epiblast,GSM1912383,female,male C57BL/6J x female C57BL/6J,..align.SRR2727574.SRR2727574.fastq_Aligned.sortedByCoord.out.bam
-SRR2727575,E3.5 ICM,GSM1912384,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727575.SRR2727575.fastq_Aligned.sortedByCoord.out.bam
-SRR2727576,E3.5 ICM,GSM1912385,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727576.SRR2727576.fastq_Aligned.sortedByCoord.out.bam
-SRR2727577,E3.5 ICM,GSM1912386,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727577.SRR2727577.fastq_Aligned.sortedByCoord.out.bam
-SRR2727578,E3.5 ICM,GSM1912387,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727578.SRR2727578.fastq_Aligned.sortedByCoord.out.bam
-SRR2727579,E3.5 ICM,GSM1912388,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727579.SRR2727579.fastq_Aligned.sortedByCoord.out.bam
-SRR2727580,E3.5 ICM,GSM1912389,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727580.SRR2727580.fastq_Aligned.sortedByCoord.out.bam
-SRR2727581,E3.5 ICM,GSM1912390,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727581.SRR2727581.fastq_Aligned.sortedByCoord.out.bam
-SRR2727582,E3.5 ICM,GSM1912391,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727582.SRR2727582.fastq_Aligned.sortedByCoord.out.bam
-SRR2727583,E3.5 ICM,GSM1912392,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727583.SRR2727583.fastq_Aligned.sortedByCoord.out.bam
-SRR2727584,E3.5 ICM,GSM1912393,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727584.SRR2727584.fastq_Aligned.sortedByCoord.out.bam
-SRR2727585,E3.5 ICM,GSM1912394,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727585.SRR2727585.fastq_Aligned.sortedByCoord.out.bam
-SRR2727586,E3.5 ICM,GSM1912395,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727586.SRR2727586.fastq_Aligned.sortedByCoord.out.bam
-SRR2727587,E3.5 ICM,GSM1912396,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727587.SRR2727587.fastq_Aligned.sortedByCoord.out.bam
-SRR2727588,E3.5 ICM,GSM1912397,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727588.SRR2727588.fastq_Aligned.sortedByCoord.out.bam
-SRR2727589,E3.5 ICM,GSM1912398,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727589.SRR2727589.fastq_Aligned.sortedByCoord.out.bam
-SRR2727590,E3.5 ICM,GSM1912399,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727590.SRR2727590.fastq_Aligned.sortedByCoord.out.bam
-SRR2727591,E3.5 ICM,GSM1912400,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727591.SRR2727591.fastq_Aligned.sortedByCoord.out.bam
-SRR2727592,E3.5 ICM,GSM1912401,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727592.SRR2727592.fastq_Aligned.sortedByCoord.out.bam
-SRR2727593,E3.5 ICM,GSM1912402,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727593.SRR2727593.fastq_Aligned.sortedByCoord.out.bam
-SRR2727594,E3.5 ICM,GSM1912403,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727594.SRR2727594.fastq_Aligned.sortedByCoord.out.bam
-SRR2727595,E3.5 ICM,GSM1912404,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727595.SRR2727595.fastq_Aligned.sortedByCoord.out.bam
-SRR2727596,E3.5 ICM,GSM1912405,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727596.SRR2727596.fastq_Aligned.sortedByCoord.out.bam
-SRR2727597,E3.5 ICM,GSM1912406,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727597.SRR2727597.fastq_Aligned.sortedByCoord.out.bam
-SRR2727598,E4.5 Epiblast,GSM1912407,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727598.SRR2727598.fastq_Aligned.sortedByCoord.out.bam
-SRR2727599,E4.5 Epiblast,GSM1912408,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727599.SRR2727599.fastq_Aligned.sortedByCoord.out.bam
-SRR2727600,E4.5 Epiblast,GSM1912409,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727600.SRR2727600.fastq_Aligned.sortedByCoord.out.bam
-SRR2727601,E4.5 Epiblast,GSM1912410,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727601.SRR2727601.fastq_Aligned.sortedByCoord.out.bam
-SRR2727602,E4.5 Epiblast,GSM1912411,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727602.SRR2727602.fastq_Aligned.sortedByCoord.out.bam
-SRR2727603,E4.5 Epiblast,GSM1912412,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727603.SRR2727603.fastq_Aligned.sortedByCoord.out.bam
-SRR2727604,E4.5 Epiblast,GSM1912413,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727604.SRR2727604.fastq_Aligned.sortedByCoord.out.bam
-SRR2727605,E4.5 Epiblast,GSM1912414,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727605.SRR2727605.fastq_Aligned.sortedByCoord.out.bam
-SRR2727606,E4.5 Epiblast,GSM1912415,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727606.SRR2727606.fastq_Aligned.sortedByCoord.out.bam
-SRR2727607,E4.5 Epiblast,GSM1912416,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727607.SRR2727607.fastq_Aligned.sortedByCoord.out.bam
-SRR2727608,E4.5 Epiblast,GSM1912417,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727608.SRR2727608.fastq_Aligned.sortedByCoord.out.bam
-SRR2727609,E4.5 Epiblast,GSM1912418,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727609.SRR2727609.fastq_Aligned.sortedByCoord.out.bam
-SRR2727610,E4.5 Epiblast,GSM1912419,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727610.SRR2727610.fastq_Aligned.sortedByCoord.out.bam
-SRR2727611,E4.5 Epiblast,GSM1912420,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727611.SRR2727611.fastq_Aligned.sortedByCoord.out.bam
-SRR2727612,E4.5 Epiblast,GSM1912421,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727612.SRR2727612.fastq_Aligned.sortedByCoord.out.bam
-SRR2727613,E4.5 Epiblast,GSM1912422,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727613.SRR2727613.fastq_Aligned.sortedByCoord.out.bam
-SRR2727614,E4.5 Epiblast,GSM1912423,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727614.SRR2727614.fastq_Aligned.sortedByCoord.out.bam
-SRR2727615,E4.5 Epiblast,GSM1912424,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727615.SRR2727615.fastq_Aligned.sortedByCoord.out.bam
-SRR2727616,E4.5 Epiblast,GSM1912425,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727616.SRR2727616.fastq_Aligned.sortedByCoord.out.bam
-SRR2727617,E4.5 Epiblast,GSM1912426,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727617.SRR2727617.fastq_Aligned.sortedByCoord.out.bam
-SRR2727618,E4.5 Epiblast,GSM1912427,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727618.SRR2727618.fastq_Aligned.sortedByCoord.out.bam
-SRR2727619,E4.5 Epiblast,GSM1912428,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727619.SRR2727619.fastq_Aligned.sortedByCoord.out.bam
-SRR2727620,E4.5 Epiblast,GSM1912429,NA,male CAST/EiJ x female C57BL/6J,..align.SRR2727620.SRR2727620.fastq_Aligned.sortedByCoord.out.bam
-SRR3211906,Epi,GSM2083182,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211906.SRR3211906.fastq_Aligned.sortedByCoord.out.bam
-SRR3211907,Epi,GSM2083183,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211907.SRR3211907.fastq_Aligned.sortedByCoord.out.bam
-SRR3211908,Epi,GSM2083184,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211908.SRR3211908.fastq_Aligned.sortedByCoord.out.bam
-SRR3211909,Epi,GSM2083185,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211909.SRR3211909.fastq_Aligned.sortedByCoord.out.bam
-SRR3211910,Epi,GSM2083186,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211910.SRR3211910.fastq_Aligned.sortedByCoord.out.bam
-SRR3211911,Epi,GSM2083187,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211911.SRR3211911.fastq_Aligned.sortedByCoord.out.bam
-SRR3211912,Epi,GSM2083188,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211912.SRR3211912.fastq_Aligned.sortedByCoord.out.bam
-SRR3211913,Epi,GSM2083189,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211913.SRR3211913.fastq_Aligned.sortedByCoord.out.bam
-SRR3211914,Epi,GSM2083190,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211914.SRR3211914.fastq_Aligned.sortedByCoord.out.bam
-SRR3211915,Epi,GSM2083191,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211915.SRR3211915.fastq_Aligned.sortedByCoord.out.bam
-SRR3211916,Epi,GSM2083192,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211916.SRR3211916.fastq_Aligned.sortedByCoord.out.bam
-SRR3211917,Epi,GSM2083193,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211917.SRR3211917.fastq_Aligned.sortedByCoord.out.bam
-SRR3211918,Epi,GSM2083194,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211918.SRR3211918.fastq_Aligned.sortedByCoord.out.bam
-SRR3211919,Epi,GSM2083195,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211919.SRR3211919.fastq_Aligned.sortedByCoord.out.bam
-SRR3211920,Epi,GSM2083196,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211920.SRR3211920.fastq_Aligned.sortedByCoord.out.bam
-SRR3211921,Epi,GSM2083197,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211921.SRR3211921.fastq_Aligned.sortedByCoord.out.bam
-SRR3211922,Epi,GSM2083198,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211922.SRR3211922.fastq_Aligned.sortedByCoord.out.bam
-SRR3211923,Epi,GSM2083199,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211923.SRR3211923.fastq_Aligned.sortedByCoord.out.bam
-SRR3211924,Epi,GSM2083200,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211924.SRR3211924.fastq_Aligned.sortedByCoord.out.bam
-SRR3211925,Epi,GSM2083201,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211925.SRR3211925.fastq_Aligned.sortedByCoord.out.bam
-SRR3211926,Epi,GSM2083202,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211926.SRR3211926.fastq_Aligned.sortedByCoord.out.bam
-SRR3211927,Epi,GSM2083203,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211927.SRR3211927.fastq_Aligned.sortedByCoord.out.bam
-SRR3211928,Epi,GSM2083204,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211928.SRR3211928.fastq_Aligned.sortedByCoord.out.bam
-SRR3211929,Epi,GSM2083205,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211929.SRR3211929.fastq_Aligned.sortedByCoord.out.bam
-SRR3211930,Epi,GSM2083206,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211930.SRR3211930.fastq_Aligned.sortedByCoord.out.bam
-SRR3211931,Epi,GSM2083207,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211931.SRR3211931.fastq_Aligned.sortedByCoord.out.bam
-SRR3211932,Epi,GSM2083208,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211932.SRR3211932.fastq_Aligned.sortedByCoord.out.bam
-SRR3211933,Epi,GSM2083209,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211933.SRR3211933.fastq_Aligned.sortedByCoord.out.bam
-SRR3211934,Epi,GSM2083210,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211934.SRR3211934.fastq_Aligned.sortedByCoord.out.bam
-SRR3211935,Epi,GSM2083211,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211935.SRR3211935.fastq_Aligned.sortedByCoord.out.bam
-SRR3211936,Epi,GSM2083212,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211936.SRR3211936.fastq_Aligned.sortedByCoord.out.bam
-SRR3211937,Epi,GSM2083213,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211937.SRR3211937.fastq_Aligned.sortedByCoord.out.bam
-SRR3211938,Epi,GSM2083214,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211938.SRR3211938.fastq_Aligned.sortedByCoord.out.bam
-SRR3211939,Epi,GSM2083215,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211939.SRR3211939.fastq_Aligned.sortedByCoord.out.bam
-SRR3211940,Epi,GSM2083216,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211940.SRR3211940.fastq_Aligned.sortedByCoord.out.bam
-SRR3211941,Epi,GSM2083217,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211941.SRR3211941.fastq_Aligned.sortedByCoord.out.bam
-SRR3211942,Epi,GSM2083218,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211942.SRR3211942.fastq_Aligned.sortedByCoord.out.bam
-SRR3211943,Epi,GSM2083219,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211943.SRR3211943.fastq_Aligned.sortedByCoord.out.bam
-SRR3211944,Epi,GSM2083220,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211944.SRR3211944.fastq_Aligned.sortedByCoord.out.bam
-SRR3211945,Epi,GSM2083221,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211945.SRR3211945.fastq_Aligned.sortedByCoord.out.bam
-SRR3211946,Epi,GSM2083222,female,male CAST/EiJ x female C57BL/6J,..align.SRR3211946.SRR3211946.fastq_Aligned.sortedByCoord.out.bam
-SRR2727165,ES,GSM1911968,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727165.SRR2727165.fastq_Aligned.sortedByCoord.out.bam
-SRR2727199,ES,GSM1912002,male,male CAST/EiJ x female C57BL/6J,..align.SRR2727199.SRR2727199.fastq_Aligned.sortedByCoord.out.bam
-SRR2727235,ES,GSM1912038,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727235.SRR2727235.fastq_Aligned.sortedByCoord.out.bam
-SRR2727236,ES,GSM1912039,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727236.SRR2727236.fastq_Aligned.sortedByCoord.out.bam
-SRR2727237,ES,GSM1912040,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727237.SRR2727237.fastq_Aligned.sortedByCoord.out.bam
-SRR2727238,ES,GSM1912041,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727238.SRR2727238.fastq_Aligned.sortedByCoord.out.bam
-SRR2727239,ES,GSM1912042,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727239.SRR2727239.fastq_Aligned.sortedByCoord.out.bam
-SRR2727240,ES,GSM1912043,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727240.SRR2727240.fastq_Aligned.sortedByCoord.out.bam
-SRR2727241,ES,GSM1912044,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727241.SRR2727241.fastq_Aligned.sortedByCoord.out.bam
-SRR2727242,ES,GSM1912045,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727242.SRR2727242.fastq_Aligned.sortedByCoord.out.bam
-SRR2727243,ES,GSM1912046,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727243.SRR2727243.fastq_Aligned.sortedByCoord.out.bam
-SRR2727244,ES,GSM1912047,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727244.SRR2727244.fastq_Aligned.sortedByCoord.out.bam
-SRR2727245,ES,GSM1912048,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727245.SRR2727245.fastq_Aligned.sortedByCoord.out.bam
-SRR2727246,ES,GSM1912049,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727246.SRR2727246.fastq_Aligned.sortedByCoord.out.bam
-SRR2727247,ES,GSM1912050,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727247.SRR2727247.fastq_Aligned.sortedByCoord.out.bam
-SRR2727248,ES,GSM1912051,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727248.SRR2727248.fastq_Aligned.sortedByCoord.out.bam
-SRR2727249,ES,GSM1912052,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727249.SRR2727249.fastq_Aligned.sortedByCoord.out.bam
-SRR2727250,ES,GSM1912053,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727250.SRR2727250.fastq_Aligned.sortedByCoord.out.bam
-SRR2727251,ES,GSM1912054,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727251.SRR2727251.fastq_Aligned.sortedByCoord.out.bam
-SRR2727252,ES,GSM1912055,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727252.SRR2727252.fastq_Aligned.sortedByCoord.out.bam
-SRR2727253,ES,GSM1912056,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727253.SRR2727253.fastq_Aligned.sortedByCoord.out.bam
-SRR2727254,ES,GSM1912057,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727254.SRR2727254.fastq_Aligned.sortedByCoord.out.bam
-SRR2727255,ES,GSM1912058,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727255.SRR2727255.fastq_Aligned.sortedByCoord.out.bam
-SRR2727256,ES,GSM1912059,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727256.SRR2727256.fastq_Aligned.sortedByCoord.out.bam
-SRR2727257,ES,GSM1912060,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727257.SRR2727257.fastq_Aligned.sortedByCoord.out.bam
-SRR2727258,ES,GSM1912061,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727258.SRR2727258.fastq_Aligned.sortedByCoord.out.bam
-SRR2727259,ES,GSM1912062,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727259.SRR2727259.fastq_Aligned.sortedByCoord.out.bam
-SRR2727260,ES,GSM1912063,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727260.SRR2727260.fastq_Aligned.sortedByCoord.out.bam
-SRR2727261,ES,GSM1912064,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727261.SRR2727261.fastq_Aligned.sortedByCoord.out.bam
-SRR2727262,ES,GSM1912065,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727262.SRR2727262.fastq_Aligned.sortedByCoord.out.bam
-SRR2727263,ES,GSM1912066,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727263.SRR2727263.fastq_Aligned.sortedByCoord.out.bam
-SRR2727264,ES,GSM1912067,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727264.SRR2727264.fastq_Aligned.sortedByCoord.out.bam
-SRR2727265,ES,GSM1912068,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727265.SRR2727265.fastq_Aligned.sortedByCoord.out.bam
-SRR2727266,ES,GSM1912069,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727266.SRR2727266.fastq_Aligned.sortedByCoord.out.bam
-SRR2727267,ES,GSM1912070,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727267.SRR2727267.fastq_Aligned.sortedByCoord.out.bam
-SRR2727268,ES,GSM1912071,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727268.SRR2727268.fastq_Aligned.sortedByCoord.out.bam
-SRR2727269,ES,GSM1912072,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727269.SRR2727269.fastq_Aligned.sortedByCoord.out.bam
-SRR2727270,ES,GSM1912073,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727270.SRR2727270.fastq_Aligned.sortedByCoord.out.bam
-SRR2727271,ES,GSM1912074,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727271.SRR2727271.fastq_Aligned.sortedByCoord.out.bam
-SRR2727272,ES,GSM1912075,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727272.SRR2727272.fastq_Aligned.sortedByCoord.out.bam
-SRR2727273,ES,GSM1912076,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727273.SRR2727273.fastq_Aligned.sortedByCoord.out.bam
-SRR2727274,ES,GSM1912077,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727274.SRR2727274.fastq_Aligned.sortedByCoord.out.bam
-SRR2727275,ES,GSM1912078,female,male CAST/EiJ x female C57BL/6J,..align.SRR2727275.SRR2727275.fastq_Aligned.sortedByCoord.out.bam
+Source.Name,Cell.Type,GEO_Accession (exp),sex,Strain,Dir
+SRR2727045,ES2i,GSM1911848,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727045/SRR2727045_Aligned.sortedByCoord.out.bam
+SRR2727046,ES2i,GSM1911849,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727046/SRR2727046_Aligned.sortedByCoord.out.bam
+SRR2727047,ES2i,GSM1911850,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727047/SRR2727047_Aligned.sortedByCoord.out.bam
+SRR2727048,ES2i,GSM1911851,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727048/SRR2727048_Aligned.sortedByCoord.out.bam
+SRR2727049,ES2i,GSM1911852,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727049/SRR2727049_Aligned.sortedByCoord.out.bam
+SRR2727050,ES2i,GSM1911853,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727050/SRR2727050_Aligned.sortedByCoord.out.bam
+SRR2727051,ES2i,GSM1911854,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727051/SRR2727051_Aligned.sortedByCoord.out.bam
+SRR2727052,ES2i,GSM1911855,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727052/SRR2727052_Aligned.sortedByCoord.out.bam
+SRR2727053,ES2i,GSM1911856,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727053/SRR2727053_Aligned.sortedByCoord.out.bam
+SRR2727054,ES2i,GSM1911857,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727054/SRR2727054_Aligned.sortedByCoord.out.bam
+SRR2727055,ES2i,GSM1911858,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727055/SRR2727055_Aligned.sortedByCoord.out.bam
+SRR2727056,ES2i,GSM1911859,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727056/SRR2727056_Aligned.sortedByCoord.out.bam
+SRR2727057,ES2i,GSM1911860,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727057/SRR2727057_Aligned.sortedByCoord.out.bam
+SRR2727058,ES2i,GSM1911861,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727058/SRR2727058_Aligned.sortedByCoord.out.bam
+SRR2727059,ES2i,GSM1911862,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727059/SRR2727059_Aligned.sortedByCoord.out.bam
+SRR2727060,ES2i,GSM1911863,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727060/SRR2727060_Aligned.sortedByCoord.out.bam
+SRR2727061,ES2i,GSM1911864,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727061/SRR2727061_Aligned.sortedByCoord.out.bam
+SRR2727062,ES2i,GSM1911865,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727062/SRR2727062_Aligned.sortedByCoord.out.bam
+SRR2727063,ES2i,GSM1911866,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727063/SRR2727063_Aligned.sortedByCoord.out.bam
+SRR2727064,ES2i,GSM1911867,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727064/SRR2727064_Aligned.sortedByCoord.out.bam
+SRR2727065,ES2i,GSM1911868,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727065/SRR2727065_Aligned.sortedByCoord.out.bam
+SRR2727066,ES2i,GSM1911869,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727066/SRR2727066_Aligned.sortedByCoord.out.bam
+SRR2727067,ES2i,GSM1911870,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727067/SRR2727067_Aligned.sortedByCoord.out.bam
+SRR2727068,ES2i,GSM1911871,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727068/SRR2727068_Aligned.sortedByCoord.out.bam
+SRR2727069,ES2i,GSM1911872,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727069/SRR2727069_Aligned.sortedByCoord.out.bam
+SRR2727070,ES2i,GSM1911873,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727070/SRR2727070_Aligned.sortedByCoord.out.bam
+SRR2727071,ES2i,GSM1911874,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727071/SRR2727071_Aligned.sortedByCoord.out.bam
+SRR2727072,ES2i,GSM1911875,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727072/SRR2727072_Aligned.sortedByCoord.out.bam
+SRR2727073,ES2i,GSM1911876,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727073/SRR2727073_Aligned.sortedByCoord.out.bam
+SRR2727074,ES2i,GSM1911877,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727074/SRR2727074_Aligned.sortedByCoord.out.bam
+SRR2727075,ES2i,GSM1911878,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727075/SRR2727075_Aligned.sortedByCoord.out.bam
+SRR2727076,ES2i,GSM1911879,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727076/SRR2727076_Aligned.sortedByCoord.out.bam
+SRR2727077,ES2i,GSM1911880,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727077/SRR2727077_Aligned.sortedByCoord.out.bam
+SRR2727078,ES2i,GSM1911881,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727078/SRR2727078_Aligned.sortedByCoord.out.bam
+SRR2727079,ES2i,GSM1911882,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727079/SRR2727079_Aligned.sortedByCoord.out.bam
+SRR2727080,ES2i,GSM1911883,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727080/SRR2727080_Aligned.sortedByCoord.out.bam
+SRR2727081,ES2i,GSM1911884,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727081/SRR2727081_Aligned.sortedByCoord.out.bam
+SRR2727082,ES2i,GSM1911885,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727082/SRR2727082_Aligned.sortedByCoord.out.bam
+SRR2727083,ES2i,GSM1911886,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727083/SRR2727083_Aligned.sortedByCoord.out.bam
+SRR2727084,ES2i,GSM1911887,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727084/SRR2727084_Aligned.sortedByCoord.out.bam
+SRR2727085,ES2i,GSM1911888,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727085/SRR2727085_Aligned.sortedByCoord.out.bam
+SRR2727086,ES2i,GSM1911889,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727086/SRR2727086_Aligned.sortedByCoord.out.bam
+SRR2727087,ES2i,GSM1911890,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727087/SRR2727087_Aligned.sortedByCoord.out.bam
+SRR2727088,ES2i,GSM1911891,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727088/SRR2727088_Aligned.sortedByCoord.out.bam
+SRR2727089,ES2i,GSM1911892,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727089/SRR2727089_Aligned.sortedByCoord.out.bam
+SRR2727090,ES2i,GSM1911893,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727090/SRR2727090_Aligned.sortedByCoord.out.bam
+SRR2727091,ES2i,GSM1911894,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727091/SRR2727091_Aligned.sortedByCoord.out.bam
+SRR2727092,ES2i,GSM1911895,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727092/SRR2727092_Aligned.sortedByCoord.out.bam
+SRR2727093,ES2i,GSM1911896,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727093/SRR2727093_Aligned.sortedByCoord.out.bam
+SRR2727094,ES2i,GSM1911897,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727094/SRR2727094_Aligned.sortedByCoord.out.bam
+SRR2727095,ES2i,GSM1911898,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727095/SRR2727095_Aligned.sortedByCoord.out.bam
+SRR2727096,ES2i,GSM1911899,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727096/SRR2727096_Aligned.sortedByCoord.out.bam
+SRR2727097,ES2i,GSM1911900,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727097/SRR2727097_Aligned.sortedByCoord.out.bam
+SRR2727098,ES2i,GSM1911901,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727098/SRR2727098_Aligned.sortedByCoord.out.bam
+SRR2727099,ES2i,GSM1911902,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727099/SRR2727099_Aligned.sortedByCoord.out.bam
+SRR2727100,ES2i,GSM1911903,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727100/SRR2727100_Aligned.sortedByCoord.out.bam
+SRR2727101,ES2i,GSM1911904,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727101/SRR2727101_Aligned.sortedByCoord.out.bam
+SRR2727102,ES2i,GSM1911905,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727102/SRR2727102_Aligned.sortedByCoord.out.bam
+SRR2727103,ES2i,GSM1911906,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727103/SRR2727103_Aligned.sortedByCoord.out.bam
+SRR2727104,ES2i,GSM1911907,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727104/SRR2727104_Aligned.sortedByCoord.out.bam
+SRR2727105,ES2i,GSM1911908,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727105/SRR2727105_Aligned.sortedByCoord.out.bam
+SRR2727106,ES2i,GSM1911909,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727106/SRR2727106_Aligned.sortedByCoord.out.bam
+SRR2727107,ES2i,GSM1911910,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727107/SRR2727107_Aligned.sortedByCoord.out.bam
+SRR2727108,ES2i,GSM1911911,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727108/SRR2727108_Aligned.sortedByCoord.out.bam
+SRR2727109,ES2i,GSM1911912,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727109/SRR2727109_Aligned.sortedByCoord.out.bam
+SRR2727110,ES2i,GSM1911913,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727110/SRR2727110_Aligned.sortedByCoord.out.bam
+SRR2727111,ES2i,GSM1911914,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727111/SRR2727111_Aligned.sortedByCoord.out.bam
+SRR2727112,ES2i,GSM1911915,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727112/SRR2727112_Aligned.sortedByCoord.out.bam
+SRR2727113,ES2i,GSM1911916,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727113/SRR2727113_Aligned.sortedByCoord.out.bam
+SRR2727114,ES2i,GSM1911917,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727114/SRR2727114_Aligned.sortedByCoord.out.bam
+SRR2727115,ES2i,GSM1911918,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727115/SRR2727115_Aligned.sortedByCoord.out.bam
+SRR2727116,ES2i,GSM1911919,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727116/SRR2727116_Aligned.sortedByCoord.out.bam
+SRR2727117,ES2i,GSM1911920,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727117/SRR2727117_Aligned.sortedByCoord.out.bam
+SRR2727118,ES2i,GSM1911921,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727118/SRR2727118_Aligned.sortedByCoord.out.bam
+SRR2727119,ES2i,GSM1911922,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727119/SRR2727119_Aligned.sortedByCoord.out.bam
+SRR2727120,ES2i,GSM1911923,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727120/SRR2727120_Aligned.sortedByCoord.out.bam
+SRR2727121,ES2i,GSM1911924,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727121/SRR2727121_Aligned.sortedByCoord.out.bam
+SRR2727122,ES2i,GSM1911925,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727122/SRR2727122_Aligned.sortedByCoord.out.bam
+SRR2727123,ES2i,GSM1911926,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727123/SRR2727123_Aligned.sortedByCoord.out.bam
+SRR2727124,ES2i,GSM1911927,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727124/SRR2727124_Aligned.sortedByCoord.out.bam
+SRR2727125,ES2i,GSM1911928,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727125/SRR2727125_Aligned.sortedByCoord.out.bam
+SRR2727126,ES2i,GSM1911929,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727126/SRR2727126_Aligned.sortedByCoord.out.bam
+SRR2727127,ES2i,GSM1911930,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727127/SRR2727127_Aligned.sortedByCoord.out.bam
+SRR2727128,ES2i,GSM1911931,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727128/SRR2727128_Aligned.sortedByCoord.out.bam
+SRR2727129,ES2i,GSM1911932,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727129/SRR2727129_Aligned.sortedByCoord.out.bam
+SRR2727130,ES2i,GSM1911933,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727130/SRR2727130_Aligned.sortedByCoord.out.bam
+SRR2727131,ES2i,GSM1911934,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727131/SRR2727131_Aligned.sortedByCoord.out.bam
+SRR2727132,ES2i,GSM1911935,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727132/SRR2727132_Aligned.sortedByCoord.out.bam
+SRR2727133,ES2i,GSM1911936,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727133/SRR2727133_Aligned.sortedByCoord.out.bam
+SRR2727134,ES2i,GSM1911937,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727134/SRR2727134_Aligned.sortedByCoord.out.bam
+SRR2727135,ES2i,GSM1911938,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727135/SRR2727135_Aligned.sortedByCoord.out.bam
+SRR2727136,ES2i,GSM1911939,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727136/SRR2727136_Aligned.sortedByCoord.out.bam
+SRR2727137,ES2i,GSM1911940,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727137/SRR2727137_Aligned.sortedByCoord.out.bam
+SRR2727138,ES2i,GSM1911941,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727138/SRR2727138_Aligned.sortedByCoord.out.bam
+SRR2727139,ES2i,GSM1911942,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727139/SRR2727139_Aligned.sortedByCoord.out.bam
+SRR2727140,ES2i,GSM1911943,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727140/SRR2727140_Aligned.sortedByCoord.out.bam
+SRR2727141,ES2i,GSM1911944,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727141/SRR2727141_Aligned.sortedByCoord.out.bam
+SRR2727142,ES2i,GSM1911945,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727142/SRR2727142_Aligned.sortedByCoord.out.bam
+SRR2727143,ES2i,GSM1911946,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727143/SRR2727143_Aligned.sortedByCoord.out.bam
+SRR2727144,ES2i,GSM1911947,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727144/SRR2727144_Aligned.sortedByCoord.out.bam
+SRR2727145,ES2i,GSM1911948,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727145/SRR2727145_Aligned.sortedByCoord.out.bam
+SRR2727146,ES2i,GSM1911949,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727146/SRR2727146_Aligned.sortedByCoord.out.bam
+SRR2727147,ES2i,GSM1911950,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727147/SRR2727147_Aligned.sortedByCoord.out.bam
+SRR2727148,ES2i,GSM1911951,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727148/SRR2727148_Aligned.sortedByCoord.out.bam
+SRR2727149,ES2i,GSM1911952,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727149/SRR2727149_Aligned.sortedByCoord.out.bam
+SRR2727150,ES2i,GSM1911953,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727150/SRR2727150_Aligned.sortedByCoord.out.bam
+SRR2727151,ES2i,GSM1911954,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727151/SRR2727151_Aligned.sortedByCoord.out.bam
+SRR2727152,ES2i,GSM1911955,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727152/SRR2727152_Aligned.sortedByCoord.out.bam
+SRR2727153,ES2i,GSM1911956,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727153/SRR2727153_Aligned.sortedByCoord.out.bam
+SRR2727154,ES2i,GSM1911957,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727154/SRR2727154_Aligned.sortedByCoord.out.bam
+SRR2727155,ES2i,GSM1911958,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727155/SRR2727155_Aligned.sortedByCoord.out.bam
+SRR2727156,ES,GSM1911959,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727156/SRR2727156_Aligned.sortedByCoord.out.bam
+SRR2727157,ES,GSM1911960,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727157/SRR2727157_Aligned.sortedByCoord.out.bam
+SRR2727158,ES,GSM1911961,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727158/SRR2727158_Aligned.sortedByCoord.out.bam
+SRR2727159,ES,GSM1911962,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727159/SRR2727159_Aligned.sortedByCoord.out.bam
+SRR2727160,ES,GSM1911963,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727160/SRR2727160_Aligned.sortedByCoord.out.bam
+SRR2727161,ES,GSM1911964,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727161/SRR2727161_Aligned.sortedByCoord.out.bam
+SRR2727162,ES,GSM1911965,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727162/SRR2727162_Aligned.sortedByCoord.out.bam
+SRR2727163,ES,GSM1911966,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727163/SRR2727163_Aligned.sortedByCoord.out.bam
+SRR2727164,ES,GSM1911967,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727164/SRR2727164_Aligned.sortedByCoord.out.bam
+SRR2727166,ES,GSM1911969,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727166/SRR2727166_Aligned.sortedByCoord.out.bam
+SRR2727167,ES,GSM1911970,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727167/SRR2727167_Aligned.sortedByCoord.out.bam
+SRR2727168,ES,GSM1911971,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727168/SRR2727168_Aligned.sortedByCoord.out.bam
+SRR2727169,ES,GSM1911972,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727169/SRR2727169_Aligned.sortedByCoord.out.bam
+SRR2727170,ES,GSM1911973,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727170/SRR2727170_Aligned.sortedByCoord.out.bam
+SRR2727171,ES,GSM1911974,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727171/SRR2727171_Aligned.sortedByCoord.out.bam
+SRR2727172,ES,GSM1911975,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727172/SRR2727172_Aligned.sortedByCoord.out.bam
+SRR2727173,ES,GSM1911976,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727173/SRR2727173_Aligned.sortedByCoord.out.bam
+SRR2727174,ES,GSM1911977,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727174/SRR2727174_Aligned.sortedByCoord.out.bam
+SRR2727175,ES,GSM1911978,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727175/SRR2727175_Aligned.sortedByCoord.out.bam
+SRR2727176,ES,GSM1911979,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727176/SRR2727176_Aligned.sortedByCoord.out.bam
+SRR2727177,ES,GSM1911980,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727177/SRR2727177_Aligned.sortedByCoord.out.bam
+SRR2727178,ES,GSM1911981,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727178/SRR2727178_Aligned.sortedByCoord.out.bam
+SRR2727179,ES,GSM1911982,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727179/SRR2727179_Aligned.sortedByCoord.out.bam
+SRR2727180,ES,GSM1911983,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727180/SRR2727180_Aligned.sortedByCoord.out.bam
+SRR2727181,ES,GSM1911984,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727181/SRR2727181_Aligned.sortedByCoord.out.bam
+SRR2727182,ES,GSM1911985,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727182/SRR2727182_Aligned.sortedByCoord.out.bam
+SRR2727183,ES,GSM1911986,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727183/SRR2727183_Aligned.sortedByCoord.out.bam
+SRR2727184,ES,GSM1911987,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727184/SRR2727184_Aligned.sortedByCoord.out.bam
+SRR2727185,ES,GSM1911988,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727185/SRR2727185_Aligned.sortedByCoord.out.bam
+SRR2727186,ES,GSM1911989,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727186/SRR2727186_Aligned.sortedByCoord.out.bam
+SRR2727187,ES,GSM1911990,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727187/SRR2727187_Aligned.sortedByCoord.out.bam
+SRR2727188,ES,GSM1911991,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727188/SRR2727188_Aligned.sortedByCoord.out.bam
+SRR2727189,ES,GSM1911992,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727189/SRR2727189_Aligned.sortedByCoord.out.bam
+SRR2727190,ES,GSM1911993,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727190/SRR2727190_Aligned.sortedByCoord.out.bam
+SRR2727191,ES,GSM1911994,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727191/SRR2727191_Aligned.sortedByCoord.out.bam
+SRR2727192,ES,GSM1911995,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727192/SRR2727192_Aligned.sortedByCoord.out.bam
+SRR2727193,ES,GSM1911996,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727193/SRR2727193_Aligned.sortedByCoord.out.bam
+SRR2727194,ES,GSM1911997,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727194/SRR2727194_Aligned.sortedByCoord.out.bam
+SRR2727195,ES,GSM1911998,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727195/SRR2727195_Aligned.sortedByCoord.out.bam
+SRR2727196,ES,GSM1911999,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727196/SRR2727196_Aligned.sortedByCoord.out.bam
+SRR2727197,ES,GSM1912000,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727197/SRR2727197_Aligned.sortedByCoord.out.bam
+SRR2727198,ES,GSM1912001,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727198/SRR2727198_Aligned.sortedByCoord.out.bam
+SRR2727200,ES,GSM1912003,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727200/SRR2727200_Aligned.sortedByCoord.out.bam
+SRR2727201,ES,GSM1912004,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727201/SRR2727201_Aligned.sortedByCoord.out.bam
+SRR2727202,ES,GSM1912005,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727202/SRR2727202_Aligned.sortedByCoord.out.bam
+SRR2727203,ES,GSM1912006,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727203/SRR2727203_Aligned.sortedByCoord.out.bam
+SRR2727204,ES,GSM1912007,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727204/SRR2727204_Aligned.sortedByCoord.out.bam
+SRR2727205,ES,GSM1912008,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727205/SRR2727205_Aligned.sortedByCoord.out.bam
+SRR2727206,ES,GSM1912009,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727206/SRR2727206_Aligned.sortedByCoord.out.bam
+SRR2727207,ES,GSM1912010,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727207/SRR2727207_Aligned.sortedByCoord.out.bam
+SRR2727208,ES,GSM1912011,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727208/SRR2727208_Aligned.sortedByCoord.out.bam
+SRR2727209,ES,GSM1912012,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727209/SRR2727209_Aligned.sortedByCoord.out.bam
+SRR2727210,ES,GSM1912013,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727210/SRR2727210_Aligned.sortedByCoord.out.bam
+SRR2727211,ES,GSM1912014,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727211/SRR2727211_Aligned.sortedByCoord.out.bam
+SRR2727212,ES,GSM1912015,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727212/SRR2727212_Aligned.sortedByCoord.out.bam
+SRR2727213,ES,GSM1912016,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727213/SRR2727213_Aligned.sortedByCoord.out.bam
+SRR2727214,ES,GSM1912017,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727214/SRR2727214_Aligned.sortedByCoord.out.bam
+SRR2727215,ES,GSM1912018,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727215/SRR2727215_Aligned.sortedByCoord.out.bam
+SRR2727216,ES,GSM1912019,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727216/SRR2727216_Aligned.sortedByCoord.out.bam
+SRR2727217,ES,GSM1912020,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727217/SRR2727217_Aligned.sortedByCoord.out.bam
+SRR2727218,ES,GSM1912021,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727218/SRR2727218_Aligned.sortedByCoord.out.bam
+SRR2727219,ES,GSM1912022,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727219/SRR2727219_Aligned.sortedByCoord.out.bam
+SRR2727220,ES,GSM1912023,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727220/SRR2727220_Aligned.sortedByCoord.out.bam
+SRR2727221,ES,GSM1912024,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727221/SRR2727221_Aligned.sortedByCoord.out.bam
+SRR2727222,ES,GSM1912025,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727222/SRR2727222_Aligned.sortedByCoord.out.bam
+SRR2727223,ES,GSM1912026,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727223/SRR2727223_Aligned.sortedByCoord.out.bam
+SRR2727224,ES,GSM1912027,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727224/SRR2727224_Aligned.sortedByCoord.out.bam
+SRR2727225,ES,GSM1912028,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727225/SRR2727225_Aligned.sortedByCoord.out.bam
+SRR2727226,ES,GSM1912029,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727226/SRR2727226_Aligned.sortedByCoord.out.bam
+SRR2727227,ES,GSM1912030,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727227/SRR2727227_Aligned.sortedByCoord.out.bam
+SRR2727228,ES,GSM1912031,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727228/SRR2727228_Aligned.sortedByCoord.out.bam
+SRR2727229,ES,GSM1912032,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727229/SRR2727229_Aligned.sortedByCoord.out.bam
+SRR2727230,ES,GSM1912033,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727230/SRR2727230_Aligned.sortedByCoord.out.bam
+SRR2727231,ES,GSM1912034,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727231/SRR2727231_Aligned.sortedByCoord.out.bam
+SRR2727232,ES,GSM1912035,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727232/SRR2727232_Aligned.sortedByCoord.out.bam
+SRR2727233,ES,GSM1912036,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727233/SRR2727233_Aligned.sortedByCoord.out.bam
+SRR2727234,ES,GSM1912037,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727234/SRR2727234_Aligned.sortedByCoord.out.bam
+SRR2727276,Epi,GSM1912079,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727276/SRR2727276_Aligned.sortedByCoord.out.bam
+SRR2727277,Epi,GSM1912080,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727277/SRR2727277_Aligned.sortedByCoord.out.bam
+SRR2727278,Epi,GSM1912081,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727278/SRR2727278_Aligned.sortedByCoord.out.bam
+SRR2727279,Epi,GSM1912082,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727279/SRR2727279_Aligned.sortedByCoord.out.bam
+SRR2727280,Epi,GSM1912083,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727280/SRR2727280_Aligned.sortedByCoord.out.bam
+SRR2727281,Epi,GSM1912084,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727281/SRR2727281_Aligned.sortedByCoord.out.bam
+SRR2727282,Epi,GSM1912085,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727282/SRR2727282_Aligned.sortedByCoord.out.bam
+SRR2727283,Epi,GSM1912086,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727283/SRR2727283_Aligned.sortedByCoord.out.bam
+SRR2727284,Epi,GSM1912087,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727284/SRR2727284_Aligned.sortedByCoord.out.bam
+SRR2727285,Epi,GSM1912088,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727285/SRR2727285_Aligned.sortedByCoord.out.bam
+SRR2727286,Epi,GSM1912089,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727286/SRR2727286_Aligned.sortedByCoord.out.bam
+SRR2727287,Epi,GSM1912090,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727287/SRR2727287_Aligned.sortedByCoord.out.bam
+SRR2727288,Epi,GSM1912091,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727288/SRR2727288_Aligned.sortedByCoord.out.bam
+SRR2727289,Epi,GSM1912092,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727289/SRR2727289_Aligned.sortedByCoord.out.bam
+SRR2727290,Epi,GSM1912093,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727290/SRR2727290_Aligned.sortedByCoord.out.bam
+SRR2727291,Epi,GSM1912094,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727291/SRR2727291_Aligned.sortedByCoord.out.bam
+SRR2727292,Epi,GSM1912095,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727292/SRR2727292_Aligned.sortedByCoord.out.bam
+SRR2727293,Epi,GSM1912096,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727293/SRR2727293_Aligned.sortedByCoord.out.bam
+SRR2727294,Epi,GSM1912097,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727294/SRR2727294_Aligned.sortedByCoord.out.bam
+SRR2727295,Epi,GSM1912098,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727295/SRR2727295_Aligned.sortedByCoord.out.bam
+SRR2727296,Epi,GSM1912099,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727296/SRR2727296_Aligned.sortedByCoord.out.bam
+SRR2727297,Epi,GSM1912100,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727297/SRR2727297_Aligned.sortedByCoord.out.bam
+SRR2727298,Epi,GSM1912101,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727298/SRR2727298_Aligned.sortedByCoord.out.bam
+SRR2727299,Epi,GSM1912102,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727299/SRR2727299_Aligned.sortedByCoord.out.bam
+SRR2727300,Epi,GSM1912103,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727300/SRR2727300_Aligned.sortedByCoord.out.bam
+SRR2727301,Epi,GSM1912104,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727301/SRR2727301_Aligned.sortedByCoord.out.bam
+SRR2727302,Epi,GSM1912105,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727302/SRR2727302_Aligned.sortedByCoord.out.bam
+SRR2727303,Epi,GSM1912106,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727303/SRR2727303_Aligned.sortedByCoord.out.bam
+SRR2727304,Epi,GSM1912107,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727304/SRR2727304_Aligned.sortedByCoord.out.bam
+SRR2727305,Epi,GSM1912108,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727305/SRR2727305_Aligned.sortedByCoord.out.bam
+SRR2727306,Epi,GSM1912109,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727306/SRR2727306_Aligned.sortedByCoord.out.bam
+SRR2727307,Epi,GSM1912110,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727307/SRR2727307_Aligned.sortedByCoord.out.bam
+SRR2727308,Epi,GSM1912111,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727308/SRR2727308_Aligned.sortedByCoord.out.bam
+SRR2727309,Epi,GSM1912112,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727309/SRR2727309_Aligned.sortedByCoord.out.bam
+SRR2727310,Epi,GSM1912113,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727310/SRR2727310_Aligned.sortedByCoord.out.bam
+SRR2727311,Epi,GSM1912114,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727311/SRR2727311_Aligned.sortedByCoord.out.bam
+SRR2727312,Epi,GSM1912115,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727312/SRR2727312_Aligned.sortedByCoord.out.bam
+SRR2727313,Epi,GSM1912116,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727313/SRR2727313_Aligned.sortedByCoord.out.bam
+SRR2727314,Epi,GSM1912117,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727314/SRR2727314_Aligned.sortedByCoord.out.bam
+SRR2727315,Epi,GSM1912118,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727315/SRR2727315_Aligned.sortedByCoord.out.bam
+SRR2727316,Epi,GSM1912119,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727316/SRR2727316_Aligned.sortedByCoord.out.bam
+SRR2727317,Epi,GSM1912120,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727317/SRR2727317_Aligned.sortedByCoord.out.bam
+SRR2727318,Epi,GSM1912121,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727318/SRR2727318_Aligned.sortedByCoord.out.bam
+SRR2727319,Epi,GSM1912122,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727319/SRR2727319_Aligned.sortedByCoord.out.bam
+SRR2727320,Epi,GSM1912124,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727320/SRR2727320_Aligned.sortedByCoord.out.bam
+SRR2727321,Epi,GSM1912126,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727321/SRR2727321_Aligned.sortedByCoord.out.bam
+SRR2727322,Epi,GSM1912129,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727322/SRR2727322_Aligned.sortedByCoord.out.bam
+SRR2727323,Epi,GSM1912132,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727323/SRR2727323_Aligned.sortedByCoord.out.bam
+SRR2727324,Epi,GSM1912133,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727324/SRR2727324_Aligned.sortedByCoord.out.bam
+SRR2727325,Epi,GSM1912134,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727325/SRR2727325_Aligned.sortedByCoord.out.bam
+SRR2727326,Epi,GSM1912135,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727326/SRR2727326_Aligned.sortedByCoord.out.bam
+SRR2727327,Epi,GSM1912136,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727327/SRR2727327_Aligned.sortedByCoord.out.bam
+SRR2727328,Epi,GSM1912137,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727328/SRR2727328_Aligned.sortedByCoord.out.bam
+SRR2727329,Epi,GSM1912138,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727329/SRR2727329_Aligned.sortedByCoord.out.bam
+SRR2727330,Epi,GSM1912139,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727330/SRR2727330_Aligned.sortedByCoord.out.bam
+SRR2727331,Epi,GSM1912140,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727331/SRR2727331_Aligned.sortedByCoord.out.bam
+SRR2727332,Epi,GSM1912141,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727332/SRR2727332_Aligned.sortedByCoord.out.bam
+SRR2727333,Epi,GSM1912142,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727333/SRR2727333_Aligned.sortedByCoord.out.bam
+SRR2727334,Epi,GSM1912143,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727334/SRR2727334_Aligned.sortedByCoord.out.bam
+SRR2727335,Epi,GSM1912144,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727335/SRR2727335_Aligned.sortedByCoord.out.bam
+SRR2727336,Epi,GSM1912145,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727336/SRR2727336_Aligned.sortedByCoord.out.bam
+SRR2727337,Epi,GSM1912146,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727337/SRR2727337_Aligned.sortedByCoord.out.bam
+SRR2727338,Epi,GSM1912147,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727338/SRR2727338_Aligned.sortedByCoord.out.bam
+SRR2727339,Epi,GSM1912148,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727339/SRR2727339_Aligned.sortedByCoord.out.bam
+SRR2727340,Epi,GSM1912149,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727340/SRR2727340_Aligned.sortedByCoord.out.bam
+SRR2727341,Epi,GSM1912150,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727341/SRR2727341_Aligned.sortedByCoord.out.bam
+SRR2727342,Epi,GSM1912151,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727342/SRR2727342_Aligned.sortedByCoord.out.bam
+SRR2727343,Epi,GSM1912152,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727343/SRR2727343_Aligned.sortedByCoord.out.bam
+SRR2727344,Epi,GSM1912153,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727344/SRR2727344_Aligned.sortedByCoord.out.bam
+SRR2727345,Epi,GSM1912154,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727345/SRR2727345_Aligned.sortedByCoord.out.bam
+SRR2727346,Epi,GSM1912155,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727346/SRR2727346_Aligned.sortedByCoord.out.bam
+SRR2727347,Epi,GSM1912156,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727347/SRR2727347_Aligned.sortedByCoord.out.bam
+SRR2727348,Epi,GSM1912157,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727348/SRR2727348_Aligned.sortedByCoord.out.bam
+SRR2727349,Epi,GSM1912158,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727349/SRR2727349_Aligned.sortedByCoord.out.bam
+SRR2727350,Epi,GSM1912159,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727350/SRR2727350_Aligned.sortedByCoord.out.bam
+SRR2727351,Epi,GSM1912160,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727351/SRR2727351_Aligned.sortedByCoord.out.bam
+SRR2727352,Epi,GSM1912161,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727352/SRR2727352_Aligned.sortedByCoord.out.bam
+SRR2727353,Epi,GSM1912162,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727353/SRR2727353_Aligned.sortedByCoord.out.bam
+SRR2727354,Epi,GSM1912163,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727354/SRR2727354_Aligned.sortedByCoord.out.bam
+SRR2727355,Epi,GSM1912164,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727355/SRR2727355_Aligned.sortedByCoord.out.bam
+SRR2727356,Epi,GSM1912165,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727356/SRR2727356_Aligned.sortedByCoord.out.bam
+SRR2727357,Epi,GSM1912166,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727357/SRR2727357_Aligned.sortedByCoord.out.bam
+SRR2727358,Epi,GSM1912167,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727358/SRR2727358_Aligned.sortedByCoord.out.bam
+SRR2727359,Epi,GSM1912168,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727359/SRR2727359_Aligned.sortedByCoord.out.bam
+SRR2727360,Epi,GSM1912169,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727360/SRR2727360_Aligned.sortedByCoord.out.bam
+SRR2727361,Epi,GSM1912170,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727361/SRR2727361_Aligned.sortedByCoord.out.bam
+SRR2727362,Epi,GSM1912171,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727362/SRR2727362_Aligned.sortedByCoord.out.bam
+SRR2727363,Epi,GSM1912172,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727363/SRR2727363_Aligned.sortedByCoord.out.bam
+SRR2727364,Epi,GSM1912173,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727364/SRR2727364_Aligned.sortedByCoord.out.bam
+SRR2727365,Epi,GSM1912174,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727365/SRR2727365_Aligned.sortedByCoord.out.bam
+SRR2727366,Epi,GSM1912175,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727366/SRR2727366_Aligned.sortedByCoord.out.bam
+SRR2727367,Epi,GSM1912176,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727367/SRR2727367_Aligned.sortedByCoord.out.bam
+SRR2727368,Epi,GSM1912177,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727368/SRR2727368_Aligned.sortedByCoord.out.bam
+SRR2727369,Epi,GSM1912178,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727369/SRR2727369_Aligned.sortedByCoord.out.bam
+SRR2727370,Epi,GSM1912179,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727370/SRR2727370_Aligned.sortedByCoord.out.bam
+SRR2727371,Epi,GSM1912180,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727371/SRR2727371_Aligned.sortedByCoord.out.bam
+SRR2727372,Epi,GSM1912181,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727372/SRR2727372_Aligned.sortedByCoord.out.bam
+SRR2727373,Epi,GSM1912182,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727373/SRR2727373_Aligned.sortedByCoord.out.bam
+SRR2727374,Epi,GSM1912183,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727374/SRR2727374_Aligned.sortedByCoord.out.bam
+SRR2727375,Epi,GSM1912184,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727375/SRR2727375_Aligned.sortedByCoord.out.bam
+SRR2727376,Epi,GSM1912185,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727376/SRR2727376_Aligned.sortedByCoord.out.bam
+SRR2727377,Epi,GSM1912186,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727377/SRR2727377_Aligned.sortedByCoord.out.bam
+SRR2727378,Epi,GSM1912187,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727378/SRR2727378_Aligned.sortedByCoord.out.bam
+SRR2727379,Epi,GSM1912188,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727379/SRR2727379_Aligned.sortedByCoord.out.bam
+SRR2727380,Epi,GSM1912189,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727380/SRR2727380_Aligned.sortedByCoord.out.bam
+SRR2727381,Epi,GSM1912190,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727381/SRR2727381_Aligned.sortedByCoord.out.bam
+SRR2727382,Epi,GSM1912191,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727382/SRR2727382_Aligned.sortedByCoord.out.bam
+SRR2727383,Epi,GSM1912192,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727383/SRR2727383_Aligned.sortedByCoord.out.bam
+SRR2727384,Epi,GSM1912193,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727384/SRR2727384_Aligned.sortedByCoord.out.bam
+SRR2727385,Epi,GSM1912194,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727385/SRR2727385_Aligned.sortedByCoord.out.bam
+SRR2727386,Epi,GSM1912195,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727386/SRR2727386_Aligned.sortedByCoord.out.bam
+SRR2727387,Epi,GSM1912196,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727387/SRR2727387_Aligned.sortedByCoord.out.bam
+SRR2727388,Epi,GSM1912197,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727388/SRR2727388_Aligned.sortedByCoord.out.bam
+SRR2727389,Epi,GSM1912198,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727389/SRR2727389_Aligned.sortedByCoord.out.bam
+SRR2727390,Epi,GSM1912199,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727390/SRR2727390_Aligned.sortedByCoord.out.bam
+SRR2727391,Epi,GSM1912200,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727391/SRR2727391_Aligned.sortedByCoord.out.bam
+SRR2727392,Epi,GSM1912201,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727392/SRR2727392_Aligned.sortedByCoord.out.bam
+SRR2727393,Epi,GSM1912202,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727393/SRR2727393_Aligned.sortedByCoord.out.bam
+SRR2727394,Epi,GSM1912203,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727394/SRR2727394_Aligned.sortedByCoord.out.bam
+SRR2727395,Epi,GSM1912204,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727395/SRR2727395_Aligned.sortedByCoord.out.bam
+SRR2727396,Epi,GSM1912205,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727396/SRR2727396_Aligned.sortedByCoord.out.bam
+SRR2727397,Epi,GSM1912206,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727397/SRR2727397_Aligned.sortedByCoord.out.bam
+SRR2727398,Epi,GSM1912207,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727398/SRR2727398_Aligned.sortedByCoord.out.bam
+SRR2727399,Epi,GSM1912208,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727399/SRR2727399_Aligned.sortedByCoord.out.bam
+SRR2727400,Epi,GSM1912209,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727400/SRR2727400_Aligned.sortedByCoord.out.bam
+SRR2727401,Epi,GSM1912210,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727401/SRR2727401_Aligned.sortedByCoord.out.bam
+SRR2727402,Epi,GSM1912211,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727402/SRR2727402_Aligned.sortedByCoord.out.bam
+SRR2727403,Epi,GSM1912212,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727403/SRR2727403_Aligned.sortedByCoord.out.bam
+SRR2727404,Epi,GSM1912213,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727404/SRR2727404_Aligned.sortedByCoord.out.bam
+SRR2727405,Epi,GSM1912214,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727405/SRR2727405_Aligned.sortedByCoord.out.bam
+SRR2727406,Epi,GSM1912215,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727406/SRR2727406_Aligned.sortedByCoord.out.bam
+SRR2727407,Epi,GSM1912216,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727407/SRR2727407_Aligned.sortedByCoord.out.bam
+SRR2727408,Epi,GSM1912217,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727408/SRR2727408_Aligned.sortedByCoord.out.bam
+SRR2727409,Epi,GSM1912218,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727409/SRR2727409_Aligned.sortedByCoord.out.bam
+SRR2727410,Epi,GSM1912219,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727410/SRR2727410_Aligned.sortedByCoord.out.bam
+SRR2727411,Epi,GSM1912220,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727411/SRR2727411_Aligned.sortedByCoord.out.bam
+SRR2727412,Epi,GSM1912221,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727412/SRR2727412_Aligned.sortedByCoord.out.bam
+SRR2727413,Epi,GSM1912222,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727413/SRR2727413_Aligned.sortedByCoord.out.bam
+SRR2727414,Epi,GSM1912223,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727414/SRR2727414_Aligned.sortedByCoord.out.bam
+SRR2727415,Epi,GSM1912224,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727415/SRR2727415_Aligned.sortedByCoord.out.bam
+SRR2727416,Epi,GSM1912225,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727416/SRR2727416_Aligned.sortedByCoord.out.bam
+SRR2727417,Epi,GSM1912226,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727417/SRR2727417_Aligned.sortedByCoord.out.bam
+SRR2727492,E5.5 Epiblast,GSM1912301,male,male C57BL/6J x female C57BL/6J,./align/SRR2727492/SRR2727492_Aligned.sortedByCoord.out.bam
+SRR2727493,E5.5 Epiblast,GSM1912302,male,male C57BL/6J x female C57BL/6J,./align/SRR2727493/SRR2727493_Aligned.sortedByCoord.out.bam
+SRR2727494,E5.5 Epiblast,GSM1912303,male,male C57BL/6J x female C57BL/6J,./align/SRR2727494/SRR2727494_Aligned.sortedByCoord.out.bam
+SRR2727495,E5.5 Epiblast,GSM1912304,male,male C57BL/6J x female C57BL/6J,./align/SRR2727495/SRR2727495_Aligned.sortedByCoord.out.bam
+SRR2727496,E5.5 Epiblast,GSM1912305,male,male C57BL/6J x female C57BL/6J,./align/SRR2727496/SRR2727496_Aligned.sortedByCoord.out.bam
+SRR2727497,E5.5 Epiblast,GSM1912306,male,male C57BL/6J x female C57BL/6J,./align/SRR2727497/SRR2727497_Aligned.sortedByCoord.out.bam
+SRR2727498,E5.5 Epiblast,GSM1912307,male,male C57BL/6J x female C57BL/6J,./align/SRR2727498/SRR2727498_Aligned.sortedByCoord.out.bam
+SRR2727499,E5.5 Epiblast,GSM1912308,male,male C57BL/6J x female C57BL/6J,./align/SRR2727499/SRR2727499_Aligned.sortedByCoord.out.bam
+SRR2727500,E5.5 Epiblast,GSM1912309,male,male C57BL/6J x female C57BL/6J,./align/SRR2727500/SRR2727500_Aligned.sortedByCoord.out.bam
+SRR2727501,E5.5 Epiblast,GSM1912310,male,male C57BL/6J x female C57BL/6J,./align/SRR2727501/SRR2727501_Aligned.sortedByCoord.out.bam
+SRR2727502,E5.5 Epiblast,GSM1912311,male,male C57BL/6J x female C57BL/6J,./align/SRR2727502/SRR2727502_Aligned.sortedByCoord.out.bam
+SRR2727503,E5.5 Epiblast,GSM1912312,male,male C57BL/6J x female C57BL/6J,./align/SRR2727503/SRR2727503_Aligned.sortedByCoord.out.bam
+SRR2727504,E5.5 Epiblast,GSM1912313,male,male C57BL/6J x female C57BL/6J,./align/SRR2727504/SRR2727504_Aligned.sortedByCoord.out.bam
+SRR2727505,E5.5 Epiblast,GSM1912314,male,male C57BL/6J x female C57BL/6J,./align/SRR2727505/SRR2727505_Aligned.sortedByCoord.out.bam
+SRR2727506,E5.5 Epiblast,GSM1912315,male,male C57BL/6J x female C57BL/6J,./align/SRR2727506/SRR2727506_Aligned.sortedByCoord.out.bam
+SRR2727507,E5.5 Epiblast,GSM1912316,male,male C57BL/6J x female C57BL/6J,./align/SRR2727507/SRR2727507_Aligned.sortedByCoord.out.bam
+SRR2727508,E5.5 Epiblast,GSM1912317,male,male C57BL/6J x female C57BL/6J,./align/SRR2727508/SRR2727508_Aligned.sortedByCoord.out.bam
+SRR2727509,E5.5 Epiblast,GSM1912318,male,male C57BL/6J x female C57BL/6J,./align/SRR2727509/SRR2727509_Aligned.sortedByCoord.out.bam
+SRR2727510,E5.5 Epiblast,GSM1912319,male,male C57BL/6J x female C57BL/6J,./align/SRR2727510/SRR2727510_Aligned.sortedByCoord.out.bam
+SRR2727511,E5.5 Epiblast,GSM1912320,male,male C57BL/6J x female C57BL/6J,./align/SRR2727511/SRR2727511_Aligned.sortedByCoord.out.bam
+SRR2727512,E5.5 Epiblast,GSM1912321,male,male C57BL/6J x female C57BL/6J,./align/SRR2727512/SRR2727512_Aligned.sortedByCoord.out.bam
+SRR2727513,E5.5 Epiblast,GSM1912322,male,male C57BL/6J x female C57BL/6J,./align/SRR2727513/SRR2727513_Aligned.sortedByCoord.out.bam
+SRR2727514,E5.5 Epiblast,GSM1912323,male,male C57BL/6J x female C57BL/6J,./align/SRR2727514/SRR2727514_Aligned.sortedByCoord.out.bam
+SRR2727515,E5.5 Epiblast,GSM1912324,male,male C57BL/6J x female C57BL/6J,./align/SRR2727515/SRR2727515_Aligned.sortedByCoord.out.bam
+SRR2727516,E5.5 Epiblast,GSM1912325,male,male C57BL/6J x female C57BL/6J,./align/SRR2727516/SRR2727516_Aligned.sortedByCoord.out.bam
+SRR2727517,E5.5 Epiblast,GSM1912326,male,male C57BL/6J x female C57BL/6J,./align/SRR2727517/SRR2727517_Aligned.sortedByCoord.out.bam
+SRR2727518,E5.5 Epiblast,GSM1912327,male,male C57BL/6J x female C57BL/6J,./align/SRR2727518/SRR2727518_Aligned.sortedByCoord.out.bam
+SRR2727519,E5.5 Epiblast,GSM1912328,male,male C57BL/6J x female C57BL/6J,./align/SRR2727519/SRR2727519_Aligned.sortedByCoord.out.bam
+SRR2727520,E5.5 Epiblast,GSM1912329,male,male C57BL/6J x female C57BL/6J,./align/SRR2727520/SRR2727520_Aligned.sortedByCoord.out.bam
+SRR2727521,E5.5 Epiblast,GSM1912330,male,male C57BL/6J x female C57BL/6J,./align/SRR2727521/SRR2727521_Aligned.sortedByCoord.out.bam
+SRR2727522,E5.5 Epiblast,GSM1912331,male,male C57BL/6J x female C57BL/6J,./align/SRR2727522/SRR2727522_Aligned.sortedByCoord.out.bam
+SRR2727523,E5.5 Epiblast,GSM1912332,male,male C57BL/6J x female C57BL/6J,./align/SRR2727523/SRR2727523_Aligned.sortedByCoord.out.bam
+SRR2727524,E5.5 Epiblast,GSM1912333,male,male C57BL/6J x female C57BL/6J,./align/SRR2727524/SRR2727524_Aligned.sortedByCoord.out.bam
+SRR2727525,E5.5 Epiblast,GSM1912334,male,male C57BL/6J x female C57BL/6J,./align/SRR2727525/SRR2727525_Aligned.sortedByCoord.out.bam
+SRR2727526,E5.5 Epiblast,GSM1912335,male,male C57BL/6J x female C57BL/6J,./align/SRR2727526/SRR2727526_Aligned.sortedByCoord.out.bam
+SRR2727527,E5.5 Epiblast,GSM1912336,male,male C57BL/6J x female C57BL/6J,./align/SRR2727527/SRR2727527_Aligned.sortedByCoord.out.bam
+SRR2727528,E5.5 Epiblast,GSM1912337,male,male C57BL/6J x female C57BL/6J,./align/SRR2727528/SRR2727528_Aligned.sortedByCoord.out.bam
+SRR2727529,E5.5 Epiblast,GSM1912338,male,male C57BL/6J x female C57BL/6J,./align/SRR2727529/SRR2727529_Aligned.sortedByCoord.out.bam
+SRR2727530,E5.5 Epiblast,GSM1912339,male,male C57BL/6J x female C57BL/6J,./align/SRR2727530/SRR2727530_Aligned.sortedByCoord.out.bam
+SRR2727531,E5.5 Epiblast,GSM1912340,male,male C57BL/6J x female C57BL/6J,./align/SRR2727531/SRR2727531_Aligned.sortedByCoord.out.bam
+SRR2727532,E5.5 Epiblast,GSM1912341,male,male C57BL/6J x female C57BL/6J,./align/SRR2727532/SRR2727532_Aligned.sortedByCoord.out.bam
+SRR2727533,E5.5 Epiblast,GSM1912342,male,male C57BL/6J x female C57BL/6J,./align/SRR2727533/SRR2727533_Aligned.sortedByCoord.out.bam
+SRR2727534,E5.5 Epiblast,GSM1912343,male,male C57BL/6J x female C57BL/6J,./align/SRR2727534/SRR2727534_Aligned.sortedByCoord.out.bam
+SRR2727535,E5.5 Epiblast,GSM1912344,male,male C57BL/6J x female C57BL/6J,./align/SRR2727535/SRR2727535_Aligned.sortedByCoord.out.bam
+SRR2727536,E5.5 Epiblast,GSM1912345,male,male C57BL/6J x female C57BL/6J,./align/SRR2727536/SRR2727536_Aligned.sortedByCoord.out.bam
+SRR2727537,E5.5 Epiblast,GSM1912346,male,male C57BL/6J x female C57BL/6J,./align/SRR2727537/SRR2727537_Aligned.sortedByCoord.out.bam
+SRR2727538,E5.5 Epiblast,GSM1912347,male,male C57BL/6J x female C57BL/6J,./align/SRR2727538/SRR2727538_Aligned.sortedByCoord.out.bam
+SRR2727539,E5.5 Epiblast,GSM1912348,male,male C57BL/6J x female C57BL/6J,./align/SRR2727539/SRR2727539_Aligned.sortedByCoord.out.bam
+SRR2727540,E5.5 Epiblast,GSM1912349,male,male C57BL/6J x female C57BL/6J,./align/SRR2727540/SRR2727540_Aligned.sortedByCoord.out.bam
+SRR2727541,E5.5 Epiblast,GSM1912350,male,male C57BL/6J x female C57BL/6J,./align/SRR2727541/SRR2727541_Aligned.sortedByCoord.out.bam
+SRR2727542,E5.5 Epiblast,GSM1912351,male,male C57BL/6J x female C57BL/6J,./align/SRR2727542/SRR2727542_Aligned.sortedByCoord.out.bam
+SRR2727543,E5.5 Epiblast,GSM1912352,male,male C57BL/6J x female C57BL/6J,./align/SRR2727543/SRR2727543_Aligned.sortedByCoord.out.bam
+SRR2727544,E5.5 Epiblast,GSM1912353,male,male C57BL/6J x female C57BL/6J,./align/SRR2727544/SRR2727544_Aligned.sortedByCoord.out.bam
+SRR2727545,E5.5 Epiblast,GSM1912354,male,male C57BL/6J x female C57BL/6J,./align/SRR2727545/SRR2727545_Aligned.sortedByCoord.out.bam
+SRR2727546,E5.5 Epiblast,GSM1912355,male,male C57BL/6J x female C57BL/6J,./align/SRR2727546/SRR2727546_Aligned.sortedByCoord.out.bam
+SRR2727547,E5.5 Epiblast,GSM1912356,male,male C57BL/6J x female C57BL/6J,./align/SRR2727547/SRR2727547_Aligned.sortedByCoord.out.bam
+SRR2727548,E5.5 Epiblast,GSM1912357,male,male C57BL/6J x female C57BL/6J,./align/SRR2727548/SRR2727548_Aligned.sortedByCoord.out.bam
+SRR2727549,E5.5 Epiblast,GSM1912358,male,male C57BL/6J x female C57BL/6J,./align/SRR2727549/SRR2727549_Aligned.sortedByCoord.out.bam
+SRR2727550,E5.5 Epiblast,GSM1912359,male,male C57BL/6J x female C57BL/6J,./align/SRR2727550/SRR2727550_Aligned.sortedByCoord.out.bam
+SRR2727551,E5.5 Epiblast,GSM1912360,male,male C57BL/6J x female C57BL/6J,./align/SRR2727551/SRR2727551_Aligned.sortedByCoord.out.bam
+SRR2727552,E5.5 Epiblast,GSM1912361,male,male C57BL/6J x female C57BL/6J,./align/SRR2727552/SRR2727552_Aligned.sortedByCoord.out.bam
+SRR2727553,E5.5 Epiblast,GSM1912362,male,male C57BL/6J x female C57BL/6J,./align/SRR2727553/SRR2727553_Aligned.sortedByCoord.out.bam
+SRR2727554,E5.5 Epiblast,GSM1912363,male,male C57BL/6J x female C57BL/6J,./align/SRR2727554/SRR2727554_Aligned.sortedByCoord.out.bam
+SRR2727555,E5.5 Epiblast,GSM1912364,female,male C57BL/6J x female C57BL/6J,./align/SRR2727555/SRR2727555_Aligned.sortedByCoord.out.bam
+SRR2727556,E5.5 Epiblast,GSM1912365,female,male C57BL/6J x female C57BL/6J,./align/SRR2727556/SRR2727556_Aligned.sortedByCoord.out.bam
+SRR2727557,E5.5 Epiblast,GSM1912366,female,male C57BL/6J x female C57BL/6J,./align/SRR2727557/SRR2727557_Aligned.sortedByCoord.out.bam
+SRR2727558,E5.5 Epiblast,GSM1912367,female,male C57BL/6J x female C57BL/6J,./align/SRR2727558/SRR2727558_Aligned.sortedByCoord.out.bam
+SRR2727559,E5.5 Epiblast,GSM1912368,female,male C57BL/6J x female C57BL/6J,./align/SRR2727559/SRR2727559_Aligned.sortedByCoord.out.bam
+SRR2727560,E5.5 Epiblast,GSM1912369,female,male C57BL/6J x female C57BL/6J,./align/SRR2727560/SRR2727560_Aligned.sortedByCoord.out.bam
+SRR2727561,E5.5 Epiblast,GSM1912370,female,male C57BL/6J x female C57BL/6J,./align/SRR2727561/SRR2727561_Aligned.sortedByCoord.out.bam
+SRR2727562,E5.5 Epiblast,GSM1912371,female,male C57BL/6J x female C57BL/6J,./align/SRR2727562/SRR2727562_Aligned.sortedByCoord.out.bam
+SRR2727563,E5.5 Epiblast,GSM1912372,female,male C57BL/6J x female C57BL/6J,./align/SRR2727563/SRR2727563_Aligned.sortedByCoord.out.bam
+SRR2727564,E5.5 Epiblast,GSM1912373,female,male C57BL/6J x female C57BL/6J,./align/SRR2727564/SRR2727564_Aligned.sortedByCoord.out.bam
+SRR2727565,E5.5 Epiblast,GSM1912374,female,male C57BL/6J x female C57BL/6J,./align/SRR2727565/SRR2727565_Aligned.sortedByCoord.out.bam
+SRR2727566,E5.5 Epiblast,GSM1912375,female,male C57BL/6J x female C57BL/6J,./align/SRR2727566/SRR2727566_Aligned.sortedByCoord.out.bam
+SRR2727567,E5.5 Epiblast,GSM1912376,female,male C57BL/6J x female C57BL/6J,./align/SRR2727567/SRR2727567_Aligned.sortedByCoord.out.bam
+SRR2727568,E5.5 Epiblast,GSM1912377,female,male C57BL/6J x female C57BL/6J,./align/SRR2727568/SRR2727568_Aligned.sortedByCoord.out.bam
+SRR2727569,E5.5 Epiblast,GSM1912378,female,male C57BL/6J x female C57BL/6J,./align/SRR2727569/SRR2727569_Aligned.sortedByCoord.out.bam
+SRR2727570,E5.5 Epiblast,GSM1912379,female,male C57BL/6J x female C57BL/6J,./align/SRR2727570/SRR2727570_Aligned.sortedByCoord.out.bam
+SRR2727571,E5.5 Epiblast,GSM1912380,female,male C57BL/6J x female C57BL/6J,./align/SRR2727571/SRR2727571_Aligned.sortedByCoord.out.bam
+SRR2727572,E5.5 Epiblast,GSM1912381,female,male C57BL/6J x female C57BL/6J,./align/SRR2727572/SRR2727572_Aligned.sortedByCoord.out.bam
+SRR2727573,E5.5 Epiblast,GSM1912382,female,male C57BL/6J x female C57BL/6J,./align/SRR2727573/SRR2727573_Aligned.sortedByCoord.out.bam
+SRR2727574,E5.5 Epiblast,GSM1912383,female,male C57BL/6J x female C57BL/6J,./align/SRR2727574/SRR2727574_Aligned.sortedByCoord.out.bam
+SRR2727575,E3.5 ICM,GSM1912384,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727575/SRR2727575_Aligned.sortedByCoord.out.bam
+SRR2727576,E3.5 ICM,GSM1912385,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727576/SRR2727576_Aligned.sortedByCoord.out.bam
+SRR2727577,E3.5 ICM,GSM1912386,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727577/SRR2727577_Aligned.sortedByCoord.out.bam
+SRR2727578,E3.5 ICM,GSM1912387,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727578/SRR2727578_Aligned.sortedByCoord.out.bam
+SRR2727579,E3.5 ICM,GSM1912388,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727579/SRR2727579_Aligned.sortedByCoord.out.bam
+SRR2727580,E3.5 ICM,GSM1912389,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727580/SRR2727580_Aligned.sortedByCoord.out.bam
+SRR2727581,E3.5 ICM,GSM1912390,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727581/SRR2727581_Aligned.sortedByCoord.out.bam
+SRR2727582,E3.5 ICM,GSM1912391,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727582/SRR2727582_Aligned.sortedByCoord.out.bam
+SRR2727583,E3.5 ICM,GSM1912392,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727583/SRR2727583_Aligned.sortedByCoord.out.bam
+SRR2727584,E3.5 ICM,GSM1912393,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727584/SRR2727584_Aligned.sortedByCoord.out.bam
+SRR2727585,E3.5 ICM,GSM1912394,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727585/SRR2727585_Aligned.sortedByCoord.out.bam
+SRR2727586,E3.5 ICM,GSM1912395,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727586/SRR2727586_Aligned.sortedByCoord.out.bam
+SRR2727587,E3.5 ICM,GSM1912396,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727587/SRR2727587_Aligned.sortedByCoord.out.bam
+SRR2727588,E3.5 ICM,GSM1912397,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727588/SRR2727588_Aligned.sortedByCoord.out.bam
+SRR2727589,E3.5 ICM,GSM1912398,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727589/SRR2727589_Aligned.sortedByCoord.out.bam
+SRR2727590,E3.5 ICM,GSM1912399,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727590/SRR2727590_Aligned.sortedByCoord.out.bam
+SRR2727591,E3.5 ICM,GSM1912400,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727591/SRR2727591_Aligned.sortedByCoord.out.bam
+SRR2727592,E3.5 ICM,GSM1912401,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727592/SRR2727592_Aligned.sortedByCoord.out.bam
+SRR2727593,E3.5 ICM,GSM1912402,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727593/SRR2727593_Aligned.sortedByCoord.out.bam
+SRR2727594,E3.5 ICM,GSM1912403,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727594/SRR2727594_Aligned.sortedByCoord.out.bam
+SRR2727595,E3.5 ICM,GSM1912404,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727595/SRR2727595_Aligned.sortedByCoord.out.bam
+SRR2727596,E3.5 ICM,GSM1912405,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727596/SRR2727596_Aligned.sortedByCoord.out.bam
+SRR2727597,E3.5 ICM,GSM1912406,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727597/SRR2727597_Aligned.sortedByCoord.out.bam
+SRR2727598,E4.5 Epiblast,GSM1912407,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727598/SRR2727598_Aligned.sortedByCoord.out.bam
+SRR2727599,E4.5 Epiblast,GSM1912408,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727599/SRR2727599_Aligned.sortedByCoord.out.bam
+SRR2727600,E4.5 Epiblast,GSM1912409,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727600/SRR2727600_Aligned.sortedByCoord.out.bam
+SRR2727601,E4.5 Epiblast,GSM1912410,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727601/SRR2727601_Aligned.sortedByCoord.out.bam
+SRR2727602,E4.5 Epiblast,GSM1912411,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727602/SRR2727602_Aligned.sortedByCoord.out.bam
+SRR2727603,E4.5 Epiblast,GSM1912412,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727603/SRR2727603_Aligned.sortedByCoord.out.bam
+SRR2727604,E4.5 Epiblast,GSM1912413,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727604/SRR2727604_Aligned.sortedByCoord.out.bam
+SRR2727605,E4.5 Epiblast,GSM1912414,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727605/SRR2727605_Aligned.sortedByCoord.out.bam
+SRR2727606,E4.5 Epiblast,GSM1912415,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727606/SRR2727606_Aligned.sortedByCoord.out.bam
+SRR2727607,E4.5 Epiblast,GSM1912416,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727607/SRR2727607_Aligned.sortedByCoord.out.bam
+SRR2727608,E4.5 Epiblast,GSM1912417,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727608/SRR2727608_Aligned.sortedByCoord.out.bam
+SRR2727609,E4.5 Epiblast,GSM1912418,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727609/SRR2727609_Aligned.sortedByCoord.out.bam
+SRR2727610,E4.5 Epiblast,GSM1912419,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727610/SRR2727610_Aligned.sortedByCoord.out.bam
+SRR2727611,E4.5 Epiblast,GSM1912420,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727611/SRR2727611_Aligned.sortedByCoord.out.bam
+SRR2727612,E4.5 Epiblast,GSM1912421,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727612/SRR2727612_Aligned.sortedByCoord.out.bam
+SRR2727613,E4.5 Epiblast,GSM1912422,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727613/SRR2727613_Aligned.sortedByCoord.out.bam
+SRR2727614,E4.5 Epiblast,GSM1912423,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727614/SRR2727614_Aligned.sortedByCoord.out.bam
+SRR2727615,E4.5 Epiblast,GSM1912424,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727615/SRR2727615_Aligned.sortedByCoord.out.bam
+SRR2727616,E4.5 Epiblast,GSM1912425,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727616/SRR2727616_Aligned.sortedByCoord.out.bam
+SRR2727617,E4.5 Epiblast,GSM1912426,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727617/SRR2727617_Aligned.sortedByCoord.out.bam
+SRR2727618,E4.5 Epiblast,GSM1912427,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727618/SRR2727618_Aligned.sortedByCoord.out.bam
+SRR2727619,E4.5 Epiblast,GSM1912428,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727619/SRR2727619_Aligned.sortedByCoord.out.bam
+SRR2727620,E4.5 Epiblast,GSM1912429,NA,male CAST/EiJ x female C57BL/6J,./align/SRR2727620/SRR2727620_Aligned.sortedByCoord.out.bam
+SRR3211906,Epi,GSM2083182,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211906/SRR3211906_Aligned.sortedByCoord.out.bam
+SRR3211907,Epi,GSM2083183,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211907/SRR3211907_Aligned.sortedByCoord.out.bam
+SRR3211908,Epi,GSM2083184,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211908/SRR3211908_Aligned.sortedByCoord.out.bam
+SRR3211909,Epi,GSM2083185,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211909/SRR3211909_Aligned.sortedByCoord.out.bam
+SRR3211910,Epi,GSM2083186,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211910/SRR3211910_Aligned.sortedByCoord.out.bam
+SRR3211911,Epi,GSM2083187,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211911/SRR3211911_Aligned.sortedByCoord.out.bam
+SRR3211912,Epi,GSM2083188,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211912/SRR3211912_Aligned.sortedByCoord.out.bam
+SRR3211913,Epi,GSM2083189,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211913/SRR3211913_Aligned.sortedByCoord.out.bam
+SRR3211914,Epi,GSM2083190,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211914/SRR3211914_Aligned.sortedByCoord.out.bam
+SRR3211915,Epi,GSM2083191,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211915/SRR3211915_Aligned.sortedByCoord.out.bam
+SRR3211916,Epi,GSM2083192,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211916/SRR3211916_Aligned.sortedByCoord.out.bam
+SRR3211917,Epi,GSM2083193,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211917/SRR3211917_Aligned.sortedByCoord.out.bam
+SRR3211918,Epi,GSM2083194,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211918/SRR3211918_Aligned.sortedByCoord.out.bam
+SRR3211919,Epi,GSM2083195,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211919/SRR3211919_Aligned.sortedByCoord.out.bam
+SRR3211920,Epi,GSM2083196,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211920/SRR3211920_Aligned.sortedByCoord.out.bam
+SRR3211921,Epi,GSM2083197,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211921/SRR3211921_Aligned.sortedByCoord.out.bam
+SRR3211922,Epi,GSM2083198,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211922/SRR3211922_Aligned.sortedByCoord.out.bam
+SRR3211923,Epi,GSM2083199,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211923/SRR3211923_Aligned.sortedByCoord.out.bam
+SRR3211924,Epi,GSM2083200,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211924/SRR3211924_Aligned.sortedByCoord.out.bam
+SRR3211925,Epi,GSM2083201,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211925/SRR3211925_Aligned.sortedByCoord.out.bam
+SRR3211926,Epi,GSM2083202,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211926/SRR3211926_Aligned.sortedByCoord.out.bam
+SRR3211927,Epi,GSM2083203,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211927/SRR3211927_Aligned.sortedByCoord.out.bam
+SRR3211928,Epi,GSM2083204,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211928/SRR3211928_Aligned.sortedByCoord.out.bam
+SRR3211929,Epi,GSM2083205,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211929/SRR3211929_Aligned.sortedByCoord.out.bam
+SRR3211930,Epi,GSM2083206,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211930/SRR3211930_Aligned.sortedByCoord.out.bam
+SRR3211931,Epi,GSM2083207,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211931/SRR3211931_Aligned.sortedByCoord.out.bam
+SRR3211932,Epi,GSM2083208,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211932/SRR3211932_Aligned.sortedByCoord.out.bam
+SRR3211933,Epi,GSM2083209,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211933/SRR3211933_Aligned.sortedByCoord.out.bam
+SRR3211934,Epi,GSM2083210,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211934/SRR3211934_Aligned.sortedByCoord.out.bam
+SRR3211935,Epi,GSM2083211,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211935/SRR3211935_Aligned.sortedByCoord.out.bam
+SRR3211936,Epi,GSM2083212,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211936/SRR3211936_Aligned.sortedByCoord.out.bam
+SRR3211937,Epi,GSM2083213,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211937/SRR3211937_Aligned.sortedByCoord.out.bam
+SRR3211938,Epi,GSM2083214,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211938/SRR3211938_Aligned.sortedByCoord.out.bam
+SRR3211939,Epi,GSM2083215,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211939/SRR3211939_Aligned.sortedByCoord.out.bam
+SRR3211940,Epi,GSM2083216,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211940/SRR3211940_Aligned.sortedByCoord.out.bam
+SRR3211941,Epi,GSM2083217,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211941/SRR3211941_Aligned.sortedByCoord.out.bam
+SRR3211942,Epi,GSM2083218,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211942/SRR3211942_Aligned.sortedByCoord.out.bam
+SRR3211943,Epi,GSM2083219,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211943/SRR3211943_Aligned.sortedByCoord.out.bam
+SRR3211944,Epi,GSM2083220,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211944/SRR3211944_Aligned.sortedByCoord.out.bam
+SRR3211945,Epi,GSM2083221,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211945/SRR3211945_Aligned.sortedByCoord.out.bam
+SRR3211946,Epi,GSM2083222,female,male CAST/EiJ x female C57BL/6J,./align/SRR3211946/SRR3211946_Aligned.sortedByCoord.out.bam
+SRR2727165,ES,GSM1911968,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727165/SRR2727165_Aligned.sortedByCoord.out.bam
+SRR2727199,ES,GSM1912002,male,male CAST/EiJ x female C57BL/6J,./align/SRR2727199/SRR2727199_Aligned.sortedByCoord.out.bam
+SRR2727235,ES,GSM1912038,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727235/SRR2727235_Aligned.sortedByCoord.out.bam
+SRR2727236,ES,GSM1912039,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727236/SRR2727236_Aligned.sortedByCoord.out.bam
+SRR2727237,ES,GSM1912040,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727237/SRR2727237_Aligned.sortedByCoord.out.bam
+SRR2727238,ES,GSM1912041,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727238/SRR2727238_Aligned.sortedByCoord.out.bam
+SRR2727239,ES,GSM1912042,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727239/SRR2727239_Aligned.sortedByCoord.out.bam
+SRR2727240,ES,GSM1912043,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727240/SRR2727240_Aligned.sortedByCoord.out.bam
+SRR2727241,ES,GSM1912044,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727241/SRR2727241_Aligned.sortedByCoord.out.bam
+SRR2727242,ES,GSM1912045,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727242/SRR2727242_Aligned.sortedByCoord.out.bam
+SRR2727243,ES,GSM1912046,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727243/SRR2727243_Aligned.sortedByCoord.out.bam
+SRR2727244,ES,GSM1912047,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727244/SRR2727244_Aligned.sortedByCoord.out.bam
+SRR2727245,ES,GSM1912048,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727245/SRR2727245_Aligned.sortedByCoord.out.bam
+SRR2727246,ES,GSM1912049,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727246/SRR2727246_Aligned.sortedByCoord.out.bam
+SRR2727247,ES,GSM1912050,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727247/SRR2727247_Aligned.sortedByCoord.out.bam
+SRR2727248,ES,GSM1912051,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727248/SRR2727248_Aligned.sortedByCoord.out.bam
+SRR2727249,ES,GSM1912052,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727249/SRR2727249_Aligned.sortedByCoord.out.bam
+SRR2727250,ES,GSM1912053,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727250/SRR2727250_Aligned.sortedByCoord.out.bam
+SRR2727251,ES,GSM1912054,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727251/SRR2727251_Aligned.sortedByCoord.out.bam
+SRR2727252,ES,GSM1912055,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727252/SRR2727252_Aligned.sortedByCoord.out.bam
+SRR2727253,ES,GSM1912056,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727253/SRR2727253_Aligned.sortedByCoord.out.bam
+SRR2727254,ES,GSM1912057,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727254/SRR2727254_Aligned.sortedByCoord.out.bam
+SRR2727255,ES,GSM1912058,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727255/SRR2727255_Aligned.sortedByCoord.out.bam
+SRR2727256,ES,GSM1912059,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727256/SRR2727256_Aligned.sortedByCoord.out.bam
+SRR2727257,ES,GSM1912060,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727257/SRR2727257_Aligned.sortedByCoord.out.bam
+SRR2727258,ES,GSM1912061,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727258/SRR2727258_Aligned.sortedByCoord.out.bam
+SRR2727259,ES,GSM1912062,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727259/SRR2727259_Aligned.sortedByCoord.out.bam
+SRR2727260,ES,GSM1912063,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727260/SRR2727260_Aligned.sortedByCoord.out.bam
+SRR2727261,ES,GSM1912064,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727261/SRR2727261_Aligned.sortedByCoord.out.bam
+SRR2727262,ES,GSM1912065,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727262/SRR2727262_Aligned.sortedByCoord.out.bam
+SRR2727263,ES,GSM1912066,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727263/SRR2727263_Aligned.sortedByCoord.out.bam
+SRR2727264,ES,GSM1912067,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727264/SRR2727264_Aligned.sortedByCoord.out.bam
+SRR2727265,ES,GSM1912068,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727265/SRR2727265_Aligned.sortedByCoord.out.bam
+SRR2727266,ES,GSM1912069,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727266/SRR2727266_Aligned.sortedByCoord.out.bam
+SRR2727267,ES,GSM1912070,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727267/SRR2727267_Aligned.sortedByCoord.out.bam
+SRR2727268,ES,GSM1912071,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727268/SRR2727268_Aligned.sortedByCoord.out.bam
+SRR2727269,ES,GSM1912072,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727269/SRR2727269_Aligned.sortedByCoord.out.bam
+SRR2727270,ES,GSM1912073,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727270/SRR2727270_Aligned.sortedByCoord.out.bam
+SRR2727271,ES,GSM1912074,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727271/SRR2727271_Aligned.sortedByCoord.out.bam
+SRR2727272,ES,GSM1912075,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727272/SRR2727272_Aligned.sortedByCoord.out.bam
+SRR2727273,ES,GSM1912076,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727273/SRR2727273_Aligned.sortedByCoord.out.bam
+SRR2727274,ES,GSM1912077,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727274/SRR2727274_Aligned.sortedByCoord.out.bam
+SRR2727275,ES,GSM1912078,female,male CAST/EiJ x female C57BL/6J,./align/SRR2727275/SRR2727275_Aligned.sortedByCoord.out.bam
