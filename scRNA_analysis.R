@@ -1295,7 +1295,78 @@ find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']
 
 
 
+find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]
 
+rank_by_fdr <- function(sce_obj,clust_num, candidates,gene_name, target){
+  # calculate the fdr rank of target in all genes correlated to 'gene_name'
+  sce <- sce_obj[,sce_obj$label %in% clust_num]
+  get_corr <- function(name1,name2,sce){
+    if(name1==name2){
+      same <- t(as.matrix(c(1,0,0)))
+      colnames(same) <- c('rho','p.value','FDR')
+      rownames(same) <- name1
+      return(same)
+    }
+    else{
+      r <- as.matrix(correlatePairs(sce,subset.row=c(name1,name2), 
+                                    assay.type = "logcounts")[c('rho','p.value','FDR')])
+      rownames(r) <- name1
+      return(r)
+    }
+  }
+  corr <- mclapply(candidates, FUN = get_corr, name2=gene_name, sce=sce, mc.cores=16)
+  corr <- do.call(rbind, corr)
+  corr <- as.data.frame(corr)
+  corr <- corr[rownames(corr)!=gene_name,]
+  corr <- corr[rowSums(is.na(corr)) == 0, ]
+  corr <- corr[corr$FDR < 0.01,]
+  corr_posi <- corr[corr$rho >0,]
+  if(! target %in% rownames(corr_posi)){
+    result <- t(as.matrix(c(NA,NA,NA,NA,NA,NA,NA,NA)))
+    colnames(result) <- c('rho','p.value','FDR','rank','posi_num','rho_diff','fdr_diff','expr_ratio')
+    rownames(result) <- gene_name
+    return(result)
+  }
+  corr_posi <- corr_posi[order(corr_posi$FDR, decreasing = FALSE),]
+  corr_posi$rank <- rank(corr_posi$FDR)
+  corr_posi$posi_num <- nrow(corr_posi)
+  result <- corr_posi[rownames(corr_posi) == target,]
+  if(result$rank == result$posi_num){
+    rho_diff <- 0
+    fdr_diff <- 0
+  }
+  else{
+    next_rank_index <- match(target,rownames(corr_posi))+1
+    next_rho <- corr_posi[next_rank_index, 'rho']
+    rho_diff <- result$rho - next_rho
+    next_fdr <- corr_posi[next_rank_index, 'FDR']
+    fdr_diff <- next_fdr - result$FDR
+  }
+  result$rho_diff <- rho_diff
+  result$fdr_diff <- fdr_diff
+  result$expr_ratio <- nexprs(sce[rownames(sce)==gene_name,], byrow=TRUE)/ncol(sce)
+  rownames(result) <- gene_name
+  return(result)
+}
+
+filter_genes <- function(sce_obj,clust_num,ratio){
+  sce <- sce_obj[,sce_obj$label %in% clust_num]
+  cell_num <- round(ncol(sce)*ratio,0)
+  filtered_genes <- rownames(sce)[nexprs(sce, byrow=TRUE) > cell_num]
+  return(filtered_genes)
+}
+
+rank_by_fdr(sce_dev,9,oct4_tar.potent,'Sf3b4','Pou5f1')
+candidates <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                              E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]
+print(system.time(oct4_rank <- mclapply(candidates[1:10], 
+                                        FUN = rank_by_fdr, sce_obj=sce_dev, clust_num=c(9),
+                                        candidates = filter_genes(sce_dev,9,0.5), target = 'Pou5f1',
+                                        mc.cores=3)))
+oct4_rank <- do.call(rbind,oct4_rank)
+oct4_rank
+rm(candidates)
 
 
 
