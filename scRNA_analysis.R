@@ -1298,7 +1298,7 @@ find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']
 find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
                 E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]
 
-rank_by_fdr <- function(sce_obj,clust_num, candidates,gene_name, target){
+rank_by_fdr <- function(sce_obj,clust_num, examiners,gene_name, target){
   # calculate the fdr rank of target in all genes correlated to 'gene_name'
   sce <- sce_obj[,sce_obj$label %in% clust_num]
   get_corr <- function(name1,name2,sce){
@@ -1315,7 +1315,7 @@ rank_by_fdr <- function(sce_obj,clust_num, candidates,gene_name, target){
       return(r)
     }
   }
-  corr <- mclapply(candidates, FUN = get_corr, name2=gene_name, sce=sce, mc.cores=16)
+  corr <- mclapply(examiners, FUN = get_corr, name2=gene_name, sce=sce, mc.cores=16)
   corr <- do.call(rbind, corr)
   corr <- as.data.frame(corr)
   corr <- corr[rownames(corr)!=gene_name,]
@@ -1358,15 +1358,52 @@ filter_genes <- function(sce_obj,clust_num,ratio){
 }
 
 rank_by_fdr(sce_dev,9,oct4_tar.potent,'Sf3b4','Pou5f1')
-candidates <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                              E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]
-print(system.time(oct4_rank <- mclapply(candidates[1:10], 
-                                        FUN = rank_by_fdr, sce_obj=sce_dev, clust_num=c(9),
-                                        candidates = filter_genes(sce_dev,9,0.5), target = 'Pou5f1',
+# candidates <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+#                               E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]
+
+# E4
+candidates <- rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])
+print(system.time(oct4_rank_E4 <- mclapply(candidates, 
+                                        FUN = rank_by_fdr, 
+                                        sce_obj=sce_dev, 
+                                        clust_num=c(9),
+                                        examiners = filter_genes(sce_dev,
+                                                                 clust_num = c(9),
+                                                                 ratio = 0.5), 
+                                        target = 'Pou5f1',
                                         mc.cores=3)))
-oct4_rank <- do.call(rbind,oct4_rank)
-oct4_rank
+oct4_rank_E4 <- do.call(rbind,oct4_rank_E4)
+oct4_rank_E4
+
+# serum
+candidates <- rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,])
+print(system.time(oct4_rank_serum <- mclapply(candidates, 
+                                           FUN = rank_by_fdr, 
+                                           sce_obj=sce_dev, 
+                                           clust_num=c(5,8,10),
+                                           examiners = filter_genes(sce_dev,
+                                                                    clust_num = c(5,8,10),
+                                                                    ratio = 0.5), 
+                                           target = 'Pou5f1',
+                                           mc.cores=3)))
+oct4_rank_serum <- do.call(rbind,oct4_rank_serum)
+oct4_rank_serum
 rm(candidates)
 
+rm(candidates)
 
-
+oct4_rank_E4 %>% 
+  arrange(rank) %>% 
+  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.6) %>% 
+  rownames(.)
+find_inter(list(oct4_rank_E4 %>% 
+                  arrange(rank) %>% 
+                  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.6) %>% 
+                  rownames(.),
+                find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                                                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
+                                find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                                                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
+                                find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                                                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
+                                predicted = oct4_tar.potent))[[4]]))[[2]]
