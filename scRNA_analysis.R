@@ -1361,7 +1361,7 @@ rank_by_fdr(sce_dev,9,oct4_tar.potent,'Sf3b4','Pou5f1')
 # candidates <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
 #                               E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]
 
-# E4
+# Oct4 E4
 candidates <- rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])
 print(system.time(oct4_rank_E4 <- mclapply(candidates, 
                                         FUN = rank_by_fdr, 
@@ -1374,8 +1374,10 @@ print(system.time(oct4_rank_E4 <- mclapply(candidates,
                                         mc.cores=3)))
 oct4_rank_E4 <- do.call(rbind,oct4_rank_E4)
 oct4_rank_E4
+write.csv(oct4_rank_E4, 'figures/oct4_rank_E4.csv')
+rm(candidates)
 
-# serum
+# Oct4 serum
 candidates <- rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,])
 print(system.time(oct4_rank_serum <- mclapply(candidates, 
                                            FUN = rank_by_fdr, 
@@ -1388,22 +1390,58 @@ print(system.time(oct4_rank_serum <- mclapply(candidates,
                                            mc.cores=3)))
 oct4_rank_serum <- do.call(rbind,oct4_rank_serum)
 oct4_rank_serum
-rm(candidates)
-
+write.csv(oct4_rank_serum, 'figures/oct4_rank_serum.csv')
 rm(candidates)
 
 oct4_rank_E4 %>% 
   arrange(rank) %>% 
-  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.6) %>% 
+  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.5) %>% 
   rownames(.)
+oct4_rank_serum %>% 
+  arrange(rank) %>% 
+  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.3) %>% 
+  rownames(.)
+
 find_inter(list(oct4_rank_E4 %>% 
                   arrange(rank) %>% 
-                  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.6) %>% 
+                  dplyr::filter(rank <= 50 & expr_ratio > 0.5 & rho > 0.5) %>% 
                   rownames(.),
-                find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                                find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                                find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                                predicted = oct4_tar.potent))[[4]]))[[2]]
+                oct4_rank_serum %>% 
+                  arrange(rank) %>% 
+                  dplyr::filter(rank <= 50 & expr_ratio > 0.5 & rho > 0.3) %>% 
+                  rownames(.)
+                ))[[2]] %in% oct4_tar.potent
+
+
+
+# Nanog E4
+candidates <- rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])
+print(system.time(nanog_rank_E4 <- mclapply(candidates, 
+                                           FUN = rank_by_fdr, 
+                                           sce_obj=sce_dev, 
+                                           clust_num=c(9),
+                                           examiners = filter_genes(sce_dev,
+                                                                    clust_num = c(9),
+                                                                    ratio = 0.5), 
+                                           target = 'Pou5f1',
+                                           mc.cores=3)))
+nanog_rank_E4 <- do.call(rbind,nanog_rank_E4)
+nanog_rank_E4
+write.csv(nanog_rank_E4, 'figures/nanog_rank_E4.csv')
+rm(candidates)
+
+# Nanog serum
+candidates <- rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,])
+print(system.time(nanog_rank_serum <- mclapply(candidates, 
+                                              FUN = rank_by_fdr, 
+                                              sce_obj=sce_dev, 
+                                              clust_num=c(5,8,10),
+                                              examiners = filter_genes(sce_dev,
+                                                                       clust_num = c(5,8,10),
+                                                                       ratio = 0.5), 
+                                              target = 'Pou5f1',
+                                              mc.cores=3)))
+nanog_rank_serum <- do.call(rbind,nanog_rank_serum)
+nanog_rank_serum
+write.csv(nanog_rank_serum, 'figures/nanog_rank_serum.csv')
+rm(candidates)
