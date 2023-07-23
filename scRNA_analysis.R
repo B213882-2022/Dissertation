@@ -952,6 +952,21 @@ rm(tar_length)
 
 
 # permutation test -> most correlated genes of Oct4 ############################
+get_corr <- function(name1,name2,sce){
+  if(name1==name2){
+    same <- t(as.matrix(c(1,0)))
+    colnames(same) <- c('rho','p.value')
+    rownames(same) <- name1
+    return(same)
+  }
+  else{
+    r <- as.matrix(correlatePairs(sce,subset.row=c(name1,name2), 
+                                  assay.type = "logcounts")[c('rho','p.value')])
+    rownames(r) <- name1
+    return(r)
+  }
+}
+
 spearman_corr <- function(sce_obj, clust_num, gene_name, ctrl_genes, clust_name, top_n){
   # gene_name is the name of the core gene used for correlation calculation
   # con_genes means control gene names
@@ -963,38 +978,25 @@ spearman_corr <- function(sce_obj, clust_num, gene_name, ctrl_genes, clust_name,
   print(paste0('Total number of genes: ',length(filtered_genes)))
   
   # calculate corr of Oct4 and all genes
-  get_corr <- function(name1,name2,sce){
-    if(name1==name2){
-      same <- t(as.matrix(c(1,0,0)))
-      colnames(same) <- c('rho','p.value','FDR')
-      rownames(same) <- name1
-      return(same)
-    }
-    else{
-      r <- as.matrix(correlatePairs(sce,subset.row=c(name1,name2), 
-                                    assay.type = "logcounts")[c('rho','p.value','FDR')])
-      rownames(r) <- name1
-      return(r)
-    }
-  }
-  print(system.time(corr <- mclapply(filtered_genes, FUN = get_corr, 
-                                     name2=gene_name, sce=sce, mc.cores=48)))
+  corr <- mclapply(filtered_genes, FUN = get_corr, name2=gene_name, sce=sce, mc.cores=48)
   corr <- do.call(rbind, corr)
   corr <- as.data.frame(corr)
+  corr$FDR <- p.adjust(corr$p.value, method='fdr')
+  original_corr <- corr
   
-  # filter genes with FDR > 0.01
+  # filter genes with FDR > 0.1
   corr <- corr[rownames(corr)!=gene_name,]
-  corr <- corr[corr$FDR < 0.01,]
-  print(paste0('totol number of genes with FDR < 0.01: ', nrow(corr)))
+  corr <- corr[corr$FDR < 0.1,]
+  print(paste0('totol number of genes with FDR < 0.1: ', nrow(corr)))
   
-  # select positive Rho genes
+  # select and sort positive Rho genes
   corr_posi <- corr[corr$rho >0,]
-  corr_posi <- corr_posi[order(corr_posi$FDR, decreasing = FALSE),]
+  corr_posi <- corr_posi[order(corr_posi$p.value, decreasing = FALSE),]
   print(paste0('positive genes number: ', nrow(corr_posi)))
   
-  # select negative Rho genes
+  # select and sort negative Rho genes
   corr_nega <- corr[corr$rho <0,]
-  corr_nega <- corr_nega[order(corr_nega$FDR, decreasing = FALSE),]
+  corr_nega <- corr_nega[order(corr_nega$p.value, decreasing = FALSE),]
   print(paste0('negative genes number: ', nrow(corr_nega)))
   
   # check control genes' correlations
@@ -1007,15 +1009,20 @@ spearman_corr <- function(sce_obj, clust_num, gene_name, ctrl_genes, clust_name,
   
   # sort positive control genes
   posi_ctrl <- ctrl_genes[ctrl_genes %in% rownames(corr_posi)]
-  posi_order <- order(corr_posi[rownames(corr_posi) %in% posi_ctrl,]$FDR, decreasing = FALSE)
+  posi_order <- order(corr_posi[rownames(corr_posi) %in% posi_ctrl,]$p.value, decreasing = FALSE)
   posi_ctrl <- posi_ctrl[posi_order]
-  print(paste0('Positively correlated control genes with FDR <0.01: ',paste(posi_ctrl, collapse = ', ')))
+  print(paste0('Positively correlated control genes with FDR < 0.1: ',paste(posi_ctrl, collapse = ', ')))
   
   # sort negative control genes
   nega_ctrl <- ctrl_genes[ctrl_genes %in% rownames(corr_nega)]
-  nega_order <- order(corr_nega[rownames(corr_nega) %in% nega_ctrl,]$FDR, decreasing = FALSE)
+  nega_order <- order(corr_nega[rownames(corr_nega) %in% nega_ctrl,]$p.value, decreasing = FALSE)
   nega_ctrl <- nega_ctrl[nega_order]
-  print(paste0('Negatively correlated control genes with FDR <0.01: ',paste(nega_ctrl, collapse = ', ')))
+  print(paste0('Negatively correlated control genes with FDR < 0.1: ',paste(nega_ctrl, collapse = ', ')))
+  
+  # check FDR < 0.1 number (corr_df is genes with FDR < 0.1)
+  if(nrow(corr) == 0){
+    return(list(original_df=original_corr, corr_df=corr, heatmap=NULL))
+  }
   
   # sum up and plot gene logcounts
   top_corr_genes <- c(rownames(na.omit(corr_posi[1:top_n,])),
@@ -1045,7 +1052,8 @@ spearman_corr <- function(sce_obj, clust_num, gene_name, ctrl_genes, clust_name,
   }
   top_corr_plot$gtable$grobs[[3]]$gp <- grid::gpar(col=color, fontsize=fontsize)
   
-  return(list(corr_df=corr, heatmap=top_corr_plot))
+  # (corr_df is genes with FDR < 0.1)
+  return(list(original_df=original_corr, corr_df=corr, heatmap=top_corr_plot))
 }
 
 spear_corr_heatmap <- function(sce,clust,target,ctrl,
@@ -1107,16 +1115,16 @@ sox2_spear_corr[['1']]$out
 sox2_spear_corr[['1']]$heatmap
 
 # venn diagram comparison ######################################################
-# in vivo intersections (oct4)
-ggVennDiagram(list(E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,]), 
-                   E4_nega = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho < 0,]),
-                   E5.5_posi = rownames(oct4_spear_corr[['1']]$corr_df[oct4_spear_corr[['1']]$corr_df$rho > 0,]), 
-                   E5.5_nega = rownames(oct4_spear_corr[['1']]$corr_df[oct4_spear_corr[['1']]$corr_df$rho < 0,])),
-              label = "count", label_size = 5) +
-  theme(legend.position = "none", plot.margin=margin(1,1,1,1,'cm')) +
-  ggtitle('intersections of correlated genes in E3.5&E4.5 and E5.5') +
-  theme(plot.title = element_text(hjust = 0.5))
-ggsave("figures/oct4_invivo_venn.pdf",device='pdf', width = 12, height = 12)
+# # in vivo intersections (oct4)
+# ggVennDiagram(list(E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,]), 
+#                    E4_nega = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho < 0,]),
+#                    E5.5_posi = rownames(oct4_spear_corr[['1']]$corr_df[oct4_spear_corr[['1']]$corr_df$rho > 0,]), 
+#                    E5.5_nega = rownames(oct4_spear_corr[['1']]$corr_df[oct4_spear_corr[['1']]$corr_df$rho < 0,])),
+#               label = "count", label_size = 5) +
+#   theme(legend.position = "none", plot.margin=margin(1,1,1,1,'cm')) +
+#   ggtitle('intersections of correlated genes in E3.5&E4.5 and E5.5') +
+#   theme(plot.title = element_text(hjust = 0.5))
+# ggsave("figures/oct4_invivo_venn.pdf",device='pdf', width = 12, height = 12)
 
 # check in vivo intersection
 find_inter <- function(li){
@@ -1133,60 +1141,65 @@ find_inter <- function(li){
   return(r)
 }
 
-# positive to negative (in vivo)
-posi2nega_vivo <- find_inter(list(cluster6_posi = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho > 0,]),
-                                  cluster2_nega = rownames(oct4_spear_corr[['2']]$corr_df[oct4_spear_corr[['2']]$corr_df$rho < 0,])))[[2]]
-posi2nega_vivo
-posi2nega_vivo[posi2nega_vivo %in% positive_control_genes]
+# # positive to negative (in vivo)
+# posi2nega_vivo <- find_inter(list(cluster6_posi = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho > 0,]),
+#                                   cluster2_nega = rownames(oct4_spear_corr[['2']]$corr_df[oct4_spear_corr[['2']]$corr_df$rho < 0,])))[[2]]
+# posi2nega_vivo
+# posi2nega_vivo[posi2nega_vivo %in% positive_control_genes]
+# 
+# # positive to positive (in vivo)
+# posi2posi_vivo <- find_inter(list(cluster6_posi = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho > 0,]),
+#                                   cluster2_posi = rownames(oct4_spear_corr[['2']]$corr_df[oct4_spear_corr[['2']]$corr_df$rho > 0,])))[[2]]
+# posi2posi_vivo
+# posi2posi_vivo[posi2posi_vivo %in% positive_control_genes]
+# 
+# # negative to positive (in vivo)
+# nega2posi_vivo <- find_inter(list(cluster6_nega = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho < 0,]),
+#                                   cluster2_posi = rownames(oct4_spear_corr[['2']]$corr_df[oct4_spear_corr[['2']]$corr_df$rho > 0,])))[[2]]
+# nega2posi_vivo
+# nega2posi_vivo[nega2posi_vivo %in% positive_control_genes]
+# 
+# # negative to negative (in vivo)
+# nega2nega_vivo <- find_inter(list(cluster6_nega = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho < 0,]),
+#                                   cluster2_posi = rownames(oct4_spear_corr[['2']]$corr_df[oct4_spear_corr[['2']]$corr_df$rho < 0,])))[[2]]
+# nega2nega_vivo
+# nega2nega_vivo[nega2nega_vivo %in% positive_control_genes]
+# 
+# # in vitro intersections
+# ggVennDiagram(list(Serum_posi = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho > 0,]), 
+#                    Serum_nega = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho < 0,]),
+#                    Epi_posi = rownames(oct4_spear_corr[['5&7']]$corr_df[oct4_spear_corr[['5&7']]$corr_df$rho > 0,]), 
+#                    Epi_nega = rownames(oct4_spear_corr[['5&7']]$corr_df[oct4_spear_corr[['5&7']]$corr_df$rho < 0,])),
+#               label = "count", label_size = 5) +
+#   theme(legend.position = "none", plot.margin=margin(1,1,1,1,'cm')) +
+#   ggtitle('intersections of correlated genes in Serum and EpiStemCell') +
+#   theme(plot.title = element_text(hjust = 0.5))
+# ggsave("figures/oct4_invitro_venn.pdf",device='pdf', width = 10, height = 10)
+# 
+# # check in vitro intersection
+# posi2nega_vitro <- find_inter(list(cluster6_posi = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho > 0,]),
+#                                    cluster2_nega = rownames(oct4_spear_corr[['5&7']]$corr_df[oct4_spear_corr[['5&7']]$corr_df$rho < 0,])))[[2]]
+# posi2nega_vitro
+# posi2nega_vitro[posi2nega_vitro %in% positive_control_genes]
+# nega2posi_vitro <- find_inter(list(cluster6_nega = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho < 0,]),
+#                                    cluster2_posi = rownames(oct4_spear_corr[['5&7']]$corr_df[oct4_spear_corr[['5&7']]$corr_df$rho > 0,])))[[2]]
+# nega2posi_vitro
+# nega2posi_vitro[nega2posi_vitro %in% positive_control_genes]
+# 
+# # check intersections of in vivo intersections and in vitro intersection
+# find_inter(list(vitro=posi2nega_vitro,vivo=posi2nega_vivo))[[2]]
+# find_inter(list(vitro=nega2posi_vitro,vivo=nega2posi_vivo))[[2]]
 
-# positive to positive (in vivo)
-posi2posi_vivo <- find_inter(list(cluster6_posi = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho > 0,]),
-                                  cluster2_posi = rownames(oct4_spear_corr[['2']]$corr_df[oct4_spear_corr[['2']]$corr_df$rho > 0,])))[[2]]
-posi2posi_vivo
-posi2posi_vivo[posi2posi_vivo %in% positive_control_genes]
-
-# negative to positive (in vivo)
-nega2posi_vivo <- find_inter(list(cluster6_nega = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho < 0,]),
-                                  cluster2_posi = rownames(oct4_spear_corr[['2']]$corr_df[oct4_spear_corr[['2']]$corr_df$rho > 0,])))[[2]]
-nega2posi_vivo
-nega2posi_vivo[nega2posi_vivo %in% positive_control_genes]
-
-# negative to negative (in vivo)
-nega2nega_vivo <- find_inter(list(cluster6_nega = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho < 0,]),
-                                  cluster2_posi = rownames(oct4_spear_corr[['2']]$corr_df[oct4_spear_corr[['2']]$corr_df$rho < 0,])))[[2]]
-nega2nega_vivo
-nega2nega_vivo[nega2nega_vivo %in% positive_control_genes]
-
-# in vitro intersections
-ggVennDiagram(list(Serum_posi = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho > 0,]), 
-                   Serum_nega = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho < 0,]),
-                   Epi_posi = rownames(oct4_spear_corr[['5&7']]$corr_df[oct4_spear_corr[['5&7']]$corr_df$rho > 0,]), 
-                   Epi_nega = rownames(oct4_spear_corr[['5&7']]$corr_df[oct4_spear_corr[['5&7']]$corr_df$rho < 0,])),
-              label = "count", label_size = 5) +
-  theme(legend.position = "none", plot.margin=margin(1,1,1,1,'cm')) +
-  ggtitle('intersections of correlated genes in Serum and EpiStemCell') +
-  theme(plot.title = element_text(hjust = 0.5))
-ggsave("figures/oct4_invitro_venn.pdf",device='pdf', width = 10, height = 10)
-
-# check in vitro intersection
-posi2nega_vitro <- find_inter(list(cluster6_posi = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho > 0,]),
-                                   cluster2_nega = rownames(oct4_spear_corr[['5&7']]$corr_df[oct4_spear_corr[['5&7']]$corr_df$rho < 0,])))[[2]]
-posi2nega_vitro
-posi2nega_vitro[posi2nega_vitro %in% positive_control_genes]
-nega2posi_vitro <- find_inter(list(cluster6_nega = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho < 0,]),
-                                   cluster2_posi = rownames(oct4_spear_corr[['5&7']]$corr_df[oct4_spear_corr[['5&7']]$corr_df$rho > 0,])))[[2]]
-nega2posi_vitro
-nega2posi_vitro[nega2posi_vitro %in% positive_control_genes]
-
-# check intersections of in vivo intersections and in vitro intersection
-find_inter(list(vitro=posi2nega_vitro,vivo=posi2nega_vivo))[[2]]
-find_inter(list(vitro=nega2posi_vitro,vivo=nega2posi_vivo))[[2]]
-
-# check in vivo and in vitro intersections
-ggVennDiagram(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]), 
-                   Serum_nega = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho < 0,]),
-                   E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,]), 
-                   E4_nega = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho < 0,]),
+# check in vivo and in vitro intersections #####################################
+# oct4
+ggVennDiagram(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                               oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]), 
+                   Serum_nega = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho < 0 & 
+                                                                               oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                   E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                       oct4_spear_corr[['9']]$corr_df$FDR <0.01,]), 
+                   E4_nega = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho < 0 & 
+                                                                       oct4_spear_corr[['9']]$corr_df$FDR <0.01,]),
                    predicted = oct4_tar.potent),
               label = "count", label_size = 5) +
   theme(legend.position = "none", plot.margin=margin(1,1,1,1,'cm')) +
@@ -1194,27 +1207,33 @@ ggVennDiagram(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct
   theme(plot.title = element_text(hjust = 0.5))
 ggsave("figures/oct4_serum_E4_venn.pdf",device='pdf', width = 10, height = 10)
 
-oct4_posi_serum_E4 <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho > 0,]),
-                E4_posi = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho > 0,])))[[2]]
-oct4_posi_serum_E4 <- oct4_spear_corr[['4']]$corr_df[rownames(oct4_spear_corr[['4']]$corr_df) %in% oct4_posi_serum_E4,]
-oct4_posi_serum_E4 <- oct4_posi_serum_E4[order(oct4_posi_serum_E4$FDR, decreasing = FALSE),]
-find_inter(list(rownames(oct4_posi_serum_E4),oct4_tar.potent))[[2]]
-
-oct4_nega_serum_E4 <- find_inter(list(Serum_nega = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho < 0,]),
-                                      E4_nega = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho < 0,])))[[2]]
-oct4_nega_serum_E4 <- oct4_spear_corr[['4']]$corr_df[rownames(oct4_spear_corr[['4']]$corr_df) %in% oct4_nega_serum_E4,]
-oct4_nega_serum_E4 <- oct4_nega_serum_E4[order(oct4_nega_serum_E4$FDR, decreasing = FALSE),]
-find_inter(list(rownames(oct4_nega_serum_E4),oct4_tar.potent))[[2]]
-
-find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,]),
+# oct4_posi_serum_E4 <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho > 0,]),
+#                 E4_posi = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho > 0,])))[[2]]
+# oct4_posi_serum_E4 <- oct4_spear_corr[['4']]$corr_df[rownames(oct4_spear_corr[['4']]$corr_df) %in% oct4_posi_serum_E4,]
+# oct4_posi_serum_E4 <- oct4_posi_serum_E4[order(oct4_posi_serum_E4$FDR, decreasing = FALSE),]
+# find_inter(list(rownames(oct4_posi_serum_E4),oct4_tar.potent))[[2]]
+# 
+# oct4_nega_serum_E4 <- find_inter(list(Serum_nega = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho < 0,]),
+#                                       E4_nega = rownames(oct4_spear_corr[['6']]$corr_df[oct4_spear_corr[['6']]$corr_df$rho < 0,])))[[2]]
+# oct4_nega_serum_E4 <- oct4_spear_corr[['4']]$corr_df[rownames(oct4_spear_corr[['4']]$corr_df) %in% oct4_nega_serum_E4,]
+# oct4_nega_serum_E4 <- oct4_nega_serum_E4[order(oct4_nega_serum_E4$FDR, decreasing = FALSE),]
+# find_inter(list(rownames(oct4_nega_serum_E4),oct4_tar.potent))[[2]]
+# 
+find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                            oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                    oct4_spear_corr[['9']]$corr_df$FDR <0.01,]),
                 predicted = oct4_tar.potent))[[3]]
 
 # nanog 
-ggVennDiagram(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]), 
-                   Serum_nega = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho < 0,]),
-                   E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,]), 
-                   E4_nega = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho < 0,]),
+ggVennDiagram(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]), 
+                   Serum_nega = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho < 0 & 
+                                                                                nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                   E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                        nanog_spear_corr[['9']]$corr_df$FDR <0.01,]), 
+                   E4_nega = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho < 0 & 
+                                                                        nanog_spear_corr[['9']]$corr_df$FDR <0.01,]),
                    predicted = oct4_tar.potent),
               label = "count", label_size = 5) +
   theme(legend.position = "none", plot.margin=margin(1,1,1,1,'cm')) +
@@ -1222,15 +1241,21 @@ ggVennDiagram(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[na
   theme(plot.title = element_text(hjust = 0.5))
 ggsave("figures/nanog_serum_E4_venn.pdf",device='pdf', width = 10, height = 10)
 
-find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,]),
+find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                             nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                     nanog_spear_corr[['9']]$corr_df$FDR <0.01,]),
                 predicted = oct4_tar.potent))[[3]]
 
 # sox2
-ggVennDiagram(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]), 
-                   Serum_nega = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho < 0,]),
-                   E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,]), 
-                   E4_nega = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho < 0,]),
+ggVennDiagram(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                               sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]), 
+                   Serum_nega = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho < 0 & 
+                                                                               sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                   E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                       sox2_spear_corr[['9']]$corr_df$FDR <0.01,]), 
+                   E4_nega = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho < 0 & 
+                                                                       sox2_spear_corr[['9']]$corr_df$FDR <0.01,]),
                    predicted = oct4_tar.potent),
               label = "count", label_size = 5) +
   theme(legend.position = "none", plot.margin=margin(1,1,1,1,'cm')) +
@@ -1238,17 +1263,25 @@ ggVennDiagram(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox
   theme(plot.title = element_text(hjust = 0.5))
 ggsave("figures/sox2_serum_E4_venn.pdf",device='pdf', width = 10, height = 10)
 
-find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,]),
+find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                            sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                    sox2_spear_corr[['9']]$corr_df$FDR <0.01,]),
                 predicted = oct4_tar.potent))[[3]]
 
-# oct4 sox2 nanog
-ggVennDiagram(list(Oct4_targets = find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                                  E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]], 
-                   Nanog_targets = find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                                   E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                   Sox2_targets = find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                                  E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]], 
+# oct4 & sox2 & nanog
+ggVennDiagram(list(Oct4_targets = find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                                              oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                                  E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                                      oct4_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]], 
+                   Nanog_targets = find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                                                nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                                   E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                                        nanog_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]],
+                   Sox2_targets = find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                                              sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                                  E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                                      sox2_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]], 
                    predicted = oct4_tar.potent),
               label = "count", label_size = 5) +
   theme(legend.position = "none", plot.margin=margin(1,1,1,1,'cm')) +
@@ -1256,71 +1289,65 @@ ggVennDiagram(list(Oct4_targets = find_inter(list(Serum_posi = rownames(oct4_spe
   theme(plot.title = element_text(hjust = 0.5))
 ggsave("figures/all_serum_E4_venn.pdf",device='pdf', width = 10, height = 10)
 
-# oct4 sox2
-find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]))[[2]]
-
-# oct4 nanog
-find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]))[[2]]
-
-# sox2 nanog
-find_inter(list(find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]))[[2]]
+# # oct4 sox2
+# find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+#                                 E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
+#                 find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+#                                 E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]))[[2]]
+# 
+# # oct4 nanog
+# find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+#                                 E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
+#                 find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+#                                 E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]))[[2]]
+# 
+# # sox2 nanog
+# find_inter(list(find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+#                                 E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
+#                 find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+#                                 E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]))[[2]]
 
 # oct4 sox2 nanog
-find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]))[[3]]
+find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                            oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                    oct4_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]],
+                find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                             nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                     nanog_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]],
+                find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                            sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                    sox2_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]]))[[3]]
 
 # oct4 sox2 nanog candidates
-find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
-                find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0,])))[[2]],
+find_inter(list(find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                            oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                    oct4_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]],
+                find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                             nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                     nanog_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]],
+                find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                            sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,]),
+                                E4_posi = rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                                    sox2_spear_corr[['9']]$corr_df$FDR <0.01,])))[[2]],
                 predicted = oct4_tar.potent))[[4]]
 
 
 
-
-
-find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
-                E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]
-
-rank_by_fdr <- function(sce_obj,clust_num, examiners,gene_name, target){
+# find genes with oct4/nanog/sox2 in their top30 correlated genes list###########
+rank_by_pvalue <- function(sce_obj,clust_num, examiners,gene_name, target){
   # calculate the fdr rank of target in all genes correlated to 'gene_name'
   sce <- sce_obj[,sce_obj$label %in% clust_num]
-  get_corr <- function(name1,name2,sce){
-    if(name1==name2){
-      same <- t(as.matrix(c(1,0,0)))
-      colnames(same) <- c('rho','p.value','FDR')
-      rownames(same) <- name1
-      return(same)
-    }
-    else{
-      r <- as.matrix(correlatePairs(sce,subset.row=c(name1,name2), 
-                                    assay.type = "logcounts")[c('rho','p.value','FDR')])
-      rownames(r) <- name1
-      return(r)
-    }
-  }
   corr <- mclapply(examiners, FUN = get_corr, name2=gene_name, sce=sce, mc.cores=16)
   corr <- do.call(rbind, corr)
   corr <- as.data.frame(corr)
+  corr$FDR <- p.adjust(corr$p.value, method='fdr')
   corr <- corr[rownames(corr)!=gene_name,]
   corr <- corr[rowSums(is.na(corr)) == 0, ]
-  corr <- corr[corr$FDR < 0.01,]
   corr_posi <- corr[corr$rho >0,]
   if(! target %in% rownames(corr_posi)){
     result <- t(as.matrix(c(NA,NA,NA,NA,NA,NA,NA,NA)))
@@ -1328,8 +1355,8 @@ rank_by_fdr <- function(sce_obj,clust_num, examiners,gene_name, target){
     rownames(result) <- gene_name
     return(result)
   }
-  corr_posi <- corr_posi[order(corr_posi$FDR, decreasing = FALSE),]
-  corr_posi$rank <- rank(corr_posi$FDR)
+  corr_posi <- corr_posi[order(corr_posi$p.value, decreasing = FALSE),]
+  corr_posi$rank <- rank(corr_posi$p.value)
   corr_posi$posi_num <- nrow(corr_posi)
   result <- corr_posi[rownames(corr_posi) == target,]
   if(result$rank == result$posi_num){
@@ -1340,11 +1367,11 @@ rank_by_fdr <- function(sce_obj,clust_num, examiners,gene_name, target){
     next_rank_index <- match(target,rownames(corr_posi))+1
     next_rho <- corr_posi[next_rank_index, 'rho']
     rho_diff <- result$rho - next_rho
-    next_fdr <- corr_posi[next_rank_index, 'FDR']
-    fdr_diff <- next_fdr - result$FDR
+    next_pvalue <- corr_posi[next_rank_index, 'p.value']
+    pvalue_diff <- next_pvalue - result$p.value
   }
   result$rho_diff <- rho_diff
-  result$fdr_diff <- fdr_diff
+  result$pvalue_diff <- pvalue_diff
   result$expr_ratio <- nexprs(sce[rownames(sce)==gene_name,], byrow=TRUE)/ncol(sce)
   rownames(result) <- gene_name
   return(result)
@@ -1357,14 +1384,15 @@ filter_genes <- function(sce_obj,clust_num,ratio){
   return(filtered_genes)
 }
 
-rank_by_fdr(sce_dev,9,oct4_tar.potent,'Sf3b4','Pou5f1')
+rank_by_pvalue(sce_dev,9,oct4_tar.potent,'Sf3b4','Pou5f1')
 # candidates <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
 #                               E4_posi = rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])))[[2]]
 
 # Oct4 E4
-candidates <- rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])
+candidates <- rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                        oct4_spear_corr[['9']]$corr_df$FDR <0.01,])
 print(system.time(oct4_rank_E4 <- mclapply(candidates, 
-                                        FUN = rank_by_fdr, 
+                                        FUN = rank_by_pvalue, 
                                         sce_obj=sce_dev, 
                                         clust_num=c(9),
                                         examiners = filter_genes(sce_dev,
@@ -1378,9 +1406,10 @@ write.csv(oct4_rank_E4, 'figures/oct4_rank_E4.csv')
 rm(candidates)
 
 # Oct4 serum
-candidates <- rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,])
+candidates <- rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                             oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.01,])
 print(system.time(oct4_rank_serum <- mclapply(candidates, 
-                                           FUN = rank_by_fdr, 
+                                           FUN = rank_by_pvalue, 
                                            sce_obj=sce_dev, 
                                            clust_num=c(5,8,10),
                                            examiners = filter_genes(sce_dev,
@@ -1415,9 +1444,10 @@ find_inter(list(oct4_rank_E4 %>%
 
 
 # Nanog E4
-candidates <- rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])
+candidates <- rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                         nanog_spear_corr[['9']]$corr_df$FDR <0.01,])
 print(system.time(nanog_rank_E4 <- mclapply(candidates, 
-                                           FUN = rank_by_fdr, 
+                                           FUN = rank_by_pvalue, 
                                            sce_obj=sce_dev, 
                                            clust_num=c(9),
                                            examiners = filter_genes(sce_dev,
@@ -1431,9 +1461,10 @@ write.csv(nanog_rank_E4, 'figures/nanog_rank_E4.csv')
 rm(candidates)
 
 # Nanog serum
-candidates <- rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,])
+candidates <- rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                              nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.01,])
 print(system.time(nanog_rank_serum <- mclapply(candidates, 
-                                              FUN = rank_by_fdr, 
+                                              FUN = rank_by_pvalue, 
                                               sce_obj=sce_dev, 
                                               clust_num=c(5,8,10),
                                               examiners = filter_genes(sce_dev,
@@ -1444,4 +1475,37 @@ print(system.time(nanog_rank_serum <- mclapply(candidates,
 nanog_rank_serum <- do.call(rbind,nanog_rank_serum)
 nanog_rank_serum
 write.csv(nanog_rank_serum, 'figures/nanog_rank_serum.csv')
+
+# Sox2 E4
+candidates <- rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                        sox2_spear_corr[['9']]$corr_df$FDR <0.01,])
+print(system.time(sox2_rank_E4 <- mclapply(candidates, 
+                                            FUN = rank_by_pvalue, 
+                                            sce_obj=sce_dev, 
+                                            clust_num=c(9),
+                                            examiners = filter_genes(sce_dev,
+                                                                     clust_num = c(9),
+                                                                     ratio = 0.5), 
+                                            target = 'Pou5f1',
+                                            mc.cores=3)))
+sox2_rank_E4 <- do.call(rbind,sox2_rank_E4)
+sox2_rank_E4
+write.csv(sox2_rank_E4, 'figures/sox2_rank_E4.csv')
+rm(candidates)
+
+# Sox2 serum
+candidates <- rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                             sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,])
+print(system.time(sox2_rank_serum <- mclapply(candidates, 
+                                               FUN = rank_by_pvalue, 
+                                               sce_obj=sce_dev, 
+                                               clust_num=c(5,8,10),
+                                               examiners = filter_genes(sce_dev,
+                                                                        clust_num = c(5,8,10),
+                                                                        ratio = 0.5), 
+                                               target = 'Pou5f1',
+                                               mc.cores=3)))
+sox2_rank_serum <- do.call(rbind,sox2_rank_serum)
+sox2_rank_serum
+write.csv(sox2_rank_serum, 'figures/sox2_rank_serum.csv')
 rm(candidates)
