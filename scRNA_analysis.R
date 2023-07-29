@@ -31,6 +31,8 @@ library(glmGamPoi)
 library(parallel)
 library(MAST)
 library(clusterProfiler)
+library(ChIPseeker)
+library(TxDb.Mmusculus.UCSC.mm10.knownGene)
 
 # preparetion ##################################################################
 # set working directory
@@ -353,7 +355,8 @@ QC_venn <- ggVennDiagram(apply(venn[1:4], 2, function(x) which(x == TRUE)),
   scale_x_continuous(expand = expansion(mult = .2)) +
   scale_color_manual(values = c("deepskyblue2","darkolivegreen","darkorange","darkorchid")) +
   annotate('table',label = QC_table[,c(1,2,7,8)],x = 0, y = 0,vjust = 0.35, hjust = -0.4) +
-  theme(legend.position = c(0.95, 0.5))
+  theme(legend.position = c(0.95, 0.5)) +
+  scale_x_continuous(expand = expansion(mult = .2))
 QC_venn
 ggsave('figures/QC_venn.jpg',QC_venn, device='jpg', width = 8, height = 8)
 rm(venn)
@@ -1205,7 +1208,8 @@ ggVennDiagram(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct
               label = "count", label_size = 5) +
   theme(legend.position = "none") +
   ggtitle('intersections of correlated genes in Serum and E4 (Oct4)') +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(expand = expansion(mult = .2))
 ggsave("figures/oct4_serum_E4_venn.pdf",device='pdf', width = 10, height = 10)
 
 # oct4_posi_serum_E4 <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['4']]$corr_df[oct4_spear_corr[['4']]$corr_df$rho > 0,]),
@@ -1239,7 +1243,8 @@ ggVennDiagram(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[na
               label = "count", label_size = 5) +
   theme(legend.position = "none") +
   ggtitle('intersections of correlated genes in Serum and E4 (Nanog)') +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(expand = expansion(mult = .2))
 ggsave("figures/nanog_serum_E4_venn.pdf",device='pdf', width = 10, height = 10)
 
 find_inter(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
@@ -1261,7 +1266,8 @@ ggVennDiagram(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox
               label = "count", label_size = 5) +
   theme(legend.position = "none") +
   ggtitle('intersections of correlated genes in Serum and E4 (Sox2)') +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(expand = expansion(mult = .2))
 ggsave("figures/sox2_serum_E4_venn.pdf",device='pdf', width = 10, height = 10)
 
 find_inter(list(Serum_posi = rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
@@ -1287,7 +1293,8 @@ ggVennDiagram(list(Oct4_targets = find_inter(list(Serum_posi = rownames(oct4_spe
               label = "count", label_size = 5) +
   theme(legend.position = "none") +
   ggtitle('intersections of correlated genes in Serum and E4 (Oct4, Sox2, Nanog)') +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(expand = expansion(mult = .2))
 ggsave("figures/all_serum_E4_venn.pdf",device='pdf', width = 10, height = 10)
 
 # # oct4 sox2
@@ -1361,9 +1368,23 @@ ggVennDiagram(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct
               label = "count", label_size = 5) +
   theme(legend.position = "none") +
   ggtitle('intersections of correlated genes in Serum, E4 and RNA-seq (Oct4)') +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(expand = expansion(mult = .2))
 ggsave("figures/oct4_serum_E4_RNAseq_venn.pdf",device='pdf', width = 10, height = 10)
 
+# nanog depletion bulk RNA-seq targets
+ggVennDiagram(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                                                nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.1,]), 
+                   E4_posi = rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                                        nanog_spear_corr[['9']]$corr_df$FDR <0.1,]), 
+                   RNAseq_targets = nanog_RNA_seq_targets,
+                   predicted = oct4_tar.potent),
+              label = "count", label_size = 5) +
+  theme(legend.position = "none") +
+  ggtitle('intersections of correlated genes in Serum, E4 and RNAseq + ChIPseq (Nanog)') +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(expand = expansion(mult = .2))
+ggsave("figures/nanog_serum_E4_RNAseq_venn.pdf",device='pdf', width = 10, height = 10)
 
 # find genes with oct4/nanog/sox2 in their top30 correlated genes list###################
 rank_by_pvalue <- function(sce_obj,clust_num, examiners,gene_name, target){
@@ -1593,10 +1614,10 @@ enrich_analysis <- function(candidates,ensdb,orgdb,GO_term,row_number,organism,f
   # GO term is a list containing: 'CC'/'MF'/'BP'
   # row_number is the row number for each GO term subplot and KEGG plot
   target_df <- AnnotationDbi::select(ensdb, keys=candidates, 
-                                     keytype='SYMBOL', column='ENTREZID')
-  dupli_num <- sum(duplicated(target_df$SYMBOL))  # check duplication number
+                                     keytype='GENENAME', column='ENTREZID')
+  dupli_num <- sum(duplicated(target_df$GENENAME))  # check duplication number
   print(paste0('duplicates number: ',dupli_num))  
-  target_df <- target_df[!duplicated(target_df$SYMBOL),]
+  target_df <- target_df[!duplicated(target_df$GENENAME),]
   
   # GO
   csv_filename <- paste0('figures/enrich_go_',file_name,'.csv')
@@ -1655,6 +1676,9 @@ enrich_analysis <- function(candidates,ensdb,orgdb,GO_term,row_number,organism,f
   ggsave(jpg_filename,device='jpg', width = 10, height = 8)
 }
 
+# get orgdb
+orgdb.mm <- AnnotationHub()[["AH107060"]]
+
 # oct4 RNA seq
 enrich_analysis(oct4_RNA_seq_targets,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','oct4_RNAseq')
 
@@ -1681,14 +1705,186 @@ enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','oct4_serum&E4'
 # oct4 tightly correlated genes
 candidates <- oct4_rank_E4 %>% 
   arrange(rank) %>% 
-  dplyr::filter(rank <= 100 & expr_ratio > 0.5 & rho > 0.3) %>% 
+  dplyr::filter(rank <= 20 & expr_ratio > 0.5 & rho > 0.3) %>% 
   rownames(.)
 enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','oct4_E4_tight')
-
 
 # clean up
 rm(candidates)
 
+
+# # ChIP-seq peak annotation #####################################################
+# peak_anno_nanog <- annotatePeak("./ChIP_nanog_mm10.bed", 
+#                                 TxDb = TxDb.Mmusculus.UCSC.mm10.knownGene,
+#                                 tssRegion = c(-1000, 1000),
+#                                 annoDb="org.Mm.eg.db",
+#                                 addFlankGeneInfo = TRUE,
+#                                 flankDistance=5000)
+# 
+# # nanog ChIPseq targets
+# as.data.frame(peak_anno_nanog) %>% head()
+# # candidates <- as.data.frame(peak_anno_nanog) %>% 
+# #   dplyr::filter(distanceToTSS < 1000 & distanceToTSS > -1000) %>% .$geneId
+# candidates <- as.data.frame(peak_anno_nanog) %>% .$geneId
+# length(unique(candidates))
+# chip_targets_nanog <- AnnotationDbi::select(ens.mm.v109, 
+#                                             keys=candidates, 
+#                                             keytype='ENTREZID', column='GENENAME') %>% .$GENENAME
+# head(chip_targets_nanog)
+# length(chip_targets_nanog)
+# 
+# # # check genes within the flankDistance 
+# # id <- as.data.frame(peak_anno_nanog)$flank_geneIds
+# # sum(is.na(id))
+# # id <- id[!is.na(id)]
+# # length(id)
+# # sum(stringr::str_detect(id,';'))  # check how many peaks contain multiple genes in their flank distance
+# # id <- id[!stringr::str_detect(id,';')]
+# # length(id)
+# # rm(id)
+# 
+# # nanog RNAseq targets
+# nanog_RNA_seq_targets <- read.csv('RNAseq_nanog.csv',header=FALSE)
+# nanog_RNA_seq_targets <- nanog_RNA_seq_targets[,2]
+# head(nanog_RNA_seq_targets)
+# 
+# # clean up
+# rm(candidates)
+
+# other enrichment analysis tools (web-based method) ###########################
+# recommended web-based tools: ChEA3, Enrichr-KG
+# we need to record the gene number successfully recognized by web-tools (e.g. 1309 below)
+
+# oct4 serum ------------------------------------------------------------
+write.table(rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                            oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.1,]),
+            'figures/targets_oct4_serum.txt',
+            row.names = FALSE,col.names = FALSE, quote=FALSE)
+# literature enrichment (ChIP-X by ChEA3)
+liter_oct4_serum_df <- read.csv('figures/Literature_ChIP-seq_oct4_serum_1309.tsv',sep='\t')
+liter_oct4_serum_df$ratio <- liter_oct4_serum_df$Intersect / 1309  
+ggplot(liter_oct4_serum_df %>% 
+         dplyr::slice_min(n = 30, order_by = FDR),
+       aes(y=reorder(TF,-FDR),x=ratio))+
+  geom_point(aes(size=Intersect,color=FDR))+
+  scale_color_gradient(low = "red",high ="blue")+
+  labs(color=expression(FDR,size="Intersect"), 
+       x="Gene Ratio",y="Transcription Factor",title="literature ChIP-X Enrichment (Oct4 serum)")+
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 12),
+        axis.text.x = element_text(size = 12))
+ggsave('figures/liter_oct4_serum.jpg',device='jpg', width = 8, height = 8)
+# MGI enrichment (by Enrichr-KG)
+mgi_oct4_serum_df <- read.csv('figures/Enrichr-KG_MGI_oct4_serum_1316.csv')
+ggplot(mgi_oct4_serum_df %>%
+         dplyr::slice_min(n = 30, order_by = q.value),
+       aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
+  geom_bar(stat="identity") +
+  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Oct4 serum)") + 
+  coord_flip() +
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 11),
+        axis.text.x = element_text(size = 11))
+ggsave('figures/mgi_oct4_serum.jpg',device='jpg', width = 12, height = 8)
+
+# oct4 E4 -----------------------------------------------
+write.table(rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                           oct4_spear_corr[['9']]$corr_df$FDR <0.1,]),
+            'figures/targets_oct4_E4.txt',
+            row.names = FALSE,col.names = FALSE, quote=FALSE)
+# literature enrichment (ChIP-X by ChEA3)
+liter_oct4_E4_df <- read.csv('figures/Literature_ChIP-seq_oct4_E4_1380.tsv',sep='\t')
+liter_oct4_E4_df$ratio <- liter_oct4_E4_df$Intersect / 1380  
+ggplot(liter_oct4_E4_df %>% 
+         dplyr::slice_min(n = 30, order_by = FDR),
+       aes(y=reorder(TF,-FDR),x=ratio))+
+  geom_point(aes(size=Intersect,color=FDR))+
+  scale_color_gradient(low = "red",high ="blue")+
+  labs(color=expression(FDR,size="Intersect"), 
+       x="Gene Ratio",y="Transcription Factor",title="literature ChIP-X Enrichment (Oct4 E4)")+
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 12),
+        axis.text.x = element_text(size = 12))
+ggsave('figures/liter_oct4_E4.jpg',device='jpg', width = 8, height = 8)
+# MGI enrichment (by Enrichr-KG)
+mgi_oct4_E4_df <- read.csv('figures/Enrichr-KG_MGI_oct4_E4_1396.csv')
+ggplot(mgi_oct4_E4_df %>%
+         dplyr::slice_min(n = 30, order_by = q.value),
+       aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
+  geom_bar(stat="identity") +
+  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Oct4 E4)") + 
+  coord_flip() +
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 11),
+        axis.text.x = element_text(size = 11))
+ggsave('figures/mgi_oct4_E4.jpg',device='jpg', width = 12, height = 8)
+
+# nanog serum --------------------------------------------
+write.table(rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                            nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.1,]),
+            'figures/targets_nanog_serum.txt',
+            row.names = FALSE,col.names = FALSE, quote=FALSE)
+# literature enrichment (ChIP-X by ChEA3)
+liter_nanog_serum_df <- read.csv('figures/Literature_ChIP-seq_nanog_serum_1694.tsv',sep='\t')
+liter_nanog_serum_df$ratio <- liter_nanog_serum_df$Intersect / 1694  
+ggplot(liter_nanog_serum_df %>% 
+         dplyr::slice_min(n = 30, order_by = FDR),
+       aes(y=reorder(TF,-FDR),x=ratio))+
+  geom_point(aes(size=Intersect,color=FDR))+
+  scale_color_gradient(low = "red",high ="blue")+
+  labs(color=expression(FDR,size="Intersect"), 
+       x="Gene Ratio",y="Transcription Factor",title="literature ChIP-X Enrichment (Nanog serum)")+
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 12),
+        axis.text.x = element_text(size = 12))
+ggsave('figures/liter_nanog_serum.jpg',device='jpg', width = 8, height = 8)
+# MGI enrichment (by Enrichr-KG)
+mgi_nanog_serum_df <- read.csv('figures/Enrichr-KG_MGI_nanog_serum_1696.csv')
+ggplot(mgi_nanog_serum_df %>%
+         dplyr::slice_min(n = 30, order_by = q.value),
+       aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
+  geom_bar(stat="identity") +
+  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Nanog serum)") + 
+  coord_flip() +
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 11),
+        axis.text.x = element_text(size = 11))
+ggsave('figures/mgi_nanog_serum.jpg',device='jpg', width = 12, height = 8)
+
+# nanog E4 ---------------------------------------------
+write.table(rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                       nanog_spear_corr[['9']]$corr_df$FDR <0.1,]),
+            'figures/targets_nanog_E4.txt',
+            row.names = FALSE,col.names = FALSE, quote=FALSE)
+# literature enrichment (ChIP-X by ChEA3)
+liter_nanog_E4_df <- read.csv('figures/Literature_ChIP-seq_nanog_E4_1010.tsv',sep='\t')
+liter_nanog_E4_df$ratio <- liter_nanog_E4_df$Intersect / 1010  
+ggplot(liter_nanog_E4_df %>% 
+         dplyr::slice_min(n = 30, order_by = FDR),
+       aes(y=reorder(TF,-FDR),x=ratio))+
+  geom_point(aes(size=Intersect,color=FDR))+
+  scale_color_gradient(low = "red",high ="blue")+
+  labs(color=expression(FDR,size="Intersect"), 
+       x="Gene Ratio",y="Transcription Factor",title="literature ChIP-X Enrichment (Nanog E4)")+
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 12),
+        axis.text.x = element_text(size = 12))
+ggsave('figures/liter_nanog_E4.jpg',device='jpg', width = 8, height = 8)
+# MGI enrichment (by Enrichr-KG)
+mgi_nanog_E4_df <- read.csv('figures/Enrichr-KG_MGI_nanog_E4_1020.csv')
+ggplot(mgi_nanog_E4_df %>%
+         dplyr::slice_min(n = 30, order_by = q.value),
+       aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
+  geom_bar(stat="identity") +
+  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Oct4 E4)") + 
+  coord_flip() +
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 11),
+        axis.text.x = element_text(size = 11))
+ggsave('figures/mgi_nanog_E4.jpg',device='jpg', width = 12, height = 8)
+
+
+
 ###############################################################################
-save(list = ls(), file = '.RData')
-load('.RData')
+save(list = ls(), file = 'temp.RData')
+load('temp.RData')
