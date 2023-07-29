@@ -1481,17 +1481,6 @@ oct4_rank_serum %>%
   dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.3) %>% 
   rownames(.)
 
-find_inter(list(oct4_rank_E4 %>% 
-                  arrange(rank) %>% 
-                  dplyr::filter(rank <= 50 & expr_ratio > 0.5 & rho > 0.5) %>% 
-                  rownames(.),
-                oct4_rank_serum %>% 
-                  arrange(rank) %>% 
-                  dplyr::filter(rank <= 50 & expr_ratio > 0.5 & rho > 0.3) %>% 
-                  rownames(.)
-                ))[[2]]
-
-
 # Nanog E4
 candidates <- rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
                                                          nanog_spear_corr[['9']]$corr_df$FDR <0.01,])
@@ -1525,39 +1514,73 @@ nanog_rank_serum <- do.call(rbind,nanog_rank_serum)
 head(nanog_rank_serum)
 write.csv(nanog_rank_serum, 'figures/nanog_rank_serum.csv')
 
-# Sox2 E4
-candidates <- rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0 & 
-                                                        sox2_spear_corr[['9']]$corr_df$FDR <0.01,])
-print(system.time(sox2_rank_E4 <- mclapply(candidates, 
-                                            FUN = rank_by_pvalue, 
-                                            sce_obj=sce_dev, 
-                                            clust_num=c(9),
-                                            examiners = filter_genes(sce_dev,
-                                                                     clust_num = c(9),
-                                                                     ratio = 0.5), 
-                                            target = 'Pou5f1',
-                                            mc.cores=3)))
-sox2_rank_E4 <- do.call(rbind,sox2_rank_E4)
-head(sox2_rank_E4)
-write.csv(sox2_rank_E4, 'figures/sox2_rank_E4.csv')
-rm(candidates)
+# find overlaps
+ggVennDiagram(list(Oct4_E4 = oct4_rank_E4 %>% 
+                               arrange(rank) %>% 
+                               dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.3) %>% 
+                               rownames(.), 
+                   Oct4_serum = oct4_rank_serum %>% 
+                                  arrange(rank) %>% 
+                                  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.3) %>% 
+                                  rownames(.),
+                   Nanog_E4 = nanog_rank_E4 %>% 
+                                arrange(rank) %>% 
+                                dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.3) %>% 
+                                rownames(.),
+                   Nanog_serum = nanog_rank_serum %>% 
+                                   arrange(rank) %>% 
+                                   dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.3) %>% 
+                                   rownames(.)),
+              label = "count", label_size = 5) +
+  theme(legend.position = "none") +
+  ggtitle('intersections of tightly correlated genes') +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(expand = expansion(mult = .2))
+ggsave("figures/tightly_correlated_genes_venn.pdf",device='pdf', width = 10, height = 10)
 
-# Sox2 serum
-candidates <- rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
-                                                             sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,])
-print(system.time(sox2_rank_serum <- mclapply(candidates, 
-                                               FUN = rank_by_pvalue, 
-                                               sce_obj=sce_dev, 
-                                               clust_num=c(5,8,10),
-                                               examiners = filter_genes(sce_dev,
-                                                                        clust_num = c(5,8,10),
-                                                                        ratio = 0.5), 
-                                               target = 'Pou5f1',
-                                               mc.cores=3)))
-sox2_rank_serum <- do.call(rbind,sox2_rank_serum)
-head(sox2_rank_serum)
-write.csv(sox2_rank_serum, 'figures/sox2_rank_serum.csv')
-rm(candidates)
+find_inter(list(oct4_rank_E4 %>% 
+                  arrange(rank) %>% 
+                  dplyr::filter(rank <= 10 & expr_ratio > 0.5 & rho > 0.3) %>% 
+                  rownames(.),
+                nanog_rank_E4 %>% 
+                  arrange(rank) %>% 
+                  dplyr::filter(rank <= 10 & expr_ratio > 0.5 & rho > 0.3) %>% 
+                  rownames(.)
+))[[2]]
+
+# # Sox2 E4
+# candidates <- rownames(sox2_spear_corr[['9']]$corr_df[sox2_spear_corr[['9']]$corr_df$rho > 0 & 
+#                                                         sox2_spear_corr[['9']]$corr_df$FDR <0.01,])
+# print(system.time(sox2_rank_E4 <- mclapply(candidates, 
+#                                             FUN = rank_by_pvalue, 
+#                                             sce_obj=sce_dev, 
+#                                             clust_num=c(9),
+#                                             examiners = filter_genes(sce_dev,
+#                                                                      clust_num = c(9),
+#                                                                      ratio = 0.5), 
+#                                             target = 'Pou5f1',
+#                                             mc.cores=3)))
+# sox2_rank_E4 <- do.call(rbind,sox2_rank_E4)
+# head(sox2_rank_E4)
+# write.csv(sox2_rank_E4, 'figures/sox2_rank_E4.csv')
+# rm(candidates)
+# 
+# # Sox2 serum
+# candidates <- rownames(sox2_spear_corr[['5&8&10']]$corr_df[sox2_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+#                                                              sox2_spear_corr[['5&8&10']]$corr_df$FDR <0.01,])
+# print(system.time(sox2_rank_serum <- mclapply(candidates, 
+#                                                FUN = rank_by_pvalue, 
+#                                                sce_obj=sce_dev, 
+#                                                clust_num=c(5,8,10),
+#                                                examiners = filter_genes(sce_dev,
+#                                                                         clust_num = c(5,8,10),
+#                                                                         ratio = 0.5), 
+#                                                target = 'Pou5f1',
+#                                                mc.cores=3)))
+# sox2_rank_serum <- do.call(rbind,sox2_rank_serum)
+# head(sox2_rank_serum)
+# write.csv(sox2_rank_serum, 'figures/sox2_rank_serum.csv')
+# rm(candidates)
 
 # check FDR < 0.1 genes number ################################################
 fdr_lt_0.1_num <- function(sce_obj,clust_num, examiners,gene_name){
@@ -1702,12 +1725,29 @@ candidates <- find_inter(list(Serum_posi = rownames(oct4_spear_corr[['5&8&10']]$
                                                                                   oct4_spear_corr[['9']]$corr_df$FDR <0.1,])))[[2]]
 enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','oct4_serum&E4')
 
-# oct4 tightly correlated genes
+# oct4 tightly correlated genes in E4
 candidates <- oct4_rank_E4 %>% 
   arrange(rank) %>% 
-  dplyr::filter(rank <= 20 & expr_ratio > 0.5 & rho > 0.3) %>% 
+  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.3) %>% 
   rownames(.)
 enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','oct4_E4_tight')
+
+# oct4 tightly correlated genes in serum
+candidates <- oct4_rank_serum %>% 
+  arrange(rank) %>% 
+  dplyr::filter(rank <= 30 & expr_ratio > 0.5 & rho > 0.3) %>% 
+  rownames(.)
+enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','oct4_serum_tight')
+
+# nanog E4 
+candidates <- rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
+                                                         nanog_spear_corr[['9']]$corr_df$FDR <0.1,])
+enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','nanog_E4')
+
+# nanog serum 
+candidates <- rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
+                                                             nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.1,])
+enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','nanog_serum')
 
 # clean up
 rm(candidates)
@@ -1757,7 +1797,7 @@ rm(candidates)
 
 # oct4 serum ------------------------------------------------------------
 write.table(rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
-                                                            oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.1,]),
+                                                           oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.1,]),
             'figures/targets_oct4_serum.txt',
             row.names = FALSE,col.names = FALSE, quote=FALSE)
 # literature enrichment (ChIP-X by ChEA3)
@@ -1772,7 +1812,8 @@ ggplot(liter_oct4_serum_df %>%
        x="Gene Ratio",y="Transcription Factor",title="literature ChIP-X Enrichment (Oct4 serum)")+
   theme_bw() +
   theme(axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12))
+        axis.text.x = element_text(size = 12)) +
+  guides(size=guide_legend("Count"))
 ggsave('figures/liter_oct4_serum.jpg',device='jpg', width = 8, height = 8)
 # MGI enrichment (by Enrichr-KG)
 mgi_oct4_serum_df <- read.csv('figures/Enrichr-KG_MGI_oct4_serum_1316.csv')
@@ -1804,7 +1845,8 @@ ggplot(liter_oct4_E4_df %>%
        x="Gene Ratio",y="Transcription Factor",title="literature ChIP-X Enrichment (Oct4 E4)")+
   theme_bw() +
   theme(axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12))
+        axis.text.x = element_text(size = 12)) +
+  guides(size=guide_legend("Count"))
 ggsave('figures/liter_oct4_E4.jpg',device='jpg', width = 8, height = 8)
 # MGI enrichment (by Enrichr-KG)
 mgi_oct4_E4_df <- read.csv('figures/Enrichr-KG_MGI_oct4_E4_1396.csv')
@@ -1836,7 +1878,8 @@ ggplot(liter_nanog_serum_df %>%
        x="Gene Ratio",y="Transcription Factor",title="literature ChIP-X Enrichment (Nanog serum)")+
   theme_bw() +
   theme(axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12))
+        axis.text.x = element_text(size = 12)) +
+  guides(size=guide_legend("Count"))
 ggsave('figures/liter_nanog_serum.jpg',device='jpg', width = 8, height = 8)
 # MGI enrichment (by Enrichr-KG)
 mgi_nanog_serum_df <- read.csv('figures/Enrichr-KG_MGI_nanog_serum_1696.csv')
@@ -1868,7 +1911,8 @@ ggplot(liter_nanog_E4_df %>%
        x="Gene Ratio",y="Transcription Factor",title="literature ChIP-X Enrichment (Nanog E4)")+
   theme_bw() +
   theme(axis.text.y = element_text(size = 12),
-        axis.text.x = element_text(size = 12))
+        axis.text.x = element_text(size = 12)) +
+  guides(size=guide_legend("Count"))
 ggsave('figures/liter_nanog_E4.jpg',device='jpg', width = 8, height = 8)
 # MGI enrichment (by Enrichr-KG)
 mgi_nanog_E4_df <- read.csv('figures/Enrichr-KG_MGI_nanog_E4_1020.csv')
@@ -1882,7 +1926,6 @@ ggplot(mgi_nanog_E4_df %>%
   theme(axis.text.y = element_text(size = 11),
         axis.text.x = element_text(size = 11))
 ggsave('figures/mgi_nanog_E4.jpg',device='jpg', width = 12, height = 8)
-
 
 
 ###############################################################################
