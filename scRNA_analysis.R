@@ -834,7 +834,7 @@ detail_sil <- function(res, seurat, PC_sele){
     ggsave(dir3, device='jpg', width = 8, height = 6)
   }
 }
-detail_sil(res=c(0.1,0.4,1.1,1.2), seurat = seurat, PC_sele=PC_num.gml)
+detail_sil(res=c(0.1,0.4,1.1,1.2), seurat = seurat, PC_sele=PC_num.gml) # need to generate cluster data with specific resolution in advance to Seurat object
 
 # clean up variable
 rm(group_diff)
@@ -1582,7 +1582,7 @@ find_inter(list(oct4_rank_E4 %>%
 # write.csv(sox2_rank_serum, 'figures/sox2_rank_serum.csv')
 # rm(candidates)
 
-# check FDR < 0.1 genes number ################################################
+# check correlated genes number (FDR < 0.1)##################################################
 fdr_lt_0.1_num <- function(sce_obj,clust_num, examiners,gene_name){
   sce <- sce_obj[,sce_obj$label %in% clust_num]
   corr <- mclapply(examiners, FUN = get_corr, name2=gene_name, sce=sce, mc.cores=16)
@@ -1599,9 +1599,7 @@ fdr_lt_0.1_num <- function(sce_obj,clust_num, examiners,gene_name){
   rownames(count) <- gene_name
   return(count)
 }
-# oct4 positively correlated genes (E4)
-candidates <- rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
-                                                        oct4_spear_corr[['9']]$corr_df$FDR <0.1,])
+# oct4 potential target genes (E4)
 print(system.time(fdr_count_oct4_E4 <- mclapply(unique(c(positive_control_genes,oct4_tar.potent)), 
                                            FUN = fdr_lt_0.1_num, 
                                            sce_obj=sce_dev, 
@@ -1612,12 +1610,10 @@ print(system.time(fdr_count_oct4_E4 <- mclapply(unique(c(positive_control_genes,
                                            mc.cores=3)))
 fdr_count_oct4_E4 <- do.call(rbind,fdr_count_oct4_E4)
 fdr_count_oct4_E4 <- as.data.frame(fdr_count_oct4_E4)
-fdr_count_oct4_E4$total <- fdr_count_oct4_E4$posi_counts+fdr_count_oct4_E4$nega_counts
+fdr_count_oct4_E4$total <- fdr_count_oct4_E4$posi_counts + fdr_count_oct4_E4$nega_counts
 head(fdr_count_oct4_E4)
 
-# oct4 positively correlated genes (serum)
-candidates <- rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
-                                                        oct4_spear_corr[['5&8&10']]$corr_df$FDR <0.1,])
+# oct4 potential target genes (serum)
 print(system.time(fdr_count_oct4_serum <- mclapply(unique(c(positive_control_genes,oct4_tar.potent)), 
                                                 FUN = fdr_lt_0.1_num, 
                                                 sce_obj=sce_dev, 
@@ -1630,6 +1626,11 @@ fdr_count_oct4_serum <- do.call(rbind,fdr_count_oct4_serum)
 fdr_count_oct4_serum <- as.data.frame(fdr_count_oct4_serum)
 fdr_count_oct4_serum$total <- fdr_count_oct4_serum$posi_counts+fdr_count_oct4_serum$nega_counts
 head(fdr_count_oct4_serum)
+
+# check overlaps
+find_inter(list(E4 = fdr_count_oct4_E4 %>% dplyr::slice_max(n = 30, order_by = total) %>% rownames(),
+                serum = fdr_count_oct4_serum %>% dplyr::slice_max(n = 30, order_by = total) %>% rownames()))[[2]]
+
 
 # enrichment analysis ##########################################################
 enrich_analysis <- function(candidates,ensdb,orgdb,GO_term,row_number,organism,file_name){
