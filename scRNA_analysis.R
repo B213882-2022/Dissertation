@@ -33,6 +33,9 @@ library(MAST)
 library(clusterProfiler)
 library(ChIPseeker)
 library(TxDb.Mmusculus.UCSC.mm10.knownGene)
+library(igraph)
+library(qgraph)
+library(BiocParallel)
 
 # preparetion ##################################################################
 # set working directory
@@ -441,6 +444,7 @@ rm(Cell_Types)
 rm(Total)
 
 
+
 # gene filtering ###############################################################
 # remove spikes
 sce <- splitAltExps(sce, is.spike)
@@ -675,6 +679,10 @@ res_sele <-1.1  # 0.1, 0.4, 0.7, 1.1, 1.2
 seurat <- FindNeighbors(seurat, dims = 1:PC_num.gml)
 seurat <- FindClusters(seurat, resolution = res_sele, algorithm = 4)  # algorithm 4 is "Leiden"; 1 is "Louvain"
 DimPlot(seurat, reduction = "tsne", label = TRUE, shape.by = 'Cell.Type')
+# DimPlot(seurat, reduction = "umap" , shape.by = 'Cell.Type', label = TRUE)
+# ggsave('figures/leiden_res_1.1_umap.jpg', device='jpg', width = 8, height = 6)
+# DimPlot(seurat, reduction = "pca" , shape.by = 'Cell.Type', label = TRUE)
+# ggsave('figures/leiden_res_1.1_pca.jpg', device='jpg', width = 8, height = 6)
 
 # # use cluster results by SC3 (7 clusters)
 # seurat$sc3_7_clusters <- sce_dev_SC3$sc3_7_clusters
@@ -784,6 +792,24 @@ rm(test_markers)
 rm(test_top100)
 rm(group_top100)
 
+# find all markers within 3 clusters of serum
+group_marker_serum <- FindAllMarkers(subset(seurat, idents = c(5,8,10)), 
+                                     only.pos = TRUE, min.pct = 0.25, 
+                                     logfc.threshold = 0.25, test.use = 'wilcox')
+group_marker_serum <- group_marker_serum %>% dplyr::filter(p_val_adj < 0.1)
+nrow(group_marker_serum)
+group_marker_serum %>%
+  group_by(cluster) %>%
+  dplyr::slice_min(n = 15, order_by = p_val_adj) -> top15
+top15 <- top15[!duplicated(top15$gene),]
+top15 %>%
+  group_by(cluster) %>%
+  dplyr::slice_min(n = 10, order_by = p_val_adj) -> top10
+top10
+DoHeatmap(subset(seurat, idents = c(5,8,10)),
+          features=top10$gene, slot = "scale.data") #+ scale_fill_virdis()
+ggsave('figures/leiden_markers_serum.jpg', device='jpg', width = 6, height = 6)
+
 # plot marker genes of each cluster (heatmap)
 # top 15 is created in case duplications appear
 group_marker %>%
@@ -835,6 +861,43 @@ detail_sil <- function(res, seurat, PC_sele){
   }
 }
 detail_sil(res=c(0.1,0.4,1.1,1.2), seurat = seurat, PC_sele=PC_num.gml) # need to generate cluster data with specific resolution in advance to Seurat object
+
+# check modularity of the SNN network to further decide the resolution
+nn.clust <- clusterCells(sce_dev, use.dimred="PCA", full=TRUE)
+ratio <- pairwiseModularity(nn.clust$objects$graph, 
+                            seurat@meta.data[[paste0('originalexp_snn_res.',1.1)]], 
+                            as.ratio=TRUE)
+modularity_dev_1.1 <- pheatmap(log2(ratio+1), cluster_rows=FALSE, cluster_cols=FALSE,
+                               color=colorRampPalette(c("white", "blue"))(100),
+                               angle_col = 0, display_numbers = TRUE, number_color = 'red')
+ggsave('figures/modularity_dev_1.1.jpg',modularity_dev_1.1,device='jpg', width = 5, height = 4)
+# cluster.gr <- igraph::graph_from_adjacency_matrix(log2(ratio+1),
+#                                                   mode="upper", weighted=TRUE, diag=TRUE)
+# pdf('figures/modularity_dev_1.1.pdf',width=7,height=7)
+# set.seed(1000)
+# plot(cluster.gr, edge.width=E(cluster.gr)$weight*3,
+#      layout=layout_in_circle(cluster.gr),
+#      edge.label = round(E(cluster.gr)$weight,2),
+#      xlim=c(-2,2), ylim=c(-2,2))
+# title('Resolution: 1.1', line = -2)
+# dev.off()
+
+# qgraph(get.adjacency(cluster.gr, attr = "weight", sparse = FALSE),
+#        edge.color='black',fade=FALSE,
+#        edge.labels=round(E(cluster.gr)$weight,2),
+#        edge.label.bg='white')
+rm(nn.clust)
+rm(ratio)
+rm(cluster.gr)
+
+# check Oct4 and Nanog variation
+sce_E4_serum <- sce_dev[,sce_dev$label %in% c(5,8,9,10)]
+sce_E4_serum
+sce_E4_serum$combined_clusters <- ifelse(sce_E4_serum$label %in% c(9),'E4','serum')
+plotExpression(sce_E4_serum,c('Pou5f1','Nanog'),x='combined_clusters',exprs_values = "logcounts") +
+  xlab('Cell Type') + ylab('Log Counts')
+ggsave('figures/variation_logcounts.jpg',device='jpg', width = 5, height = 5)
+rm(sce_E4_serum)
 
 # clean up variable
 rm(group_diff)
@@ -918,6 +981,8 @@ tar_length
 
 # calculate Spearman correlation
 oct4_tar.corr <- correlatePairs(sce_dev[,sce_dev$Cell.Type == 'ES'], subset.row=oct4_tar.potent)
+# oct4_tar.corr <- correlatePairs(sce_dev[,sce_dev$Cell.Type == 'E3.5 ICM' |
+#                                           sce_dev$Cell.Type == 'E4.5 Epiblast'], subset.row=oct4_tar.potent)
 oct4_tar.corr <- oct4_tar.corr[apply(is.na(oct4_tar.corr),1,sum)==0,]
 oct4_tar.corr
 
@@ -930,13 +995,13 @@ build_corr <- function(corr){
   rownames(corr.matrix) <- corr.matrix$gene1
   corr.matrix$gene1 <- NULL  # remove 1st column
   diag(corr.matrix) <- 1
-  return(corr.matrix)
+  return(as.matrix(corr.matrix))
 }
 oct4_tar_corr.matrix <- build_corr(oct4_tar.corr)
 
 # plot correlation
 oct4_potent_tar <- pheatmap(oct4_tar_corr.matrix,fontsize_row=3,fontsize_col=3, 
-                            main = 'Spearman correlation of potential Oct4 targets in serum',
+                            main = 'Spearman correlation of potential Oct4 targets in Serum',
                             breaks = seq(-1,1,0.05), 
                             color = colorRampPalette(rev(RColorBrewer::brewer.pal(11,"RdBu")))(40))
 # change Oct4 text color to red
@@ -952,6 +1017,210 @@ ggsave('figures/oct4_potent_tar_serum.jpg',oct4_potent_tar, device='jpg', width 
 rm(names)
 rm(color)
 rm(tar_length)
+
+
+# find hub genes from potential oct4 direct targets (serum) ########################
+centrality_pval <- function(permuted_matrix, tested_degree){
+  p_values <- apply(permuted_matrix, 1, function(x, obs) mean(x >= obs), obs = tested_degree)
+  pval <- mean(p_values)
+  return(pval)
+}
+
+permute_degree <- function(g,x=0){
+  # g: igraph object
+  # do not delete x=0, it is used for mclappy
+  g_permuted <- permute(g, sample(vcount(g)))
+  permuted_degree <- strength(g_permuted, weights = E(g_permuted)$weight)
+  return(permuted_degree)
+}
+
+build_network <- function(corr_matrix, threshold=0.3, file_name,seed=1000, permute_n=1000){
+  tsv_filename <- paste0('figures/weighted_degrees_',file_name,'.csv')
+  network_filename <- paste0('figures/network_',file_name)
+  adjacency_matrix <- as.matrix(corr_matrix)
+  adjacency_matrix[adjacency_matrix < threshold] <- 0
+  diag(adjacency_matrix) <- 0 # Remove self-loops
+  g <- graph_from_adjacency_matrix(adjacency_matrix, mode = "undirected", weighted = TRUE)
+  print(length(V(g)))
+  weighted_degrees <- strength(g, weights = E(g)$weight)  # Sum up the edge weights for each gene
+  
+  # calculate weighted_degree probability density
+  print(system.time(permuted_degree_matrix <- mclapply(1:permute_n,
+                                                       FUN=permute_degree,
+                                                       g=g,
+                                                       mc.cores=8)))
+  permuted_degree_matrix <- do.call(rbind, permuted_degree_matrix)
+  permuted_degree_matrix <- t(permuted_degree_matrix)
+  print(dim(permuted_degree_matrix))
+  
+  # calculate p value
+  print(system.time(weighted_degrees_pval <- mclapply(weighted_degrees,
+                                                      FUN = centrality_pval,
+                                                      permuted_matrix=permuted_degree_matrix,
+                                                      mc.cores=8)))
+  weighted_degrees_pval <- do.call(rbind,weighted_degrees_pval)
+  colnames(weighted_degrees_pval) <- 'p_value'
+  #head(weighted_degrees_pval)
+  # for(res in seq(0.6,2,0.2)){
+  #   set.seed(seed)
+  #   communities <- cluster_louvain(g, resolution = res)
+  #   new_modul <- modularity(communities)
+  #   if(res > 0.6){
+  #     if(new_modul > old_modul){
+  #       final_res <- res
+  #     }
+  #   }else{
+  #     old_modul <- new_modul
+  #     final_res <- 0.6
+  #   }
+  # }
+  # print(final_res)
+  result_df <- data.frame(gene_name=names(weighted_degrees),
+                          weighted_degrees=weighted_degrees,
+                          p_value=weighted_degrees_pval[,1],
+                          FDR=p.adjust(weighted_degrees_pval[,1], method = "fdr"),
+                          cluster=as.numeric(membership(cluster_louvain(g,resolution = 1))))
+  write.csv(result_df,tsv_filename, row.names = FALSE)
+  threshold <- 0.3
+  while(TRUE){
+    print(threshold)
+    adjacency_matrix[adjacency_matrix < threshold] <- 0 
+    #sum(adjacency_matrix >= 0.3)/2
+    diag(adjacency_matrix) <- 0 # Remove self-loops
+    g <- graph_from_adjacency_matrix(adjacency_matrix, mode = "undirected", weighted = TRUE)
+    weighted_degrees <- strength(g, weights = E(g)$weight)  # Sum up the edge weights for each gene
+    #hub_genes <- names(sort(weighted_degrees, decreasing = TRUE)[1:20])
+    #hub_genes
+    color_palette <- colorRampPalette(c("white", "red"))
+    scaled_degrees <- (weighted_degrees - min(weighted_degrees)) / (max(weighted_degrees) - min(weighted_degrees))*99+1
+    vertex_colors <- color_palette(100)[as.integer(scaled_degrees)]
+    g_sub <- induced_subgraph(g, which(weighted_degrees > 0))
+    print(length(V(g_sub)))
+    if(length(V(g_sub))<=3000 | threshold >= 0.85){break}else{threshold <- threshold + 0.05}
+  }
+  #length(V(g_sub))
+  set.seed(seed)
+  qgraph(get.adjacency(g_sub, attr = "weight", sparse = FALSE), 
+         layout = qgraph.layout.fruchtermanreingold(get.edgelist(g_sub,names=FALSE),vcount=vcount(g_sub),
+                                                    area=30*(vcount(g_sub)^2),repulse.rad=(vcount(g_sub)^2.8)), 
+         color=vertex_colors[weighted_degrees > 0],
+         vsize=(weighted_degrees/max(weighted_degrees) * 2.5+1)[weighted_degrees > 0],
+         labels = names(V(g_sub)),
+         label.color=ifelse(names(V(g_sub)) %in% c('Nanog','Pou5f1','Sox2'), "blue", "black"),
+         border.color='orange',
+         filename=network_filename,
+         filetype = "pdf", height = 8, width = 12)
+  
+  # cluster nodes by Louvain
+  network_filename2 <- paste0('figures/network_',file_name,'_clustered.pdf')
+  # for(res in seq(0.6,2,0.1)){
+  #   set.seed(seed)
+  #   communities <- cluster_louvain(g_sub,resolution = res)
+  #   new_modul <- modularity(communities)
+  #   if(res > 0.6){
+  #     if(new_modul > old_modul){
+  #       final_res <- res
+  #     }
+  #   }else{
+  #     old_modul <- new_modul
+  #     final_res <- 0.6
+  #   }
+  # }
+  # print(final_res)
+  set.seed(seed)
+  communities <- cluster_louvain(g_sub, resolution=1)
+  modularity(communities)
+  membership_vector <- membership(communities)  # recording the clustering results
+  if(max(membership_vector) > 10){
+    colors <- rainbow(max(membership_vector))
+    node_colors <- colors[membership_vector]
+    top10_member <- as.numeric(names(sort(table(membership_vector),decreasing = TRUE)[1:10]))
+    node_colors[!membership_vector %in% top10_member] <- '#FFFFFF'
+    n <- 1
+    for(i in top10_member){
+      node_colors[membership_vector == i] <- rainbow(10)[n]
+      n <- n+1
+    }
+    legend_names <- as.character(sort(table(membership_vector),decreasing = TRUE)[1:10])
+    legend_colors <- rainbow(10)
+  }else{
+    colors <- rainbow(max(membership_vector))
+    node_colors <- colors[membership_vector]
+    legend_names <- as.character(sort(table(membership_vector),decreasing = TRUE))
+    legend_colors <- node_colors
+  }
+  pdf(network_filename2,height = 8, width = 12)
+  set.seed(seed)
+  qgraph(get.adjacency(g_sub, attr = "weight", sparse = FALSE),
+         layout = qgraph.layout.fruchtermanreingold(get.edgelist(g_sub,names=FALSE),vcount=vcount(g_sub),
+                                                    area=30*(vcount(g_sub)^2),repulse.rad=(vcount(g_sub)^2.8)),
+         color=node_colors,
+         vsize=(weighted_degrees/max(weighted_degrees) * 2.5+1)[weighted_degrees > 0],
+         labels = names(V(g_sub)),
+         label.color=ifelse(names(V(g_sub)) %in% c('Nanog','Pou5f1','Sox2'), "blue", "black"),
+         border.color='orange')
+  legend("right", legend = legend_names, col = legend_colors, pch = 16,title="Node Number")
+  dev.off()
+  # write.csv(data.frame(cluster=as.numeric(membership(cluster_louvain(g)))), 
+  #           'figures/test.csv')
+  return(list(result_df,threshold))
+}
+
+# # network of serum (oct4 potential targets)
+# hubgenes_oct4_tar_serum <- build_network(oct4_tar_corr.matrix, file_name='oct4_tar_serum',seed=seed)
+# hubgenes_oct4_tar_serum[[2]]
+# head(hubgenes_oct4_tar_serum[[1]])
+
+# # network of E4 (oct4 potential targets)
+# oct4_tar_E4.corr <- correlatePairs(sce_dev[,sce_dev$Cell.Type == 'E3.5 ICM' |
+#                                           sce_dev$Cell.Type == 'E4.5 Epiblast'], subset.row=oct4_tar.potent,
+#                                    BPPARAM = MulticoreParam(workers = 20))
+# oct4_tar_E4.corr <- oct4_tar_E4.corr[apply(is.na(oct4_tar_E4.corr),1,sum)==0,]
+# oct4_tar_E4_corr.matrix <- build_corr(oct4_tar_E4.corr)
+# hubgenes_oct4_tar_E4 <- build_network(oct4_tar_E4_corr.matrix, threshold=0.3,
+#                                       file_name='oct4_tar_E4',seed=seed)
+# hubgenes_oct4_tar_E4[[2]]
+# head(hubgenes_oct4_tar_E4[[1]])
+
+# check hub genes of the network built by genes expressed in more than 50% of the cells in specific cluster
+widely_expressed_serum.corr <- correlatePairs(sce_dev[,sce_dev$Cell.Type == 'ES'], 
+                                              subset.row=filter_genes(sce_dev,
+                                                                      clust_num = c(5,8,10),
+                                                                      ratio = 0.8),
+                                              BPPARAM = MulticoreParam(workers = 20))
+widely_expressed_serum.corr <- widely_expressed_serum.corr[apply(is.na(widely_expressed_serum.corr),1,sum)==0,]
+widely_expressed_serum.matrix <- build_corr(widely_expressed_serum.corr)
+widely_expressed_serum.matrix <- as.matrix(widely_expressed_serum.matrix)
+rm(widely_expressed_serum.corr)
+nrow(widely_expressed_serum.matrix)
+widely_expressed_serum.matrix[1:5,1:5]
+hubgenes_widely_expressed_serum <- build_network(widely_expressed_serum.matrix,
+                                                 file_name='widely_expressed_serum')
+
+
+# check hub genes of the network built by genes expressed in more than 50% of the cells in specific cluster
+widely_expressed_E4.corr <- correlatePairs(sce_dev[,sce_dev$Cell.Type == 'E3.5 ICM' |
+                                                        sce_dev$Cell.Type == 'E4.5 Epiblast'], 
+                                              subset.row=filter_genes(sce_dev,
+                                                                      clust_num = c(9),
+                                                                      ratio = 0.8),
+                                           BPPARAM = MulticoreParam(workers = 20))
+widely_expressed_E4.corr <- widely_expressed_E4.corr[apply(is.na(widely_expressed_E4.corr),1,sum)==0,]
+widely_expressed_E4.matrix <- build_corr(widely_expressed_E4.corr)
+widely_expressed_E4.matrix <- as.matrix(widely_expressed_E4.matrix)
+rm(widely_expressed_E4.corr)
+nrow(widely_expressed_E4.matrix)
+widely_expressed_E4.matrix[1:5,1:5]
+hubgenes_widely_expressed_E4 <- build_network(widely_expressed_E4.matrix,
+                                                 file_name='widely_expressed_E4')
+rm(g)
+rm(g_sub)
+rm(weighted_degrees)
+rm(hub_genes)
+rm(color_palette)
+rm(scaled_degrees)
+rm(vertex_colors)
+rm(degrees)
 
 
 # permutation test -> most correlated genes of Oct4 ############################
@@ -1079,7 +1348,7 @@ spear_corr_heatmap <- function(sce,clust,target,ctrl,
 }
 
 positive_control_genes <- c("Pou5f1",'Sox2','Nanog','Zfp42','Klf4','Klf2','Klf5',
-                            'Esrrb','Eras','Nacc1','Utf1','Lefty1', 'Sall4',
+                            'Esrrb','Eras','Nac1','Utf1','Lefty1', 'Sall4',
                             'Smad3','Smad1','Gdf3', 'Lin28a','Tfcp2l1','Id3',
                             'Fgf4','Tcl1','Spp1','Upp1','Fbxo15','Dppa3','Trp53',
                             'Dppa5a','Nr0b1','Stat3','Cdyl', 'Mycbp', 'Tbx3', 
@@ -1096,6 +1365,36 @@ oct4_spear_corr <- spear_corr_heatmap(sce_dev,list(1,2,3,4,5,6,7,8,9,10,
                                       30,'figures/spear_corr_')
 oct4_spear_corr[['1']]$out
 oct4_spear_corr[['1']]$heatmap
+
+
+
+# calculate enrichment level (GSEA)
+oct4_spear_corr[['5&8&10']]$corr_df %>% 
+  arrange(desc(rho)) %>% 
+  mutate(gene_name = rownames(.)) %>% 
+  pull(rho, gene_name)
+library(fgsea)
+fgseaRes <- fgsea(pathways = list(direct_targets = oct4_tar.potent), 
+                  stats    = oct4_spear_corr[['5&8&10']]$corr_df %>% 
+                    arrange(desc(rho)) %>% 
+                    mutate(gene_name = rownames(.)) %>% 
+                    pull(rho, gene_name),
+                  minSize  = 15,
+                  maxSize  = 500)
+fgseaRes$pval
+plotEnrichment(oct4_tar.potent,
+               oct4_spear_corr[['5&8&10']]$corr_df %>% 
+                 arrange(desc(rho)) %>% 
+                 mutate(gene_name = rownames(.)) %>% 
+                 pull(rho, gene_name))
+rm(fgseaRes)
+
+# fisher test
+phyper(length(find_inter(list(oct4_tar.potent,
+                              rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,])))[[2]]),
+       length(oct4_tar.potent),nrow(sce_dev),
+       nrow(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+       lower.tail = FALSE)
 
 # Nanog spearman correlation ###################################################
 nanog_spear_corr <- spear_corr_heatmap(sce_dev,list(1,2,3,4,5,6,7,8,9,10,
@@ -1386,6 +1685,102 @@ ggVennDiagram(list(Serum_posi = rownames(nanog_spear_corr[['5&8&10']]$corr_df[na
   scale_x_continuous(expand = expansion(mult = .2))
 ggsave("figures/nanog_serum_E4_RNAseq_venn.pdf",device='pdf', width = 10, height = 10)
 
+
+
+
+# calculate enrichment pvalue using Fisher test (RNA-seq, Oct4)####################
+# serum posi
+q <- length(find_inter(list(rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                            oct4_RNA_seq_targets))[[2]])
+m <- length(oct4_RNA_seq_targets)
+n <- nrow(sce_dev)
+k <- nrow(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,])
+phyper(q,m,n,k,lower.tail=FALSE)
+
+# E4 posi
+# serum posi
+q <- length(find_inter(list(rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,]),
+                            oct4_RNA_seq_targets))[[2]])
+m <- length(oct4_RNA_seq_targets)
+n <- nrow(sce_dev)
+k <- nrow(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])
+phyper(q,m,n,k,lower.tail=FALSE)
+
+# calculate enrichment pvalue using Fisher test (predicted, Oct4)
+# serum posi
+q <- length(find_inter(list(rownames(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                            oct4_tar.potent))[[2]])
+m <- length(oct4_tar.potent)
+n <- nrow(sce_dev)
+k <- nrow(oct4_spear_corr[['5&8&10']]$corr_df[oct4_spear_corr[['5&8&10']]$corr_df$rho > 0,])
+phyper(q,m,n,k,lower.tail=FALSE)
+
+# E4 posi
+# serum posi
+q <- length(find_inter(list(rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,]),
+                            oct4_tar.potent))[[2]])
+m <- length(oct4_tar.potent)
+n <- nrow(sce_dev)
+k <- nrow(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0,])
+phyper(q,m,n,k,lower.tail=FALSE)
+rm(q)
+rm(m)
+rm(n)
+rm(k)
+
+
+# calculate enrichment pvalue using Fisher test (RNA-seq, Nanog)####################
+# serum posi
+q <- length(find_inter(list(rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                            nanog_RNA_seq_targets))[[2]])
+m <- length(nanog_RNA_seq_targets)
+n <- nrow(sce_dev)
+k <- nrow(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,])
+phyper(q,m,n,k,lower.tail=FALSE)
+
+# E4 posi
+# serum posi
+q <- length(find_inter(list(rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,]),
+                            nanog_RNA_seq_targets))[[2]])
+m <- length(nanog_RNA_seq_targets)
+n <- nrow(sce_dev)
+k <- nrow(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])
+phyper(q,m,n,k,lower.tail=FALSE)
+
+# calculate enrichment pvalue using Fisher test (predicted, Nanog)
+# serum posi
+q <- length(find_inter(list(rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,]),
+                            oct4_tar.potent))[[2]])
+m <- length(oct4_tar.potent)
+n <- nrow(sce_dev)
+k <- nrow(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0,])
+phyper(q,m,n,k,lower.tail=FALSE)
+
+# E4 posi
+# serum posi
+q <- length(find_inter(list(rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,]),
+                            oct4_tar.potent))[[2]])
+m <- length(oct4_tar.potent)
+n <- nrow(sce_dev)
+k <- nrow(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0,])
+phyper(q,m,n,k,lower.tail=FALSE)
+
+# hub genes (serum)
+q <- 37
+m <- length(oct4_tar.potent)
+n <- nrow(sce_dev)
+k <- 136
+phyper(q,m,n,k,lower.tail=FALSE)
+
+# clean up
+rm(q)
+rm(m)
+rm(n)
+rm(k)
+
+
+
+
 # find genes with oct4/nanog/sox2 in their top30 correlated genes list###################
 rank_by_pvalue <- function(sce_obj,clust_num, examiners,gene_name, target){
   # calculate the fdr rank of target in all genes correlated to 'gene_name'
@@ -1647,53 +2042,75 @@ enrich_analysis <- function(candidates,ensdb,orgdb,GO_term,row_number,organism,f
   csv_filename <- paste0('figures/enrich_go_',file_name,'.csv')
   jpg_suffix <- paste(GO_term,collapse='_')
   jpg_filename <- paste0('figures/enrich_go_',file_name,'_',jpg_suffix,'.jpg')
-  enrich_go = enrichGO(gene = target_df$ENTREZID, 
-                               OrgDb = orgdb, 
-                               keyType = "ENTREZID", 
+  enrich_go = enrichGO(gene = target_df$ENTREZID,
+                               OrgDb = orgdb,
+                               keyType = "ENTREZID",
                                ont = "ALL", # can be selected in "CC\MF\BP\ALL"
-                               pAdjustMethod = "fdr", 
-                               pvalueCutoff = 0.05,  
+                               pAdjustMethod = "fdr",
+                               pvalueCutoff = 0.05,
                                qvalueCutoff = 0.1, # default is 0.2
-                               readable = T) 
+                               readable = T)
   enrich_go <- data.frame(enrich_go)
   write.csv(enrich_go,csv_filename,row.names = TRUE)
   enrich_go$ratio <- sapply(enrich_go$GeneRatio, FUN = function(x){eval(parse(text=x))})
-  ggplot(enrich_go %>% 
+  ggplot(enrich_go %>%
            dplyr::filter(ONTOLOGY %in% GO_term) %>%
-           group_by(ONTOLOGY) %>% 
+           group_by(ONTOLOGY) %>%
            dplyr::slice_min(n = row_number, order_by = p.adjust),
          aes(y=reorder(Description,-p.adjust),x=ratio))+
     geom_point(aes(size=Count,color=p.adjust))+
     facet_grid(ONTOLOGY~., scale = 'free_y', space = 'free_y')+
     scale_color_gradient(low = "red",high ="blue")+
-    labs(color=expression(p.adjust,size="Count"), 
+    labs(color=expression(p.adjust,size="Count"),
          x="Gene Ratio",y="GO term",title="GO Enrichment (Biological Process)")+
     theme_bw() +
     theme(axis.text.y = element_text(size = 12),
           axis.text.x = element_text(size = 12))
   ggsave(jpg_filename,device='jpg', width = 14, height = 8)
-  
+
   # KEGG
   csv_filename <- paste0('figures/enrich_kegg_',file_name,'.csv')
   jpg_filename <- paste0('figures/enrich_kegg_',file_name,'.jpg')
-  enrich_kegg = enrichKEGG(gene = target_df$ENTREZID, 
-                                   keyType = "kegg", 
+  enrich_kegg = enrichKEGG(gene = target_df$ENTREZID,
+                                   keyType = "kegg",
                                    organism = organism,
-                                   pAdjustMethod = "fdr", 
-                                   pvalueCutoff = 0.05,  
+                                   pAdjustMethod = "fdr",
+                                   pvalueCutoff = 0.05,
                                    qvalueCutoff = 0.1 # default is 0.2
-  ) 
+  )
   enrich_kegg <- data.frame(enrich_kegg)
   write.csv(enrich_kegg,csv_filename,row.names = TRUE)
   enrich_kegg$Description <- gsub('- Mus musculus \\(house mouse\\)','',enrich_kegg$Description)
   enrich_kegg$ratio <- sapply(enrich_kegg$GeneRatio, FUN = function(x){eval(parse(text=x))})
-  ggplot(enrich_kegg %>% 
+  ggplot(enrich_kegg %>%
+           dplyr::slice_min(n = 30, order_by = p.adjust),
+         aes(y=reorder(Description,-p.adjust),x=ratio))+
+    geom_point(aes(size=Count,color=p.adjust))+
+    scale_color_gradient(low = "red",high ="blue")+
+    labs(color=expression(p.adjust,size="Count"),
+         x="Gene Ratio",y="KEGG term",title="KEGG Enrichment")+
+    theme_bw() +
+    theme(axis.text.y = element_text(size = 12),
+          axis.text.x = element_text(size = 12))
+  ggsave(jpg_filename,device='jpg', width = 10, height = 8)
+  
+  # WikiPathway
+  csv_filename <- paste0('figures/enrich_wp_',file_name,'.csv')
+  jpg_filename <- paste0('figures/enrich_wp_',file_name,'.jpg')
+  target_df <- target_df[!duplicated(target_df$GENENAME),]
+  enrich_WP <- enrichWP(target_df$ENTREZID, 
+                        organism = 'Mus musculus',
+                        qvalueCutoff = 0.1)
+  enrich_WP <- data.frame(enrich_WP)
+  write.csv(enrich_WP,csv_filename,row.names = TRUE)
+  enrich_WP$ratio <- sapply(enrich_WP$GeneRatio, FUN = function(x){eval(parse(text=x))})
+  ggplot(enrich_WP %>% 
            dplyr::slice_min(n = 30, order_by = p.adjust),
          aes(y=reorder(Description,-p.adjust),x=ratio))+
     geom_point(aes(size=Count,color=p.adjust))+
     scale_color_gradient(low = "red",high ="blue")+
     labs(color=expression(p.adjust,size="Count"), 
-         x="Gene Ratio",y="KEGG term",title="KEGG Enrichment")+
+         x="Gene Ratio",y="WikiPathway term",title="WikiPathway Enrichment")+
     theme_bw() +
     theme(axis.text.y = element_text(size = 12),
           axis.text.x = element_text(size = 12))
@@ -1749,6 +2166,41 @@ enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','nanog_E4')
 candidates <- rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
                                                              nanog_spear_corr[['5&8&10']]$corr_df$FDR <0.1,])
 enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','nanog_serum')
+
+# markers in 3 serum clusters
+enrich_analysis(rownames(group_marker_serum),ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','serum_DE')
+
+# hub gene (serum, the group with nanog (sox2 also in this group))
+target_cluster_num <- hubgenes_widely_expressed_serum[[1]][grep('Nanog',hubgenes_widely_expressed_serum[[1]]$gene_name),'cluster']
+target_cluster_num
+candidates <- hubgenes_widely_expressed_serum[[1]] %>% 
+  arrange(p_value) %>% 
+  filter(p_value < 0.05 & cluster == target_cluster_num) %>% rownames(.)
+enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','hubgene_serum_nanog')
+
+# hub gene (serum, the group with oct4)
+target_cluster_num <- hubgenes_widely_expressed_serum[[1]][grep('Pou5f1',hubgenes_widely_expressed_serum[[1]]$gene_name),'cluster']
+target_cluster_num
+candidates <- hubgenes_widely_expressed_serum[[1]] %>% 
+  arrange(p_value) %>% 
+  filter(p_value < 0.05 & cluster == target_cluster_num) %>% rownames(.)
+enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','hubgene_serum_oct4')
+
+# hub gene (E4, the group with oct4 (nanog and sox2 also in this group))
+target_cluster_num <- hubgenes_widely_expressed_E4[[1]][grep('Pou5f1',hubgenes_widely_expressed_E4[[1]]$gene_name),'cluster']
+target_cluster_num
+candidates <- hubgenes_widely_expressed_E4[[1]] %>% 
+  arrange(p_value) %>% 
+  filter(p_value < 0.05 & cluster == target_cluster_num) %>% rownames(.)
+enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','hubgene_E4_oct4')
+
+# hub gene (E4, the group with cdx2 (differentiation))
+target_cluster_num <- hubgenes_widely_expressed_E4[[1]][grep('Cdx2',hubgenes_widely_expressed_E4[[1]]$gene_name),'cluster']
+target_cluster_num
+candidates <- hubgenes_widely_expressed_E4[[1]] %>% 
+  arrange(p_value) %>% 
+  filter(p_value < 0.2 & cluster == target_cluster_num) %>% rownames(.)
+enrich_analysis(candidates,ens.mm.v109,orgdb.mm,c('BP'),30,'mmu','hubgene_E4_cdx2')
 
 # clean up
 rm(candidates)
@@ -1921,12 +2373,58 @@ ggplot(mgi_nanog_E4_df %>%
          dplyr::slice_min(n = 30, order_by = q.value),
        aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
   geom_bar(stat="identity") +
-  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Oct4 E4)") + 
+  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Nanog E4)") + 
   coord_flip() +
   theme_bw() +
   theme(axis.text.y = element_text(size = 11),
         axis.text.x = element_text(size = 11))
 ggsave('figures/mgi_nanog_E4.jpg',device='jpg', width = 12, height = 8)
+
+# expression differences test###################################################
+# t test for E3.5 and E4.5 (E4, Oct4)
+cluster3.5 <- logcounts(sce_dev['Pou5f1',sce_dev$Cell.Type == 'E3.5 ICM'])
+cluster4.5 <- logcounts(sce_dev['Pou5f1',sce_dev$Cell.Type == 'E4.5 Epiblast'])
+t.test(cluster3.5, cluster4.5)
+# plot expression
+sce_E4 <- sce_dev[,sce_dev$label %in% c(9)]
+variation_E4 <- plotExpression(sce_E4,c('Pou5f1','Nanog'),x='Cell.Type',exprs_values = "logcounts") +
+  xlab('Cell Type') + ylab('Log Counts') + 
+  ggtitle('Oct4 and Nanog expression level in E4 group')
+variation_E4
+ggsave('figures/variation_E4.jpg',variation_E4, device='jpg', width = 8, height = 5)
+rm(sce_E4)
+rm(cluster3.5)
+rm(cluster4.5)
+
+
+# ANOVA test for cluster5,8,10 (Serum, Oct4)
+cluster5 <- logcounts(sce_dev['Pou5f1',sce_dev$label == 5])
+cluster8 <- logcounts(sce_dev['Pou5f1',sce_dev$label == 8])
+cluster10 <- logcounts(sce_dev['Pou5f1',sce_dev$label == 10])
+# expression_data <- data.frame(
+#   expression = c(cluster5, cluster8, cluster10),
+#   cell_type = factor(rep(c(5,8,10), times = c(length(cluster5), length(cluster8), length(cluster10))))
+# )
+# aov_result <- aov(expression ~ cell_type, data = expression_data)
+# summary(aov_result)
+
+# t test for each pair of group
+t.test(cluster5,cluster8) 
+t.test(cluster5,cluster10)
+t.test(cluster8,cluster10)
+
+# plot expression
+sce_serum <- sce_dev[,sce_dev$label %in% c(5,8,10)]
+variation_serum <- plotExpression(sce_serum,c('Pou5f1','Nanog'),x='label',exprs_values = "logcounts") +
+  xlab('cluster number') + ylab('Log Counts') + 
+  ggtitle('Oct4 and Nanog expression level in Serum group')
+variation_serum
+ggsave('figures/variation_serum.jpg',variation_serum, device='jpg', width = 8, height = 5)
+rm(sce_serum)
+rm(cluster5)
+rm(cluster8)
+rm(cluster10)
+
 
 
 ###############################################################################
