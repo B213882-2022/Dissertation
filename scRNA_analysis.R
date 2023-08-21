@@ -621,7 +621,7 @@ sweep_para <- function(seurat, seed, features, res, feature_num, PC_method=1, se
 }
 out <- sweep_para(seurat, seed, features_dev, 
                   res=seq(0.1,2.0,0.1),
-                  feature_num = c(seq(1000,5000,1000)),
+                  feature_num = c(4000),
                   3,PC_num.gml)
 out
 ggplot(out, aes(x=res,y=sil_score,label=paste0('(',res,', ',round(sil_score,3),')'))) +
@@ -2413,6 +2413,11 @@ t.test(cluster5,cluster8)
 t.test(cluster5,cluster10)
 t.test(cluster8,cluster10)
 
+rm(sce_serum)
+rm(cluster5)
+rm(cluster8)
+rm(cluster10)
+
 # plot expression
 sce_serum <- sce_dev[,sce_dev$label %in% c(5,8,10)]
 variation_serum <- plotExpression(sce_serum,c('Pou5f1','Nanog'),x='label',exprs_values = "logcounts") +
@@ -2420,11 +2425,6 @@ variation_serum <- plotExpression(sce_serum,c('Pou5f1','Nanog'),x='label',exprs_
   ggtitle('Oct4 and Nanog expression level in Serum group')
 variation_serum
 ggsave('figures/variation_serum.jpg',variation_serum, device='jpg', width = 8, height = 5)
-rm(sce_serum)
-rm(cluster5)
-rm(cluster8)
-rm(cluster10)
-
 
 
 ###############################################################################
