@@ -2245,7 +2245,8 @@ rm(candidates)
 # rm(candidates)
 
 # other enrichment analysis tools (web-based method) ###########################
-# recommended web-based tools: ChEA3, Enrichr-KG
+# recommended web-based tools: ChEA3 (select lirary: "Literature")
+# note that not every gene can be recognized by the tool
 # we need to record the gene number successfully recognized by web-tools (e.g. 1309 below)
 
 # oct4 serum ------------------------------------------------------------
@@ -2268,18 +2269,18 @@ ggplot(liter_oct4_serum_df %>%
         axis.text.x = element_text(size = 12)) +
   guides(size=guide_legend("Count"))
 ggsave('figures/liter_oct4_serum.jpg',device='jpg', width = 8, height = 8)
-# MGI enrichment (by Enrichr-KG)
-mgi_oct4_serum_df <- read.csv('figures/Enrichr-KG_MGI_oct4_serum_1316.csv')
-ggplot(mgi_oct4_serum_df %>%
-         dplyr::slice_min(n = 30, order_by = q.value),
-       aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
-  geom_bar(stat="identity") +
-  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Oct4 serum)") + 
-  coord_flip() +
-  theme_bw() +
-  theme(axis.text.y = element_text(size = 11),
-        axis.text.x = element_text(size = 11))
-ggsave('figures/mgi_oct4_serum.jpg',device='jpg', width = 12, height = 8)
+# # MGI enrichment (by Enrichr-KG)
+# mgi_oct4_serum_df <- read.csv('figures/Enrichr-KG_MGI_oct4_serum_1316.csv')
+# ggplot(mgi_oct4_serum_df %>%
+#          dplyr::slice_min(n = 30, order_by = q.value),
+#        aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
+#   geom_bar(stat="identity") +
+#   labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Oct4 serum)") + 
+#   coord_flip() +
+#   theme_bw() +
+#   theme(axis.text.y = element_text(size = 11),
+#         axis.text.x = element_text(size = 11))
+# ggsave('figures/mgi_oct4_serum.jpg',device='jpg', width = 12, height = 8)
 
 # oct4 E4 -----------------------------------------------
 write.table(rownames(oct4_spear_corr[['9']]$corr_df[oct4_spear_corr[['9']]$corr_df$rho > 0 & 
@@ -2301,18 +2302,18 @@ ggplot(liter_oct4_E4_df %>%
         axis.text.x = element_text(size = 12)) +
   guides(size=guide_legend("Count"))
 ggsave('figures/liter_oct4_E4.jpg',device='jpg', width = 8, height = 8)
-# MGI enrichment (by Enrichr-KG)
-mgi_oct4_E4_df <- read.csv('figures/Enrichr-KG_MGI_oct4_E4_1396.csv')
-ggplot(mgi_oct4_E4_df %>%
-         dplyr::slice_min(n = 30, order_by = q.value),
-       aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
-  geom_bar(stat="identity") +
-  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Oct4 E4)") + 
-  coord_flip() +
-  theme_bw() +
-  theme(axis.text.y = element_text(size = 11),
-        axis.text.x = element_text(size = 11))
-ggsave('figures/mgi_oct4_E4.jpg',device='jpg', width = 12, height = 8)
+# # MGI enrichment (by Enrichr-KG)
+# mgi_oct4_E4_df <- read.csv('figures/Enrichr-KG_MGI_oct4_E4_1396.csv')
+# ggplot(mgi_oct4_E4_df %>%
+#          dplyr::slice_min(n = 30, order_by = q.value),
+#        aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
+#   geom_bar(stat="identity") +
+#   labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Oct4 E4)") + 
+#   coord_flip() +
+#   theme_bw() +
+#   theme(axis.text.y = element_text(size = 11),
+#         axis.text.x = element_text(size = 11))
+# ggsave('figures/mgi_oct4_E4.jpg',device='jpg', width = 12, height = 8)
 
 # nanog serum --------------------------------------------
 write.table(rownames(nanog_spear_corr[['5&8&10']]$corr_df[nanog_spear_corr[['5&8&10']]$corr_df$rho > 0 & 
@@ -2334,18 +2335,18 @@ ggplot(liter_nanog_serum_df %>%
         axis.text.x = element_text(size = 12)) +
   guides(size=guide_legend("Count"))
 ggsave('figures/liter_nanog_serum.jpg',device='jpg', width = 8, height = 8)
-# MGI enrichment (by Enrichr-KG)
-mgi_nanog_serum_df <- read.csv('figures/Enrichr-KG_MGI_nanog_serum_1696.csv')
-ggplot(mgi_nanog_serum_df %>%
-         dplyr::slice_min(n = 30, order_by = q.value),
-       aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
-  geom_bar(stat="identity") +
-  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Nanog serum)") + 
-  coord_flip() +
-  theme_bw() +
-  theme(axis.text.y = element_text(size = 11),
-        axis.text.x = element_text(size = 11))
-ggsave('figures/mgi_nanog_serum.jpg',device='jpg', width = 12, height = 8)
+# # MGI enrichment (by Enrichr-KG)
+# mgi_nanog_serum_df <- read.csv('figures/Enrichr-KG_MGI_nanog_serum_1696.csv')
+# ggplot(mgi_nanog_serum_df %>%
+#          dplyr::slice_min(n = 30, order_by = q.value),
+#        aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
+#   geom_bar(stat="identity") +
+#   labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Nanog serum)") + 
+#   coord_flip() +
+#   theme_bw() +
+#   theme(axis.text.y = element_text(size = 11),
+#         axis.text.x = element_text(size = 11))
+# ggsave('figures/mgi_nanog_serum.jpg',device='jpg', width = 12, height = 8)
 
 # nanog E4 ---------------------------------------------
 write.table(rownames(nanog_spear_corr[['9']]$corr_df[nanog_spear_corr[['9']]$corr_df$rho > 0 & 
@@ -2367,18 +2368,18 @@ ggplot(liter_nanog_E4_df %>%
         axis.text.x = element_text(size = 12)) +
   guides(size=guide_legend("Count"))
 ggsave('figures/liter_nanog_E4.jpg',device='jpg', width = 8, height = 8)
-# MGI enrichment (by Enrichr-KG)
-mgi_nanog_E4_df <- read.csv('figures/Enrichr-KG_MGI_nanog_E4_1020.csv')
-ggplot(mgi_nanog_E4_df %>%
-         dplyr::slice_min(n = 30, order_by = q.value),
-       aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
-  geom_bar(stat="identity") +
-  labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Nanog E4)") + 
-  coord_flip() +
-  theme_bw() +
-  theme(axis.text.y = element_text(size = 11),
-        axis.text.x = element_text(size = 11))
-ggsave('figures/mgi_nanog_E4.jpg',device='jpg', width = 12, height = 8)
+# # MGI enrichment (by Enrichr-KG)
+# mgi_nanog_E4_df <- read.csv('figures/Enrichr-KG_MGI_nanog_E4_1020.csv')
+# ggplot(mgi_nanog_E4_df %>%
+#          dplyr::slice_min(n = 30, order_by = q.value),
+#        aes(x=reorder(Term,-q.value),y=-log10(q.value))) +
+#   geom_bar(stat="identity") +
+#   labs(x="MGI term",y="-log10(qvalue)",title="MGI Enrichment (Nanog E4)") + 
+#   coord_flip() +
+#   theme_bw() +
+#   theme(axis.text.y = element_text(size = 11),
+#         axis.text.x = element_text(size = 11))
+# ggsave('figures/mgi_nanog_E4.jpg',device='jpg', width = 12, height = 8)
 
 # expression differences test###################################################
 # t test for E3.5 and E4.5 (E4, Oct4)
