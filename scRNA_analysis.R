@@ -68,7 +68,7 @@ rm(raw_count)
 
 # gene name annotation
 ah <- AnnotationHub()
-#display(ah)  # search 'GRCm39' and 'EnsDb' to find v109 ID
+#display(ah)  # search 'GRCm39' and 'EnsDb' to find v109 ID (deprecated; Use 'BiocHubsShiny::BiocHubsShiny' instead)
 ens.mm.v109 <- AnnotationHub()[["AH109655"]]
 columns(ens.mm.v109)
 gene_anno <- AnnotationDbi::select(ens.mm.v109, keys=rownames(sce), 
